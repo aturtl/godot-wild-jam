@@ -1,7 +1,7 @@
 For Godot Wild Jam #94
 
 Theme: Mutation
-Wildcards: Disassembly, Checkout, Turtle
+<br>Wildcards: Disassembly, Checkout, Turtle
 
 A game about assembling a mechanized turtle and fighting robots.
 
