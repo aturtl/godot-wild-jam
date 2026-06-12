@@ -1,11 +1,15 @@
-For Godot Wild Jam #94
+<h2>Godot Wild Jam #94</h2>
 
-Theme: Mutation
-<br>Wildcards: Disassembly, Checkout, Turtle
+<i>A game about assembling a mechanized turtle and fighting robots.</i>
 
-A game about assembling a mechanized turtle and fighting robots.
+<h3>Documents:</h3>
 
-Documents:
-<br>[Devlog](docs/devlog.txt)
-<br>[Design Layout](docs/design.txt)
-<br>[Objectives](docs/objectives.txt)
+ - [Devlog](docs/devlog.txt)
+ - [Design Layout](docs/design.txt)
+ - [Objectives](docs/objectives.txt)
+
+<h3>Jam Information:</h3>
+
+ - [Godot Wild Jam (Itch.io)](https://itch.io/jam/godot-wild-jam-94)
+ - Theme: <b>Mutation</b>
+ - Wildcards: Disassembly, Checkout, Turtle
