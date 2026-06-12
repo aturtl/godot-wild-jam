@@ -1,0 +1,18 @@
+GODOT WILD JAM OBJECTIVES
+
+Main Goals:
+	Heavily document game (neatly)
+	At least 10 unique attachments
+	Music & Sound Design
+	Write a basic narrative
+
+Roadmap (rough):
+	6/12: Documentation, Assembly, Shop Mechanics
+	6/13: Battle mechanics, Basic sprites (chasis, attachments)
+	6/14: Robot disassembly, Overworld
+	6/15: Battle Music, Overworld Music, Shop Music
+	6/16: Create more chases & attachments
+	6/17: Turtle care + mutations
+	6/18: Backgrounds, spritework
+	6/19: Spritework, polish
+	6/20: Final polish, Upload to Itch

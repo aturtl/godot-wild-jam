@@ -1,0 +1,34 @@
+GODOT WILD JAM DESIGN LAYOUT
+
+Theme: Mutation
+Wildcards: Disassembly, Checkout, Turtle
+
+Idea: Robot turtle assembly
+	Mutation: Mech structure of turtle mutates based on how you take care of it
+	Disassembly: Repurpose parts from disassembled robots
+	Checkout: Purchase parts from shop for turtle
+	Turtle: Assemble robot turtle
+
+Basic Mechanics:
+	Assembly
+		Nodes to attach parts
+		Parts give unique modifiers
+	Shop: currency, shop layout
+		Menus
+	Battle
+		The turtle walks in random directions & flings itself at the enemy
+			Like duck life. You build it then watch it autonomously.
+			For interactivity, projectiles/other weapons could be timed by the player.
+		The head is the main damage area. The shell resists the most.
+	Attachments
+		The parts attached to the turtle chasis
+		Weapons:
+			Shell-top, Tail
+		Protection:
+			Shell, Head
+		Mobility:
+			Legs
+		Should mainly follow this but some attachments can have multiple purposes. The head, for example, could have a laser attachment to it.
+
+Attachments:
+	Mace Tail - Chained to tail, swings freely with gravity

@@ -1,0 +1,9 @@
+GODOT WILD JAM DEVLOG
+
+6/12:
+	- Added documentation
+		- objectives.txt
+		- devlog.txt
+		- design.txt
+	- Designed base game (design.txt)
+	- Created rough objective roadmap (objectives.txt)
