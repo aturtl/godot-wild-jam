@@ -7,3 +7,10 @@ GODOT WILD JAM DEVLOG
 		- design.txt
 	- Designed base game (design.txt)
 	- Created rough objective roadmap (objectives.txt)
+	- Added README.md
+	- Created basic assembly scene
+	- Default chasis scene
+	- Attachments
+		- Attachments
+		- Slots
+		- Magnetivity to slots

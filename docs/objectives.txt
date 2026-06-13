@@ -7,7 +7,7 @@ Main Goals:
 	Write a basic narrative
 
 Roadmap (rough):
-	6/12: Documentation, Assembly, Shop Mechanics
+	6/12: Documentation, Assembly Mechanics, Shop Mechanics
 	6/13: Battle mechanics, Basic sprites (chasis, attachments)
 	6/14: Robot disassembly, Overworld
 	6/15: Battle Music, Overworld Music, Shop Music
