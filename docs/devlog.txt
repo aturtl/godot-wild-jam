@@ -18,4 +18,4 @@ GODOT WILD JAM DEVLOG
 
 6/13:
 	- Added savable stats
-	- 
+	- Made assembly layout save (currently saves on change. To be replaced with save button)
