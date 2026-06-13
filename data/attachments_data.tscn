@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://boe5v1ffi4pn4"]
+
+[ext_resource type="PackedScene" uid="uid://bn8tikihxgpsa" path="res://assembly/attachment.tscn" id="1_5402b"]
+
+[node name="AttachmentsData" type="Node2D"]
+
+[node name="prototype_tail" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(426, 182)
+connect_to = 2
+
+[node name="Sprite" parent="prototype_tail" index="0"]
+position = Vector2(16.6, -12.055)
+rotation = -5.27613
+scale = Vector2(0.0859373, 0.34375)
+
+[node name="prototype_foot" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(557, 228)
+connect_to = 3
+
+[node name="Sprite" parent="prototype_foot" index="0"]
+position = Vector2(-0.239994, 14)
+scale = Vector2(0.18375, 0.34375)
+
+[node name="prototype_shell" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(403, 287)
+connect_to = 1
+
+[node name="Sprite" parent="prototype_shell" index="0"]
+position = Vector2(0.499999, -25)
+scale = Vector2(0.898437, 0.40625)
+
+[node name="prototype_head" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(277, 188)
+
+[node name="Sprite" parent="prototype_head" index="0"]
+position = Vector2(-37.5, -3.8147e-06)
+scale = Vector2(0.929688, 0.34375)
+
+[editable path="prototype_tail"]
+[editable path="prototype_foot"]
+[editable path="prototype_shell"]
+[editable path="prototype_head"]

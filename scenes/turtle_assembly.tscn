@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqt8exjsvy4j1" path="res://assembly/assembly_hand.png" id="2_08n57"]
 [ext_resource type="Texture2D" uid="uid://bmskc4idnkqna" path="res://icon.svg" id="3_0ja4x"]
 [ext_resource type="Script" uid="uid://ehl2mjgwbf1u" path="res://assembly/assembly_hand.gd" id="4_08n57"]
-[ext_resource type="PackedScene" uid="uid://bn8tikihxgpsa" path="res://assembly/attachment.tscn" id="5_0ja4x"]
+[ext_resource type="Script" uid="uid://dlg0fx3nqyqy2" path="res://scenes/attachment_buttons.gd" id="5_0ja4x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3d87l"]
 
@@ -27,31 +27,53 @@ shape = SubResource("CircleShape2D_3d87l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="UI" type="Node2D" parent="."]
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="Attachments" type="BoxContainer" parent="UI"]
+[node name="AttachmentBtns" type="Control" parent="UI" node_paths=PackedStringArray("head_list", "shell_list", "tail_list", "foot_list")]
+layout_mode = 3
+anchors_preset = 0
 offset_left = -541.0
-offset_top = 158.0
-offset_right = -17.0
-offset_bottom = 286.0
+offset_top = 216.0
+offset_right = -13.0
+offset_bottom = 344.0
+scale = Vector2(1, 0.6)
+script = ExtResource("5_0ja4x")
+head_list = NodePath("../AttachmentLayout/ListHead")
+shell_list = NodePath("../AttachmentLayout/ListShell")
+tail_list = NodePath("../AttachmentLayout/ListTail")
+foot_list = NodePath("../AttachmentLayout/ListFoot")
 
-[node name="BtnHead" type="TextureButton" parent="UI/Attachments"]
-layout_mode = 2
+[node name="BtnHead" type="TextureButton" parent="UI/AttachmentBtns"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
 texture_normal = ExtResource("3_0ja4x")
 
-[node name="BtnShell" type="TextureButton" parent="UI/Attachments"]
-layout_mode = 2
+[node name="BtnShell" type="TextureButton" parent="UI/AttachmentBtns"]
+layout_mode = 0
+offset_left = 132.0
+offset_right = 260.0
+offset_bottom = 128.0
 texture_normal = ExtResource("3_0ja4x")
 
-[node name="BtnTail" type="TextureButton" parent="UI/Attachments"]
-layout_mode = 2
+[node name="BtnTail" type="TextureButton" parent="UI/AttachmentBtns"]
+layout_mode = 0
+offset_left = 264.0
+offset_right = 392.0
+offset_bottom = 128.0
 texture_normal = ExtResource("3_0ja4x")
 
-[node name="BtnFoot" type="TextureButton" parent="UI/Attachments"]
-layout_mode = 2
+[node name="BtnFoot" type="TextureButton" parent="UI/AttachmentBtns"]
+layout_mode = 0
+offset_left = 396.0
+offset_right = 524.0
+offset_bottom = 128.0
 texture_normal = ExtResource("3_0ja4x")
 
 [node name="BtnInteract" type="TextureButton" parent="UI"]
+layout_mode = 0
 offset_left = 223.0
 offset_top = 45.0
 offset_right = 554.0
@@ -59,48 +81,58 @@ offset_bottom = 305.0
 texture_normal = ExtResource("3_0ja4x")
 stretch_mode = 0
 
-[node name="AttachmentHead" parent="." instance=ExtResource("5_0ja4x")]
-position = Vector2(200, -113)
+[node name="AttachmentLayout" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -541.0
+offset_top = 112.0
+offset_right = -541.0
+offset_bottom = 112.0
 
-[node name="Sprite" parent="AttachmentHead" index="0"]
-position = Vector2(-37.5, -3.8147e-06)
-scale = Vector2(0.929688, 0.34375)
+[node name="ListHead" type="ScrollContainer" parent="UI/AttachmentLayout"]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 94.0
 
-[node name="AttachmentTail" parent="." instance=ExtResource("5_0ja4x")]
-position = Vector2(349, -119)
-connect_to = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/ListHead"]
+layout_mode = 2
 
-[node name="Sprite" parent="AttachmentTail" index="0"]
-position = Vector2(16.6, -12.055)
-rotation = -5.27613
-scale = Vector2(0.0859373, 0.34375)
+[node name="ListShell" type="ScrollContainer" parent="UI/AttachmentLayout"]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 94.0
 
-[node name="AttachmentFoot" parent="." instance=ExtResource("5_0ja4x")]
-position = Vector2(480, -73)
-connect_to = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/ListShell"]
+layout_mode = 2
 
-[node name="Sprite" parent="AttachmentFoot" index="0"]
-position = Vector2(-0.239994, 14)
-scale = Vector2(0.18375, 0.34375)
+[node name="ListTail" type="ScrollContainer" parent="UI/AttachmentLayout"]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 94.0
 
-[node name="AttachmentFoot2" parent="." instance=ExtResource("5_0ja4x")]
-position = Vector2(457, -183)
-connect_to = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/ListTail"]
+layout_mode = 2
 
-[node name="Sprite" parent="AttachmentFoot2" index="0"]
-position = Vector2(-0.239994, 14)
-scale = Vector2(0.18375, 0.34375)
+[node name="ListFoot" type="ScrollContainer" parent="UI/AttachmentLayout"]
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 94.0
 
-[node name="AttachmentShell" parent="." instance=ExtResource("5_0ja4x")]
-position = Vector2(326, -14)
-connect_to = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/ListFoot"]
+layout_mode = 2
 
-[node name="Sprite" parent="AttachmentShell" index="0"]
-position = Vector2(0.499999, -25)
-scale = Vector2(0.898437, 0.40625)
+[node name="ScrollBackground" type="TextureRect" parent="UI/AttachmentLayout"]
+visible = false
+layout_mode = 0
+offset_right = 525.0
+offset_bottom = 94.0
+texture = ExtResource("3_0ja4x")
+expand_mode = 1
 
-[editable path="AttachmentHead"]
-[editable path="AttachmentTail"]
-[editable path="AttachmentFoot"]
-[editable path="AttachmentFoot2"]
-[editable path="AttachmentShell"]
+[node name="Attachments" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[connection signal="button_down" from="UI/AttachmentBtns/BtnHead" to="UI/AttachmentBtns" method="_on_head_button_down"]
+[connection signal="button_down" from="UI/AttachmentBtns/BtnShell" to="UI/AttachmentBtns" method="_on_shell_button_down"]
+[connection signal="button_down" from="UI/AttachmentBtns/BtnTail" to="UI/AttachmentBtns" method="_on_tail_button_down"]
+[connection signal="button_down" from="UI/AttachmentBtns/BtnFoot" to="UI/AttachmentBtns" method="_on_foot_button_down"]
