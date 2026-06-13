@@ -7,13 +7,12 @@ class_name Attachment extends Node2D
 @onready var drop_area: Area2D = $DropArea
 
 var attached: bool = false
-
 var dragging: bool = false
 
-signal detached
+var id_name: String
+var owned_index: int
 
-func _ready():
-	pass
+signal detached
 
 func _physics_process(delta):
 	var was_dragging = dragging
@@ -32,21 +31,23 @@ func _physics_process(delta):
 		visible = control_marker.is_visible_in_tree()
 
 func drag():
-	print("dragging")
 	attached = false
 	position = get_global_mouse_position()
 
 func drop():
 	var slot = get_slot()
 	if slot:
-		attached = true
-		replace_slot(slot)
-		position = slot.global_position
+		attach(slot)
 	else:
 		detach()
 
-func replace_slot(slot):
+func replace_slot(slot: AttachmentSlot):
 	slot.set_new_attachment(self)
+
+func attach(slot: AttachmentSlot):
+	attached = true
+	replace_slot(slot)
+	position = slot.global_position
 
 func detach():
 	attached = false

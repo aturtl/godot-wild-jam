@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DefaultStats" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/stats/default_stats.gd" id="1_yryac"]
+
+[resource]
+script = ExtResource("1_yryac")
+owned_attachments = [["prototype_head", 0], ["prototype_foot", 2], ["prototype_foot", 1], ["prototype_shell", 4], ["prototype_tail", 3]]

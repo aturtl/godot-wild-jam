@@ -19,8 +19,8 @@ config/canvas_textures/default_texture_filter=0
 
 [autoload]
 
-DefaultData="*res://data/player_data/default_data.gd"
 GlobalData="*res://data/global_data.gd"
+SESSIONSTATS="*res://data/stats/session_stats.gd"
 
 [rendering]
 

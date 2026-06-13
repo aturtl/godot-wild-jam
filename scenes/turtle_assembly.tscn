@@ -11,6 +11,7 @@
 [node name="TurtleAssembly" type="Node2D"]
 
 [node name="Chassis" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="DefaultChasis" parent="Chassis" instance=ExtResource("1_4s7fl")]
 position = Vector2(-1, 91)

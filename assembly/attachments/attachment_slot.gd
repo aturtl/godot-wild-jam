@@ -26,8 +26,16 @@ func set_new_attachment(attach: Attachment):
 		connected_attachment.detach()
 	connected_attachment = attach
 	connected_attachment.detached.connect(on_attachment_detach)
+	var attachment_array = SESSIONSTATS.stats.owned_attachments[attach.owned_index]
+	attachment_array[1] = number
+	SESSIONSTATS.save_stats()
 
 func on_attachment_detach():
 	connected_attachment.detached.disconnect(on_attachment_detach)
+	if connected_attachment:
+		var attachment_array = SESSIONSTATS.stats.owned_attachments[connected_attachment.owned_index]
+		attachment_array[1] = -1
+		SESSIONSTATS.save_stats()
+	else:
+		print("no attachment")
 	connected_attachment = null
-	print("Detached")

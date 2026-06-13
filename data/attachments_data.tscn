@@ -31,6 +31,7 @@ scale = Vector2(0.898437, 0.40625)
 
 [node name="prototype_head" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(277, 188)
+connect_to = null
 
 [node name="Sprite" parent="prototype_head" index="0"]
 position = Vector2(-37.5, -3.8147e-06)

@@ -7,12 +7,29 @@ extends Control
 @export var tail_list: ScrollContainer
 @export var foot_list: ScrollContainer
 
+var equipped_chassis: Chassis
+
 func _ready():
+	equipped_chassis = %Chassis.get_child(0)
 	set_other_lists_invisible(head_list)
-	for attachment_name in DefaultData.owned_attachments:
-		var attachment = attachments_data.find_child(attachment_name)
+	load_owned_attachments()
+
+
+func load_owned_attachments():
+	var i = 0
+	print(SESSIONSTATS.stats.owned_attachments)
+	for attachment_array in SESSIONSTATS.stats.owned_attachments:
+		var attachment = attachments_data.find_child(attachment_array[0])
 		if attachment and attachment is Attachment:
-			assign_attachment_to_proper_list(attachment.duplicate())
+			var dup_attachment:Attachment = attachment.duplicate()
+			dup_attachment.id_name = attachment_array[0]
+			dup_attachment.owned_index = i
+			var attached_to = attachment_array[1]
+			if attached_to != -1:
+				#equip
+				dup_attachment.attach(equipped_chassis.get_slot_by_number(attached_to))
+			assign_attachment_to_proper_list(dup_attachment)
+		i += 1
 
 
 func assign_attachment_to_proper_list(attachment: Attachment):
