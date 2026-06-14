@@ -1,13 +1,15 @@
 class_name Attachment extends Node2D
 
-@export_enum("Head","Shell","Tail","Foot") var connect_to: int;
-
 @export var control_marker: Control
 
 @onready var drop_area: Area2D = $DropArea
 
+@onready var connect_to_info = $ConnectTo
+
 var attached: bool = false
 var dragging: bool = false
+
+var drag_offset: Vector2
 
 var id_name: String
 var owned_index: int
@@ -18,6 +20,9 @@ func _physics_process(delta):
 	var was_dragging = dragging
 	
 	dragging = (Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and GlobalData.selected_mouse_area == drop_area)
+	
+	if !was_dragging and dragging: # determine offset
+		drag_offset = get_global_mouse_position() - position
 	
 	if dragging:
 		drag()
@@ -32,7 +37,7 @@ func _physics_process(delta):
 
 func drag():
 	attached = false
-	position = get_global_mouse_position()
+	position = get_global_mouse_position() - drag_offset
 
 func drop():
 	var slot = get_slot()
@@ -56,6 +61,6 @@ func detach():
 func get_slot() -> AttachmentSlot:
 	for area in drop_area.get_overlapping_areas():
 		if area is SlotArea:
-			if connect_to == area.get_parent().type:
+			if connect_to_info.connect_to == area.get_parent().type:
 				return area.get_parent()
 	return null

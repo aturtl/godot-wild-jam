@@ -1,43 +1,128 @@
-[gd_scene load_steps=2 format=3 uid="uid://boe5v1ffi4pn4"]
+[gd_scene load_steps=3 format=3 uid="uid://boe5v1ffi4pn4"]
 
 [ext_resource type="PackedScene" uid="uid://bn8tikihxgpsa" path="res://assembly/attachments/attachment.tscn" id="1_5402b"]
+[ext_resource type="Texture2D" uid="uid://blunw0qqgihs5" path="res://assembly/chasses/regular_turtle_chassis-Sheet.png" id="2_5404i"]
 
 [node name="AttachmentsData" type="Node2D"]
 
 [node name="prototype_tail" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(426, 182)
-connect_to = 2
 
 [node name="Sprite" parent="prototype_tail" index="0"]
 position = Vector2(16.6, -12.055)
 rotation = -5.27613
 scale = Vector2(0.0859373, 0.34375)
 
+[node name="ConnectTo" parent="prototype_tail" index="2"]
+connect_to = 2
+
 [node name="prototype_foot" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(557, 228)
-connect_to = 3
 
 [node name="Sprite" parent="prototype_foot" index="0"]
 position = Vector2(-0.239994, 14)
 scale = Vector2(0.18375, 0.34375)
 
+[node name="ConnectTo" parent="prototype_foot" index="2"]
+connect_to = 3
+
 [node name="prototype_shell" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(403, 287)
-connect_to = 1
 
 [node name="Sprite" parent="prototype_shell" index="0"]
 position = Vector2(0.499999, -25)
 scale = Vector2(0.898437, 0.40625)
 
+[node name="ConnectTo" parent="prototype_shell" index="2"]
+connect_to = 1
+
 [node name="prototype_head" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(277, 188)
-connect_to = null
 
 [node name="Sprite" parent="prototype_head" index="0"]
 position = Vector2(-37.5, -3.8147e-06)
 scale = Vector2(0.929688, 0.34375)
 
+[node name="turtle_head" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(98, 0)
+
+[node name="Sprite" parent="turtle_head" index="0"]
+z_index = 10
+position = Vector2(40, -16)
+scale = Vector2(8, 8)
+texture = ExtResource("2_5404i")
+vframes = 8
+frame = 5
+
+[node name="DropArea" parent="turtle_head" index="1"]
+position = Vector2(-31, -5)
+
+[node name="turtle_shell" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(318, -12)
+
+[node name="Sprite" parent="turtle_shell" index="0"]
+z_index = 8
+position = Vector2(-8, -32)
+scale = Vector2(8, 8)
+texture = ExtResource("2_5404i")
+vframes = 8
+frame = 4
+
+[node name="DropArea" parent="turtle_shell" index="1"]
+position = Vector2(0, -42)
+
+[node name="CollisionShape2D" parent="turtle_shell/DropArea" index="0"]
+scale = Vector2(1.865, 1.865)
+
+[node name="ConnectTo" parent="turtle_shell" index="2"]
+connect_to = 1
+
+[node name="turtle_legs" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(-133, 106)
+
+[node name="Sprite" parent="turtle_legs" index="0"]
+z_index = 4
+position = Vector2(33, -31)
+scale = Vector2(8, 8)
+texture = ExtResource("2_5404i")
+vframes = 8
+frame = 7
+
+[node name="Sprite2" type="Sprite2D" parent="turtle_legs"]
+position = Vector2(33, -31)
+scale = Vector2(8, 8)
+texture = ExtResource("2_5404i")
+vframes = 8
+frame = 1
+
+[node name="DropArea" parent="turtle_legs" index="2"]
+position = Vector2(-6, 19)
+
+[node name="ConnectTo" parent="turtle_legs" index="3"]
+connect_to = 3
+
+[node name="turtle_tail" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(43, 108)
+
+[node name="Sprite" parent="turtle_tail" index="0"]
+position = Vector2(-80, -32)
+scale = Vector2(8, 8)
+texture = ExtResource("2_5404i")
+vframes = 8
+frame = 3
+
+[node name="ConnectTo" parent="turtle_tail" index="2"]
+connect_to = 2
+
+[node name="Attachment5" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(-138, -37)
+
 [editable path="prototype_tail"]
 [editable path="prototype_foot"]
 [editable path="prototype_shell"]
 [editable path="prototype_head"]
+[editable path="turtle_head"]
+[editable path="turtle_shell"]
+[editable path="turtle_legs"]
+[editable path="turtle_tail"]
+[editable path="Attachment5"]

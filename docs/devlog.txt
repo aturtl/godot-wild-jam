@@ -9,7 +9,7 @@ GODOT WILD JAM DEVLOG
 	- Created rough objective roadmap (objectives.txt)
 	- Added README.md
 	- Created basic assembly scene
-	- Default chasis scene
+	- Default chassis scene
 	- Attachments
 		- Attachments
 		- Slots
@@ -19,3 +19,9 @@ GODOT WILD JAM DEVLOG
 6/13:
 	- Added savable stats
 	- Made assembly layout save (currently saves on change. To be replaced with save button)
+	- Drew sprites for base turtle robot parts, placed in correct locations
+	- Made attachment grabbing smoother
+		- click location feels more intuitive
+		- mouse grabs closest area
+	- Didn't get to creating battle system; very tired -- to do 6/14
+		- Updated objectives to prioritize most important mechanics

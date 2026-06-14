@@ -33,7 +33,7 @@ func load_owned_attachments():
 
 
 func assign_attachment_to_proper_list(attachment: Attachment):
-	match attachment.connect_to:
+	match attachment.find_child("ConnectTo").connect_to:
 		0:
 			add_attachment_to_list(head_list, attachment)
 		1:

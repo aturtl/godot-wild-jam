@@ -13,7 +13,7 @@
 [node name="Chassis" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="DefaultChasis" parent="Chassis" instance=ExtResource("1_4s7fl")]
+[node name="DefaultChassis" parent="Chassis" instance=ExtResource("1_4s7fl")]
 position = Vector2(-1, 91)
 
 [node name="Hand" type="Node2D" parent="."]

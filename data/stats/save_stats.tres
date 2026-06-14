@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_yryac")
-owned_attachments = [["prototype_head", -1], ["prototype_foot", -1], ["prototype_foot", 1], ["prototype_shell", 4], ["prototype_tail", 3]]
+owned_attachments = [["prototype_head", -1], ["prototype_foot", -1], ["prototype_foot", -1], ["prototype_shell", -1], ["prototype_tail", -1], ["turtle_head", 0], ["turtle_legs", 1], ["turtle_legs", 2], ["turtle_shell", 4], ["turtle_tail", 3]]

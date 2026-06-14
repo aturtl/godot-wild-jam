@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn8tikihxgpsa"]
+[gd_scene load_steps=6 format=3 uid="uid://bn8tikihxgpsa"]
 
 [ext_resource type="Script" uid="uid://bcs6k6biogycg" path="res://assembly/attachments/attachment.gd" id="1_vnavf"]
 [ext_resource type="Texture2D" uid="uid://bmskc4idnkqna" path="res://icon.svg" id="2_i5r4i"]
 [ext_resource type="Script" uid="uid://b8w0r3n5d05j2" path="res://assembly/areas/drop_area.gd" id="3_cfh1h"]
+[ext_resource type="Script" uid="uid://dxmrawxadbil3" path="res://assembly/attachments/connect_to.gd" id="4_i5r4i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ja4x"]
 radius = 45.0444
 
 [node name="Attachment" type="Node2D"]
 script = ExtResource("1_vnavf")
-connect_to = null
 metadata/_custom_type_script = "uid://bcs6k6biogycg"
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -22,3 +22,6 @@ script = ExtResource("3_cfh1h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropArea"]
 shape = SubResource("CircleShape2D_0ja4x")
+
+[node name="ConnectTo" type="Node2D" parent="."]
+script = ExtResource("4_i5r4i")
