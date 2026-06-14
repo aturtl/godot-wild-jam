@@ -30,5 +30,72 @@ Basic Mechanics:
 			Legs
 		Should mainly follow this but some attachments can have multiple purposes. The head, for example, could have a laser attachment to it.
 
-Attachments:
+Attachments & Descriptions:
 	Mace Tail - Chained to tail, swings freely with gravity
+	Gun Shell - Shell with a gun attached to it. Self-explanatory.
+
+Mechanics in relation to Dynamics and Aesthetics: (With the time constraint, a lot of these will probably not make it into the game. But I will try to perform as many as possible)
+	Assembly:
+		M: Assembly sign tilts to the right by a screw
+		D: Player notices it, helps distract from the initial darkness
+		A: Gives assembly a mechanical, rustic feeling
+		
+		M: Items slide in by a conveyor belt
+		D: Adds to the feeling of the room being built
+		
+		M: Lights off initially. Flickers. Turns on. (later only occasionally flickers)
+		A: Feels like a garage with a faulty light
+		
+		M: Room zooms in.
+		A: Feels ike you're just walking into the room after turning on the light
+	
+		M: Sounds: Screws, hammering, slight low buzzing noise (like a power generator), cricket?
+		A: Feels mechanical
+	
+	Battle:
+		M: Screen rumbles when battle opens or contact is made
+		A: Adds to intensity
+		
+		M: Enemy drops in from the right with a zoom-in and a FIGHT sound
+		D: Player understands target and has a moment to gauge the intensity of the fight
+		A: Feeling of challenge
+		
+		M: Zooms out to a wider portrayal of the scene
+		D: Player loses tension and watches the battle
+		A: Feeling of spectation
+		
+		M: Metal/intense music met with slight breaks; pipe sounds, chainsaws, coins (coins are metal... so it might add to the feeling)
+		A: Feeling of intensity
+		
+		M: Camera slightly bobs to match music bpm
+		D: Player feels and sees the rhythm
+		A: Immersion
+	
+	Shop:
+		M: Shopkeeper's elbows rest on countertop. Leans forward, head tilted onto wrist. Eyes slightly opened, slow blinks. Falls asleep after a while.
+		A: Gives the player a break from the chaos with a relaxing, unintense vibe
+		
+		M: Parts hung on wall on a peg board with prices
+		D: Player looks at the parts that seem visually appealing and wonders about their functions
+		A: Curiosity, choice
+		
+		M: Click part. Shopkeeper prompts if you'd like to purchase it. Purchase is met by black screen with a cash register ding and money symbol.
+		A: Player now feels like they own the part
+		
+		M: Music: Coins, cash register, metal sounds
+		A: Mechanical and also prompting to purchase
+	
+	Overworld: 
+		M: Small turtle sprite (basic but simplified) with 2 fps walking animation
+		D: Players attention draws to the path of where
+		A: Feels charming, simple, gives direction
+	
+		M: Shop is a physical place on the map. Button only unlocks when you open it for the first time.
+		A: Feels like the world is connected, rather than just UI buttons
+		
+		M: Bottom-Left: Assembly, Level, Bottom-Right: Shop, Money, Top-Left: Menu
+		D: Player can locate buttons easier
+		A: Feels intuitive & centered: money near shop, assembly near level, menu is located in typical site location
+		
+		M: Cutesy, adventurous music using mostly the drums and simple pipe sound melodies
+		A: Engaging but calming, offers ears a break from the noise, not overbearing, draws ears more to background noises
