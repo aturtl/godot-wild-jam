@@ -156,6 +156,7 @@ layout_mode = 2
 unique_name_in_owner = true
 
 [node name="LoadingScreen" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(21.7315, 7.2515)
 texture = ExtResource("3_0ja4x")
 script = ExtResource("6_hl11m")

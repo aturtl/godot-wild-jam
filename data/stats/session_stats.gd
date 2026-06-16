@@ -7,6 +7,9 @@ var stats: Resource
 var save_path = "res://data/stats/save_stats.tres"
 
 func _ready():
+	if OS.is_debug_build():
+		save_path = "res://data/stats/debug_stats.tres"
+	
 	load_stats()
 
 

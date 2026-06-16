@@ -21,11 +21,13 @@ func _physics_process(delta):
 func mouse_interact_check():
 	if GlobalData.selected_mouse_area:
 		return
-	var closest_area: Area2D
+	var closest_area: DropArea
 	var closest_dist: float = INF
 	var mouse_pos = get_global_mouse_position()
+	
 	for area in interact_area.get_overlapping_areas():
 		if area is DropArea and area.is_visible_in_tree():
+			var p = area.get_parent()
 			var dist: float = area.position.distance_to(mouse_pos)
 			if dist < closest_dist:
 				closest_dist = dist

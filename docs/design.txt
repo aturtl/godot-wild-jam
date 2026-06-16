@@ -34,6 +34,12 @@ Attachments & Descriptions:
 	Mace Tail - Chained to tail, swings freely with gravity
 	Gun Shell - Shell with a gun attached to it. Self-explanatory.
 
+Collisions:
+	1 - collide with player
+	2 - chains
+	3 - ignore
+	4 - damage
+
 Mechanics in relation to Dynamics and Aesthetics: (With the time constraint, a lot of these will probably not make it into the game. But I will try to perform as many as possible)
 	Assembly:
 		M: Assembly sign tilts to the right by a screw

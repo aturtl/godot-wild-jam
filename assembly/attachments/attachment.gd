@@ -6,13 +6,24 @@ class_name Attachment extends Node2D
 
 @onready var connect_to_info = $ConnectTo
 
+@onready var sprite = $Sprite
+
 enum Type {
 	UNASSIGNED,
 	ASSEMBLY,
 	BATTLE
 }
 
+@export var z_index_override: int = -1
+
 var type = Type.UNASSIGNED
+
+enum BodyParts {
+	Head,
+	Shell,
+	Tail,
+	Foot
+}
 
 var id_name: String
 var owned_index: int
@@ -25,6 +36,23 @@ var dragging: bool = false
 var drag_offset: Vector2
 
 signal detached
+
+func _ready():
+	var c = connect_to_info.connect_to
+	var b = BodyParts
+	if z_index_override == -1:
+		match (c):
+			b.Foot:
+				sprite.z_index = 12
+			b.Shell:
+				sprite.z_index = 10
+			b.Head:
+				sprite.z_index = 11
+			b.Tail:
+				sprite.z_index = 9
+	else:
+		z_index = z_index_override
+		
 
 # BATTLE
 
@@ -52,6 +80,7 @@ func manage_dragging_and_dropping():
 		visible = control_marker.is_visible_in_tree()
 
 func drag():
+	rotation = 0
 	attached = false
 	position = get_global_mouse_position() - drag_offset
 
@@ -69,10 +98,12 @@ func attach(slot: AttachmentSlot):
 	attached = true
 	replace_slot(slot)
 	global_position = slot.global_position
+	rotation = slot.rotation
 
 func detach():
 	attached = false
 	detached.emit()
+	rotation = 0
 
 func get_slot() -> AttachmentSlot:
 	for area in drop_area.get_overlapping_areas():

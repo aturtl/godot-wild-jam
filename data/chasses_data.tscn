@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bumwj0b4sr8yv"]
 
-[ext_resource type="PackedScene" uid="uid://ccpudey38trpo" path="res://assembly/chasses/types/turtle.tscn" id="1_ugwqk"]
+[ext_resource type="PackedScene" uid="uid://ccpudey38trpo" path="res://assembly/chasses/types/turtle_chassis.tscn" id="1_ugwqk"]
 
 [node name="ChassesData" type="Node2D"]
 

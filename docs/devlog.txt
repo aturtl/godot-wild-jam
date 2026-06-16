@@ -39,3 +39,13 @@ GODOT WILD JAM DEVLOG
 	- Separated how attachments function based on asssembly/battle
 		- (Battle functions not started yet)
 	- Updated roadmap
+
+6/15:
+	- Added attachments:
+		- Mace tail
+		- Dragon head, body (chassis), tail, wings (part of chassis), feet
+		- Scorpion tail
+		- Tank shell and wheels (foot)
+		- In total: 3 tails, 1 chassis, 1 shell, 3 feet
+	- Mace functionality with rigid bodies
+		- Swings on a chain using physics

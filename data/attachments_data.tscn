@@ -1,9 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://boe5v1ffi4pn4"]
+[gd_scene load_steps=18 format=3 uid="uid://boe5v1ffi4pn4"]
 
 [ext_resource type="PackedScene" uid="uid://bn8tikihxgpsa" path="res://assembly/attachments/attachment.tscn" id="1_5402b"]
 [ext_resource type="Texture2D" uid="uid://blunw0qqgihs5" path="res://assembly/chasses/regular_turtle_chassis-Sheet.png" id="2_5404i"]
+[ext_resource type="Texture2D" uid="uid://b1j5icsqpegm0" path="res://assembly/chasses/scorpion_tail.png" id="2_rpc7s"]
+[ext_resource type="Texture2D" uid="uid://b13rh3c2wbw38" path="res://assembly/chasses/mace_tail.png" id="3_2wtpt"]
+[ext_resource type="Texture2D" uid="uid://deeq0vjlnqdyd" path="res://assembly/chasses/dragon_full.png" id="3_rpc7s"]
+[ext_resource type="Texture2D" uid="uid://b3vtakxjuxbke" path="res://assembly/chasses/tank_shell-sheet.png" id="4_fwatq"]
+[ext_resource type="Texture2D" uid="uid://bhh5bfhytp8qr" path="res://assembly/chasses/mace_chain.png" id="4_ordi7"]
+[ext_resource type="Script" uid="uid://bqnme6wq1sn2b" path="res://assembly/special_attachments/special_animate.gd" id="4_ow60t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwatq"]
+radius = 49.0306
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ow60t"]
+radius = 64.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdisx"]
+radius = 124.036
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v34og"]
+radius = 69.2604
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rpc7s"]
+radius = 33.988
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mof4j"]
+radius = 26.0768
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ordi7"]
+radius = 15.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ordi7"]
+radius = 30.0
+height = 96.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ja4x"]
+radius = 45.0444
 
 [node name="AttachmentsData" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-264.0]
 
 [node name="prototype_tail" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(426, 182)
@@ -57,6 +92,152 @@ frame = 5
 [node name="DropArea" parent="turtle_head" index="1"]
 position = Vector2(-31, -5)
 
+[node name="dragon_head" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(-213, -192)
+
+[node name="Sprite" parent="dragon_head" index="0"]
+z_index = 10
+position = Vector2(79, 83)
+scale = Vector2(4, 4)
+texture = ExtResource("3_rpc7s")
+hframes = 3
+vframes = 6
+frame = 12
+
+[node name="DropArea" parent="dragon_head" index="1"]
+position = Vector2(20, 14)
+
+[node name="CollisionShape2D" parent="dragon_head/DropArea" index="0"]
+position = Vector2(-88, -37)
+shape = SubResource("CircleShape2D_fwatq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="dragon_head/DropArea" index="1"]
+position = Vector2(-165, -58)
+shape = SubResource("CircleShape2D_fwatq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="dragon_head/DropArea" index="2"]
+position = Vector2(-21, -14)
+shape = SubResource("CircleShape2D_fwatq")
+
+[node name="SpecialAnimate" type="Node2D" parent="dragon_head"]
+position = Vector2(-445, 117)
+script = ExtResource("4_ow60t")
+
+[node name="dragon_foot" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(-658, -75)
+
+[node name="Sprite" parent="dragon_foot" index="0"]
+z_index = 10
+position = Vector2(81, 66)
+scale = Vector2(4, 4)
+texture = ExtResource("3_rpc7s")
+hframes = 3
+vframes = 6
+
+[node name="DropArea" parent="dragon_foot" index="1"]
+position = Vector2(20, 14)
+
+[node name="CollisionShape2D" parent="dragon_foot/DropArea" index="0"]
+position = Vector2(-15, -7)
+shape = SubResource("CircleShape2D_fwatq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="dragon_foot/DropArea" index="1"]
+position = Vector2(33, 44)
+shape = SubResource("CircleShape2D_ow60t")
+
+[node name="ConnectTo" parent="dragon_foot" index="2"]
+connect_to = 3
+
+[node name="Sprite2" type="Sprite2D" parent="dragon_foot"]
+z_index = 7
+position = Vector2(54, 66)
+scale = Vector2(4, 4)
+texture = ExtResource("3_rpc7s")
+hframes = 3
+vframes = 6
+
+[node name="dragon_wing_shell" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(-1043, -233)
+
+[node name="Sprite" parent="dragon_wing_shell" index="0"]
+z_index = 10
+position = Vector2(31, 70)
+scale = Vector2(4, 4)
+texture = ExtResource("3_rpc7s")
+hframes = 3
+vframes = 6
+frame = 15
+
+[node name="DropArea" parent="dragon_wing_shell" index="1"]
+position = Vector2(20, 14)
+
+[node name="CollisionShape2D" parent="dragon_wing_shell/DropArea" index="0"]
+position = Vector2(-15, -7)
+shape = SubResource("CircleShape2D_fwatq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="dragon_wing_shell/DropArea" index="1"]
+position = Vector2(39, -71)
+shape = SubResource("CircleShape2D_ow60t")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="dragon_wing_shell/DropArea" index="2"]
+position = Vector2(27, -170)
+shape = SubResource("CircleShape2D_jdisx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="dragon_wing_shell/DropArea" index="3"]
+position = Vector2(130, -184)
+shape = SubResource("CircleShape2D_jdisx")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="dragon_wing_shell/DropArea" index="4"]
+position = Vector2(255, -169)
+shape = SubResource("CircleShape2D_jdisx")
+
+[node name="ConnectTo" parent="dragon_wing_shell" index="2"]
+connect_to = 1
+
+[node name="SpecialAnimate" type="Node2D" parent="dragon_wing_shell"]
+position = Vector2(385, 158)
+script = ExtResource("4_ow60t")
+frames_between_switch = 5
+anim_frame_count = 3
+
+[node name="dragon_tail" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(-1457, 138)
+
+[node name="Sprite" parent="dragon_tail" index="0"]
+z_index = 10
+position = Vector2(-106, 40)
+scale = Vector2(4, 4)
+texture = ExtResource("3_rpc7s")
+hframes = 3
+vframes = 6
+frame = 6
+
+[node name="DropArea" parent="dragon_tail" index="1"]
+position = Vector2(20, 14)
+
+[node name="CollisionShape2D" parent="dragon_tail/DropArea" index="0"]
+position = Vector2(-8, -14)
+shape = SubResource("CircleShape2D_v34og")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="dragon_tail/DropArea" index="1"]
+position = Vector2(54, -19)
+shape = SubResource("CircleShape2D_fwatq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="dragon_tail/DropArea" index="2"]
+position = Vector2(117, -34)
+shape = SubResource("CircleShape2D_fwatq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="dragon_tail/DropArea" index="3"]
+position = Vector2(185, -59)
+shape = SubResource("CircleShape2D_fwatq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="dragon_tail/DropArea" index="4"]
+position = Vector2(227, -82)
+shape = SubResource("CircleShape2D_fwatq")
+
+[node name="ConnectTo" parent="dragon_tail" index="2"]
+connect_to = 2
+
 [node name="turtle_shell" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(318, -12)
 
@@ -77,6 +258,47 @@ scale = Vector2(1.865, 1.865)
 [node name="ConnectTo" parent="turtle_shell" index="2"]
 connect_to = 1
 
+[node name="tank_shell" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(665, -93)
+
+[node name="Sprite" parent="tank_shell" index="0"]
+z_index = 8
+position = Vector2(-4, -32)
+scale = Vector2(8, 8)
+texture = ExtResource("4_fwatq")
+vframes = 2
+
+[node name="DropArea" parent="tank_shell" index="1"]
+position = Vector2(0, -42)
+
+[node name="CollisionShape2D" parent="tank_shell/DropArea" index="0"]
+scale = Vector2(1.865, 1.865)
+
+[node name="ConnectTo" parent="tank_shell" index="2"]
+connect_to = 1
+
+[node name="tank_wheel" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(1283, 43)
+
+[node name="Sprite" parent="tank_wheel" index="0"]
+z_index = 8
+position = Vector2(44, -24)
+scale = Vector2(8, 8)
+texture = ExtResource("4_fwatq")
+vframes = 2
+frame = 1
+
+[node name="DropArea" parent="tank_wheel" index="1"]
+position = Vector2(0, -54)
+
+[node name="CollisionShape2D" parent="tank_wheel/DropArea" index="0"]
+position = Vector2(0, 98)
+scale = Vector2(1.865, 1.865)
+shape = SubResource("CircleShape2D_rpc7s")
+
+[node name="ConnectTo" parent="tank_wheel" index="2"]
+connect_to = 3
+
 [node name="turtle_legs" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(-133, 106)
 
@@ -88,18 +310,19 @@ texture = ExtResource("2_5404i")
 vframes = 8
 frame = 7
 
+[node name="DropArea" parent="turtle_legs" index="1"]
+position = Vector2(-6, 19)
+
+[node name="ConnectTo" parent="turtle_legs" index="2"]
+connect_to = 3
+
 [node name="Sprite2" type="Sprite2D" parent="turtle_legs"]
+z_index = 7
 position = Vector2(33, -31)
 scale = Vector2(8, 8)
 texture = ExtResource("2_5404i")
 vframes = 8
 frame = 1
-
-[node name="DropArea" parent="turtle_legs" index="2"]
-position = Vector2(-6, 19)
-
-[node name="ConnectTo" parent="turtle_legs" index="3"]
-connect_to = 3
 
 [node name="turtle_tail" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(43, 108)
@@ -115,15 +338,205 @@ frame = 3
 [node name="ConnectTo" parent="turtle_tail" index="2"]
 connect_to = 2
 
-[node name="Attachment5" parent="." instance=ExtResource("1_5402b")]
+[node name="mace_tail" parent="." instance=ExtResource("1_5402b")]
 position = Vector2(-138, -37)
+
+[node name="Sprite" parent="mace_tail" index="0"]
+position = Vector2(56, -8)
+scale = Vector2(8, 8)
+texture = ExtResource("3_2wtpt")
+vframes = 2
+
+[node name="ConnectTo" parent="mace_tail" index="2"]
+connect_to = 2
+
+[node name="Battle" type="Node2D" parent="mace_tail"]
+position = Vector2(35, -4)
+
+[node name="base" type="StaticBody2D" parent="mace_tail/Battle"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/base"]
+z_index = 12
+position = Vector2(-27, 0)
+shape = SubResource("CircleShape2D_mof4j")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/base"]
+position = Vector2(25, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../chain")
+bias = 0.52
+
+[node name="base" type="Sprite2D" parent="mace_tail/Battle/base"]
+position = Vector2(21, -4)
+scale = Vector2(8, 8)
+texture = ExtResource("3_2wtpt")
+vframes = 2
+
+[node name="chain" type="RigidBody2D" parent="mace_tail/Battle"]
+position = Vector2(25, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain"]
+z_index = 12
+shape = SubResource("CircleShape2D_ordi7")
+
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain"]
+position = Vector2(12, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("4_ordi7")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain"]
+position = Vector2(24, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../chain2")
+bias = 0.52
+
+[node name="chain2" type="RigidBody2D" parent="mace_tail/Battle"]
+position = Vector2(49, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain2"]
+z_index = 12
+shape = SubResource("CircleShape2D_ordi7")
+
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain2"]
+position = Vector2(12, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("4_ordi7")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain2"]
+position = Vector2(24, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../chain3")
+bias = 0.52
+
+[node name="chain3" type="RigidBody2D" parent="mace_tail/Battle"]
+position = Vector2(73, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain3"]
+z_index = 12
+shape = SubResource("CircleShape2D_ordi7")
+
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain3"]
+position = Vector2(12, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("4_ordi7")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain3"]
+position = Vector2(24, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../chain4")
+bias = 0.52
+
+[node name="chain4" type="RigidBody2D" parent="mace_tail/Battle"]
+position = Vector2(97, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain4"]
+z_index = 12
+shape = SubResource("CircleShape2D_ordi7")
+
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain4"]
+position = Vector2(12, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("4_ordi7")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain4"]
+position = Vector2(24, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../chain5")
+bias = 0.52
+
+[node name="chain5" type="RigidBody2D" parent="mace_tail/Battle"]
+position = Vector2(121, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain5"]
+z_index = 12
+shape = SubResource("CircleShape2D_ordi7")
+
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain5"]
+position = Vector2(12, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("4_ordi7")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain5"]
+position = Vector2(24, 0)
+node_a = NodePath("..")
+node_b = NodePath("../../mace")
+bias = 0.52
+softness = 1.78
+
+[node name="mace" type="RigidBody2D" parent="mace_tail/Battle"]
+position = Vector2(145, 0)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/mace"]
+z_index = 12
+position = Vector2(44, 2)
+shape = SubResource("CapsuleShape2D_ordi7")
+
+[node name="mace" type="Sprite2D" parent="mace_tail/Battle/mace"]
+position = Vector2(-164, -4)
+scale = Vector2(8, 8)
+texture = ExtResource("3_2wtpt")
+vframes = 2
+frame = 1
+
+[node name="scorpion_tail" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(852, 364)
+
+[node name="Sprite" parent="scorpion_tail" index="0"]
+position = Vector2(59, 4.99999)
+rotation = -5.98591
+scale = Vector2(8, 8)
+texture = ExtResource("2_rpc7s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="scorpion_tail/DropArea" index="1"]
+position = Vector2(59, 15)
+shape = SubResource("CircleShape2D_0ja4x")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="scorpion_tail/DropArea" index="2"]
+position = Vector2(127, 10)
+shape = SubResource("CircleShape2D_0ja4x")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="scorpion_tail/DropArea" index="3"]
+position = Vector2(186, -26)
+shape = SubResource("CircleShape2D_0ja4x")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="scorpion_tail/DropArea" index="4"]
+position = Vector2(215, -79)
+shape = SubResource("CircleShape2D_0ja4x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="scorpion_tail/DropArea" index="5"]
+position = Vector2(220, -110)
+shape = SubResource("CircleShape2D_0ja4x")
+
+[node name="ConnectTo" parent="scorpion_tail" index="2"]
+connect_to = 2
 
 [editable path="prototype_tail"]
 [editable path="prototype_foot"]
 [editable path="prototype_shell"]
 [editable path="prototype_head"]
 [editable path="turtle_head"]
+[editable path="dragon_head"]
+[editable path="dragon_foot"]
+[editable path="dragon_wing_shell"]
+[editable path="dragon_tail"]
 [editable path="turtle_shell"]
+[editable path="tank_shell"]
+[editable path="tank_wheel"]
 [editable path="turtle_legs"]
 [editable path="turtle_tail"]
-[editable path="Attachment5"]
+[editable path="mace_tail"]
+[editable path="scorpion_tail"]
