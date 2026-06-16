@@ -16,6 +16,9 @@ enum Type {
 
 @export var z_index_override: int = -1
 
+#@export var assembly_scale = Vector2(.5,.5)
+#@export var battle_scale = Vector2(.5,.5)
+
 var type = Type.UNASSIGNED
 
 enum BodyParts {
@@ -40,6 +43,7 @@ signal detached
 func _ready():
 	var c = connect_to_info.connect_to
 	var b = BodyParts
+	
 	if z_index_override == -1:
 		match (c):
 			b.Foot:
@@ -57,8 +61,11 @@ func _ready():
 # BATTLE
 
 func _physics_process(delta):
+	print(scale, name)
 	if Type.ASSEMBLY:
 		manage_dragging_and_dropping()
+	elif Type.BATTLE:
+		pass
 
 func manage_dragging_and_dropping():
 	var was_dragging = dragging
@@ -81,6 +88,7 @@ func manage_dragging_and_dropping():
 
 func drag():
 	rotation = 0
+	scale = Vector2(1,1)
 	attached = false
 	position = get_global_mouse_position() - drag_offset
 
@@ -95,15 +103,19 @@ func replace_slot(slot: AttachmentSlot):
 	slot.set_new_attachment(self)
 
 func attach(slot: AttachmentSlot):
+	if not slot:
+		return
 	attached = true
 	replace_slot(slot)
 	global_position = slot.global_position
 	rotation = slot.rotation
+	global_scale = slot.global_scale
 
 func detach():
 	attached = false
 	detached.emit()
 	rotation = 0
+	scale = Vector2(1,1)
 
 func get_slot() -> AttachmentSlot:
 	for area in drop_area.get_overlapping_areas():

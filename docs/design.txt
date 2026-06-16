@@ -33,6 +33,10 @@ Basic Mechanics:
 Attachments & Descriptions:
 	Mace Tail - Chained to tail, swings freely with gravity
 	Gun Shell - Shell with a gun attached to it. Self-explanatory.
+	Glitch Turtle Set (As a pair for the File Shell)
+	Goo Shell - Rigid Body Sticky
+	Snail Shell - Slowness, floor-stuck
+	
 
 Collisions:
 	1 - collide with player
@@ -105,3 +109,41 @@ Mechanics in relation to Dynamics and Aesthetics: (With the time constraint, a l
 		
 		M: Cutesy, adventurous music using mostly the drums and simple pipe sound melodies
 		A: Engaging but calming, offers ears a break from the noise, not overbearing, draws ears more to background noises
+
+Chasses:
+	Turtle:
+		Starts off initially as a painted turtle until destroyed and paint comes off (QOL, might not include)
+		Generic, balanced, the beginner-friendly chassis (shells, legs, arms, feet, tails are the most expected)
+		Special: Tuck
+		Upsides: Generic
+		Downsides: Generic
+		Slots(5/6)
+			Head - 1
+			Leg - 3
+			Tail - 1
+			Shell - 1
+	Dragon:
+		Upsides: Tough-skin (takes less damage), Flutters, slow-fall
+		Downsides: Slower attacks, actions
+		Slots(5/6)
+			Head - 1
+			Leg - 2
+			Tail - 1
+			Shell - 1
+	Ant:
+		Upsides: Wall-climb, faster
+		Downsides: Small (takes more damage)
+		Slots(6/6)
+			Head - 1
+			Leg - 3
+			Tail - 1
+			Shell - 1
+
+Chassis Ideas:
+	Star - Head, 2 tails, 2 shells, no mobility
+	Mutant - 2 heads, 2 legs, 2 tails
+	Hydra - 3 heads, 1 shell, 1 tail, 1 legs
+
+Mechanical:
+	Upsides: Strong snap-motions
+	Downsides: Must stay on the ground

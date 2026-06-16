@@ -25,6 +25,7 @@ type = 3
 
 [node name="AttachmentSlot4" parent="AttachmentSlots" instance=ExtResource("4_a5ovw")]
 position = Vector2(108, 35)
+rotation = 0.39633
 type = 2
 
 [node name="AttachmentSlot5" parent="AttachmentSlots" instance=ExtResource("4_a5ovw")]

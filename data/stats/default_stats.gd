@@ -1,8 +1,8 @@
 class_name DefaultStats extends Resource
 
-@export var equipped_chassis = "dragon_chassis"
+@export var equipped_chassis = "ant_chassis"
 
-@export var owned_chasses = ["turtle_chassis", "dragon_chassis"]
+@export var owned_chasses = ["turtle_chassis", "dragon_chassis", "ant_chassis"]
 
 @export var owned_attachments = [
 	["prototype_head", -1],
@@ -24,4 +24,5 @@ class_name DefaultStats extends Resource
 	["dragon_foot", -1],
 	["dragon_foot", -1],
 	["dragon_head", -1],
+	["file_shell", -1]
 ]

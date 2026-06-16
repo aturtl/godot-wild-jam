@@ -45,7 +45,12 @@ GODOT WILD JAM DEVLOG
 		- Mace tail
 		- Dragon head, body (chassis), tail, wings (part of chassis), feet
 		- Scorpion tail
+		- Ant chassis
+		- File shell
 		- Tank shell and wheels (foot)
-		- In total: 3 tails, 1 chassis, 1 shell, 3 feet
+		- In total: 3 tails, 2 chasses, 2 shells, 3 feet
 	- Mace functionality with rigid bodies
 		- Swings on a chain using physics
+	- Redid attachment collisions
+	- Updated roadmap
+	- Added more design.txt attachment and chassis ideas
