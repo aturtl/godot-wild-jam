@@ -2,7 +2,6 @@
 
 <i>A game about assembling a mechanized turtle and fighting robots.</i>
 
-
 <h3>Documents:</h3>
 
  - [Devlog](docs/devlog.txt)
@@ -20,3 +19,7 @@
  - Duration: 9 days
  - Theme: <b>Mutation</b>
  - Wildcards: Disassembly, Checkout, Turtle
+
+<br>
+
+![image](docs/screenshots/s5_assembly_frankenstein_2.png)
