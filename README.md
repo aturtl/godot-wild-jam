@@ -19,7 +19,3 @@
  - Duration: 9 days
  - Theme: <b>Mutation</b>
  - Wildcards: Disassembly, Checkout, Turtle
-
-<br>
-
-![image](docs/screenshots/s5_assembly_frankenstein_2.png)
