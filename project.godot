@@ -22,6 +22,17 @@ config/canvas_textures/default_texture_filter=0
 GlobalData="*res://data/global_data.gd"
 SESSIONSTATS="*res://data/stats/session_stats.gd"
 
+[file_customization]
+
+folder_colors={
+"res://assembly/": "purple",
+"res://attachments/": "red",
+"res://battle/": "purple",
+"res://chasses/": "red",
+"res://docs/": "teal",
+"res://sprites/": "orange"
+}
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

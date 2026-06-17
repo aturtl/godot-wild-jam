@@ -13,7 +13,7 @@ func assemble():
 
 func load_chassis():
 	var equipped_chassis_name = SESSIONSTATS.stats.equipped_chassis
-	var ec = load("res://assembly/chasses/types/"+equipped_chassis_name+".tscn").instantiate()
+	var ec = load("res://chasses/types/"+equipped_chassis_name+".tscn").instantiate()
 	
 	if ec:
 		await add_child(ec)

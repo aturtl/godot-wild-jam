@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ei6mxeiwijv"]
+
+[ext_resource type="Script" uid="uid://cjl24fr2nc7im" path="res://scenes/assembly/open_assembly.gd" id="1_sl2e5"]
+[ext_resource type="Script" uid="uid://26j5tknsk67j" path="res://scenes/battle/open_battle.gd" id="2_1fp7r"]
+
+[node name="World" type="Node2D"]
+
+[node name="btn_assembly" type="Button" parent="."]
+offset_left = -573.0
+offset_top = -321.0
+offset_right = -412.0
+offset_bottom = -283.0
+text = "Assembly"
+script = ExtResource("1_sl2e5")
+
+[node name="btn_battle" type="Button" parent="."]
+offset_left = -572.0
+offset_top = -275.0
+offset_right = -411.0
+offset_bottom = -237.0
+text = "Battle"
+script = ExtResource("2_1fp7r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="button_down" from="btn_assembly" to="btn_assembly" method="_on_button_down"]
+[connection signal="button_down" from="btn_battle" to="btn_battle" method="_on_button_down"]
