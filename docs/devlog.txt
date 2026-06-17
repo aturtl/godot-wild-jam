@@ -54,3 +54,7 @@ GODOT WILD JAM DEVLOG
 	- Redid attachment collisions
 	- Updated roadmap
 	- Added more design.txt attachment and chassis ideas
+
+6/16:
+	- Folder reorganization
+	- 
