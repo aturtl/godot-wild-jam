@@ -66,4 +66,9 @@ GODOT WILD JAM DEVLOG
 	- Ability to alter actions/modifiers based on equipped attachments
 	- Debug text to show actions being performed
 	- Unique mech stats holding actions, behaviors, attachment, chassis
+	- Updated roadmap
+	- Created apple shell
+	- Smaller ant build (enlarged in assembly)
+
+6/17:
 	

@@ -12,11 +12,10 @@ Roadmap (rough):
 	6/14: Battle Mechanic
 	6/15: Create 12 (3x4) chasses & attachments including functionality
 	6/16: Finish attachment functionalities, create way to win battles
-	6/17: Level-ups, Shop Mechanics
-	6/17: Overworld Map, Mutations, levels (Level-up = mutation choice)
-	6/18: Battle Music, Overworld Music, Shop Music (all emphasizing mechanical feeling)
-	6/19: Spritework, polish
-	6/20: QOL, Upload to Itch
+	6/17: Finish all unique attachment behaviors, settable enemies JSON, battle win condition
+	6/18: Overworld Map, Mutations, levels (Level-up = mutation choice)
+	6/19: Shop Mechanics, Battle Music, Overworld Music, Shop Music (all emphasizing mechanical feeling)
+	6/20: Spritework, polish, upload to Itch
 	6/21: Final polish?
 
 QOL:

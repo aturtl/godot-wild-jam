@@ -24,5 +24,6 @@ class_name DefaultStats extends Resource
 	["dragon_foot", -1],
 	["dragon_foot", -1],
 	["dragon_head", -1],
-	["file_shell", -1]
+	["file_shell", -1],
+	["apple_shell", -1]
 ]

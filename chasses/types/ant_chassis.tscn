@@ -10,7 +10,7 @@ radius = 14.4444
 height = 90.0
 
 [node name="DefaultChassis" type="Node2D"]
-scale = Vector2(1.8, 1.8)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ik7uh")
 
 [node name="Sprite" type="Sprite2D" parent="."]

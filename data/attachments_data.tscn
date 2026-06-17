@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://boe5v1ffi4pn4"]
+[gd_scene load_steps=18 format=3 uid="uid://boe5v1ffi4pn4"]
 
 [ext_resource type="PackedScene" uid="uid://bn8tikihxgpsa" path="res://attachments/attachment.tscn" id="1_5402b"]
 [ext_resource type="Texture2D" uid="uid://blunw0qqgihs5" path="res://sprites/assembly/regular_turtle_chassis-Sheet.png" id="2_5404i"]
@@ -9,9 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://bhh5bfhytp8qr" path="res://sprites/assembly/mace_chain.png" id="4_ordi7"]
 [ext_resource type="Script" uid="uid://bqnme6wq1sn2b" path="res://attachments/special_attachments/special_animate.gd" id="4_ow60t"]
 [ext_resource type="Texture2D" uid="uid://dp7mn4wwuwkkh" path="res://sprites/assembly/file_shell.png" id="5_jdisx"]
+[ext_resource type="Texture2D" uid="uid://bqmm8mje1ul1n" path="res://sprites/assembly/apple_shell.png" id="5_v34og"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow60t"]
 radius = 52.0384
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lverr"]
+radius = 35.0571
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdisx"]
 radius = 24.0208
@@ -205,6 +209,25 @@ position = Vector2(0, -42)
 polygon = PackedVector2Array(-80, 42, 80, 42, 80, -6, 16, -54, -24, -54, -80, -6)
 
 [node name="ConnectTo" parent="turtle_shell" index="2"]
+connect_to = 1
+
+[node name="apple_shell" parent="." instance=ExtResource("1_5402b")]
+position = Vector2(-563, 372)
+
+[node name="Sprite" parent="apple_shell" index="0"]
+z_index = 8
+position = Vector2(4, -38)
+scale = Vector2(8, 8)
+texture = ExtResource("5_v34og")
+
+[node name="DropArea" parent="apple_shell" index="1"]
+position = Vector2(12, -48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="apple_shell/DropArea" index="0"]
+position = Vector2(-12, 24)
+shape = SubResource("CircleShape2D_lverr")
+
+[node name="ConnectTo" parent="apple_shell" index="2"]
 connect_to = 1
 
 [node name="file_shell" parent="." instance=ExtResource("1_5402b")]
@@ -499,6 +522,7 @@ connect_to = 2
 [editable path="dragon_tail"]
 [editable path="turtle_head"]
 [editable path="turtle_shell"]
+[editable path="apple_shell"]
 [editable path="file_shell"]
 [editable path="tank_shell"]
 [editable path="tank_wheel"]

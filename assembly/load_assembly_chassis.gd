@@ -7,4 +7,7 @@ func _ready():
 	if ec:
 		await add_child(ec)
 	
+	if equipped_chassis_name == "ant_chassis":
+		ec.scale = Vector2(1.8,1.8)
+	
 	%AttachmentsManager.initial_setup()
