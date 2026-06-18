@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd2mi06j6aqxg"]
+[gd_scene format=3 uid="uid://bd2mi06j6aqxg"]
 
 [ext_resource type="Texture2D" uid="uid://bmskc4idnkqna" path="res://icon.svg" id="1_0yh6x"]
 [ext_resource type="Script" uid="uid://jy3qxy6eduda" path="res://battle/battle_start.gd" id="1_h0kxc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ksu31iubgd46" path="res://battle/assemble_battle_mech.gd" id="3_fh7rg"]
 [ext_resource type="Shader" uid="uid://c7qpdrt6kq4qo" path="res://shaders/screen_shake.gdshader" id="4_pll4o"]
 [ext_resource type="Script" uid="uid://cjdqhxgvlbwf1" path="res://battle/spawnpoint.gd" id="6_fh7rg"]
+[ext_resource type="Script" uid="uid://bu6tlhwbqh7th" path="res://scenes/world/open_world.gd" id="7_pll4o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a12nh"]
 size = Vector2(128.306, 126.592)
@@ -16,99 +17,99 @@ size = Vector2(128.306, 126.592)
 shader = ExtResource("4_pll4o")
 shader_parameter/intensity = 0.0
 
-[node name="Battle" type="Node2D"]
+[node name="Battle" type="Node2D" unique_id=610513562]
 
-[node name="BattleStateManager" type="Node" parent="." node_paths=PackedStringArray("p_spawnpoint", "e_spawnpoint")]
+[node name="BattleStateManager" type="Node" parent="." unique_id=1229100516 node_paths=PackedStringArray("p_spawnpoint", "e_spawnpoint")]
 unique_name_in_owner = true
 script = ExtResource("1_h0kxc")
 display_action_statuses = true
 p_spawnpoint = NodePath("../PlayerSpawnpoint")
 e_spawnpoint = NodePath("../EnemySpawnpoint")
 
-[node name="Ground" type="Sprite2D" parent="."]
+[node name="Ground" type="Sprite2D" parent="." unique_id=121820980]
 position = Vector2(556, 619)
 scale = Vector2(12.0415, -0.908428)
 texture = ExtResource("1_0yh6x")
 
-[node name="Area2D" type="StaticBody2D" parent="Ground"]
+[node name="Area2D" type="StaticBody2D" parent="Ground" unique_id=2095705898]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Area2D" unique_id=875693495]
 position = Vector2(0.207619, -0.550415)
 shape = SubResource("RectangleShape2D_a12nh")
 
-[node name="Ground4" type="Sprite2D" parent="."]
+[node name="Ground4" type="Sprite2D" parent="." unique_id=580775735]
 position = Vector2(613, -53)
 scale = Vector2(12.0415, -0.908428)
 texture = ExtResource("1_0yh6x")
 
-[node name="Area2D" type="StaticBody2D" parent="Ground4"]
+[node name="Area2D" type="StaticBody2D" parent="Ground4" unique_id=1573503552]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/Area2D" unique_id=689183338]
 position = Vector2(0.207619, -0.550415)
 shape = SubResource("RectangleShape2D_a12nh")
 
-[node name="Ground2" type="Sprite2D" parent="."]
+[node name="Ground2" type="Sprite2D" parent="." unique_id=1894182023]
 position = Vector2(1151, 378)
 scale = Vector2(-0.215623, -9.35077)
 texture = ExtResource("1_0yh6x")
 
-[node name="Area2D" type="StaticBody2D" parent="Ground2"]
+[node name="Area2D" type="StaticBody2D" parent="Ground2" unique_id=1371537277]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/Area2D" unique_id=1609510295]
 position = Vector2(0.207619, -0.550415)
 shape = SubResource("RectangleShape2D_a12nh")
 
-[node name="Ground3" type="Sprite2D" parent="."]
+[node name="Ground3" type="Sprite2D" parent="." unique_id=193354732]
 position = Vector2(6, 386)
 scale = Vector2(-0.215623, -9.35077)
 texture = ExtResource("1_0yh6x")
 
-[node name="Area2D" type="StaticBody2D" parent="Ground3"]
+[node name="Area2D" type="StaticBody2D" parent="Ground3" unique_id=1792962599]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/Area2D" unique_id=1013691975]
 position = Vector2(0.207619, -0.550415)
 shape = SubResource("RectangleShape2D_a12nh")
 
-[node name="AssembledMech2" type="CharacterBody2D" parent="."]
+[node name="AssembledMech2" type="CharacterBody2D" parent="." unique_id=1493213802]
 position = Vector2(1035, 231)
 script = ExtResource("2_h0kxc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AssembledMech2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AssembledMech2" unique_id=698257230]
 scale = Vector2(8.52, 8.52)
 shape = SubResource("CircleShape2D_p1qf1")
 
-[node name="Chassis" type="Node2D" parent="AssembledMech2"]
+[node name="Chassis" type="Node2D" parent="AssembledMech2" unique_id=1011369230]
 
-[node name="Sprite2D" type="Sprite2D" parent="AssembledMech2/Chassis"]
+[node name="Sprite2D" type="Sprite2D" parent="AssembledMech2/Chassis" unique_id=1395059108]
 texture = ExtResource("1_0yh6x")
 
-[node name="ActionTimer" type="Timer" parent="AssembledMech2"]
+[node name="ActionTimer" type="Timer" parent="AssembledMech2" unique_id=253921464]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1378595375]
 position = Vector2(581, 311)
 
-[node name="ScreenShake" type="Sprite2D" parent="."]
+[node name="ScreenShake" type="Sprite2D" parent="." unique_id=1961084168]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_4k1nj")
 position = Vector2(581, 311)
 scale = Vector2(23.48, 10.88)
 texture = ExtResource("1_0yh6x")
 
-[node name="AssemblePlayerMech" type="Node2D" parent="."]
+[node name="AssemblePlayerMech" type="Node2D" parent="." unique_id=301949924]
 position = Vector2(272, 185)
 script = ExtResource("3_fh7rg")
 
-[node name="IsPlayer" type="Node2D" parent="AssemblePlayerMech"]
+[node name="IsPlayer" type="Node2D" parent="AssemblePlayerMech" unique_id=368954418]
 
-[node name="PlayerSpawnpoint" type="Node2D" parent="."]
+[node name="PlayerSpawnpoint" type="Node2D" parent="." unique_id=1084930132]
 position = Vector2(155, 181)
 script = ExtResource("6_fh7rg")
 
-[node name="EnemySpawnpoint" type="Node2D" parent="."]
+[node name="EnemySpawnpoint" type="Node2D" parent="." unique_id=1336594375]
 position = Vector2(866, 163)
 script = ExtResource("6_fh7rg")
 
-[node name="PlayerActionsDebug" type="RichTextLabel" parent="."]
+[node name="PlayerActionsDebug" type="RichTextLabel" parent="." unique_id=1653510318]
 unique_name_in_owner = true
 offset_left = 35.0
 offset_top = 11.0
@@ -116,10 +117,21 @@ offset_right = 335.0
 offset_bottom = 51.0
 text = "Player Action:"
 
-[node name="EnemyActionsDebug" type="RichTextLabel" parent="."]
+[node name="EnemyActionsDebug" type="RichTextLabel" parent="." unique_id=225320574]
 unique_name_in_owner = true
 offset_left = 35.0
 offset_top = 66.0
 offset_right = 335.0
 offset_bottom = 106.0
 text = "Enemy Action:"
+
+[node name="btn_world" type="Button" parent="." unique_id=1667861169]
+offset_left = 32.0
+offset_top = 506.0
+offset_right = 193.0
+offset_bottom = 544.0
+text = "World
+"
+script = ExtResource("7_pll4o")
+
+[connection signal="button_down" from="btn_world" to="btn_world" method="_on_button_down"]

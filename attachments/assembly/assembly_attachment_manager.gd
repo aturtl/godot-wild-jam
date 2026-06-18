@@ -25,6 +25,7 @@ func load_owned_attachments():
 			dup_attachment.id_name = attachment_array[0]
 			dup_attachment.owned_index = i
 			dup_attachment.type = dup_attachment.Type.ASSEMBLY
+			dup_attachment.visible = false
 			var attached_to = attachment_array[1]
 			if attached_to != -1:
 				#equip

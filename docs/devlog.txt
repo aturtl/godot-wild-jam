@@ -71,4 +71,8 @@ GODOT WILD JAM DEVLOG
 	- Smaller ant build (enlarged in assembly)
 
 6/17:
-	
+	- Upgraded to Godot 4.6.3
+	- Web exportability
+	- Added buttons to go back to world for both battle and assembly scenes (temporary for battle)
+	- Assembly: Made attachments invisible at first for cleanliness
+	- Created plan for attachment attributes in design.txt

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://boe5v1ffi4pn4"]
+[gd_scene format=3 uid="uid://boe5v1ffi4pn4"]
 
 [ext_resource type="PackedScene" uid="uid://bn8tikihxgpsa" path="res://attachments/attachment.tscn" id="1_5402b"]
 [ext_resource type="Texture2D" uid="uid://blunw0qqgihs5" path="res://sprites/assembly/regular_turtle_chassis-Sheet.png" id="2_5404i"]
@@ -33,10 +33,10 @@ radius = 15.0
 radius = 30.0
 height = 96.0
 
-[node name="AttachmentsData" type="Node2D"]
+[node name="AttachmentsData" type="Node2D" unique_id=1618873691]
 metadata/_edit_vertical_guides_ = [-264.0]
 
-[node name="prototype_tail" parent="." instance=ExtResource("1_5402b")]
+[node name="prototype_tail" parent="." unique_id=2026694851 instance=ExtResource("1_5402b")]
 position = Vector2(426, 182)
 
 [node name="Sprite" parent="prototype_tail" index="0"]
@@ -47,7 +47,7 @@ scale = Vector2(0.0859373, 0.34375)
 [node name="ConnectTo" parent="prototype_tail" index="2"]
 connect_to = 2
 
-[node name="prototype_foot" parent="." instance=ExtResource("1_5402b")]
+[node name="prototype_foot" parent="." unique_id=1191209006 instance=ExtResource("1_5402b")]
 position = Vector2(557, 228)
 
 [node name="Sprite" parent="prototype_foot" index="0"]
@@ -57,7 +57,7 @@ scale = Vector2(0.18375, 0.34375)
 [node name="ConnectTo" parent="prototype_foot" index="2"]
 connect_to = 3
 
-[node name="prototype_shell" parent="." instance=ExtResource("1_5402b")]
+[node name="prototype_shell" parent="." unique_id=206388483 instance=ExtResource("1_5402b")]
 position = Vector2(403, 287)
 
 [node name="Sprite" parent="prototype_shell" index="0"]
@@ -67,14 +67,14 @@ scale = Vector2(0.898437, 0.40625)
 [node name="ConnectTo" parent="prototype_shell" index="2"]
 connect_to = 1
 
-[node name="prototype_head" parent="." instance=ExtResource("1_5402b")]
+[node name="prototype_head" parent="." unique_id=1347088247 instance=ExtResource("1_5402b")]
 position = Vector2(277, 188)
 
 [node name="Sprite" parent="prototype_head" index="0"]
 position = Vector2(-37.5, -3.8147e-06)
 scale = Vector2(0.929688, 0.34375)
 
-[node name="dragon_head" parent="." instance=ExtResource("1_5402b")]
+[node name="dragon_head" parent="." unique_id=2138439597 instance=ExtResource("1_5402b")]
 position = Vector2(-213, -192)
 
 [node name="Sprite" parent="dragon_head" index="0"]
@@ -89,15 +89,15 @@ frame = 12
 [node name="DropArea" parent="dragon_head" index="1"]
 position = Vector2(-32, -21)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_head/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_head/DropArea" index="0" unique_id=218948164]
 position = Vector2(-1, -1)
 polygon = PackedVector2Array(56, -16, 59, 40, 10, 54, -32, 17, -161, 7, -183, -27, -136, -28, -123, -46, -89, -56, -62, -67, -9, -71, -9, -60, -33, -43, -25, -34)
 
-[node name="SpecialAnimate" type="Node2D" parent="dragon_head"]
+[node name="SpecialAnimate" type="Node2D" parent="dragon_head" unique_id=992775002]
 position = Vector2(-445, 117)
 script = ExtResource("4_ow60t")
 
-[node name="dragon_foot" parent="." instance=ExtResource("1_5402b")]
+[node name="dragon_foot" parent="." unique_id=489414398 instance=ExtResource("1_5402b")]
 position = Vector2(-658, -75)
 
 [node name="Sprite" parent="dragon_foot" index="0"]
@@ -111,14 +111,14 @@ vframes = 6
 [node name="DropArea" parent="dragon_foot" index="1"]
 position = Vector2(20, 14)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_foot/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_foot/DropArea" index="0" unique_id=669012138]
 position = Vector2(-20, -14)
 polygon = PackedVector2Array(-5, -26, -27, -2, 21, 96, 61, 105, 93, 95, 106, 80, 96, 45, 69, 47, 51, 32, 8, -26)
 
 [node name="ConnectTo" parent="dragon_foot" index="2"]
 connect_to = 3
 
-[node name="Sprite2" type="Sprite2D" parent="dragon_foot"]
+[node name="Sprite2" type="Sprite2D" parent="dragon_foot" unique_id=1680667019]
 z_index = 7
 position = Vector2(54, 66)
 scale = Vector2(4, 4)
@@ -126,7 +126,7 @@ texture = ExtResource("3_rpc7s")
 hframes = 3
 vframes = 6
 
-[node name="dragon_wing_shell" parent="." instance=ExtResource("1_5402b")]
+[node name="dragon_wing_shell" parent="." unique_id=1531130714 instance=ExtResource("1_5402b")]
 position = Vector2(-1043, -233)
 
 [node name="Sprite" parent="dragon_wing_shell" index="0"]
@@ -141,19 +141,19 @@ frame = 15
 [node name="DropArea" parent="dragon_wing_shell" index="1"]
 position = Vector2(20, 14)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_wing_shell/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_wing_shell/DropArea" index="0" unique_id=1323585714]
 polygon = PackedVector2Array(11, -16, 11, -28, 54, -70, 94, -86, 101, -94, 168, -103, 209, -100, 272, -70, 248, -113, 209, -131, 228, -138, 286, -137, 323, -123, 306, -155, 258, -180, 201, -186, 237, -198, 293, -198, 335, -186, 380, -156, 359, -192, 310, -232, 238, -255, 91, -260, -16, -228, -86, -191, -101, -175, -23, -118, 2, -85, 1, -61, -15, -45, -29, -43, -43, -30, -43, -10, -27, 6, -6, 6, 2, -3)
 
 [node name="ConnectTo" parent="dragon_wing_shell" index="2"]
 connect_to = 1
 
-[node name="SpecialAnimate" type="Node2D" parent="dragon_wing_shell"]
+[node name="SpecialAnimate" type="Node2D" parent="dragon_wing_shell" unique_id=515175816]
 position = Vector2(385, 158)
 script = ExtResource("4_ow60t")
 frames_between_switch = 5
 anim_frame_count = 3
 
-[node name="dragon_tail" parent="." instance=ExtResource("1_5402b")]
+[node name="dragon_tail" parent="." unique_id=2043376949 instance=ExtResource("1_5402b")]
 position = Vector2(-1457, 138)
 
 [node name="Sprite" parent="dragon_tail" index="0"]
@@ -168,13 +168,13 @@ frame = 6
 [node name="DropArea" parent="dragon_tail" index="1"]
 position = Vector2(20, 14)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_tail/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_tail/DropArea" index="0" unique_id=2089819313]
 polygon = PackedVector2Array(-49, -29, -48, 0, -35, 22, -12, 32, 92, 2, 203, -50, 240, -72, 259, -92, 204, -67, 157, -53, 84, -44, 44, -44, -10, -56, -31, -49)
 
 [node name="ConnectTo" parent="dragon_tail" index="2"]
 connect_to = 2
 
-[node name="turtle_head" parent="." instance=ExtResource("1_5402b")]
+[node name="turtle_head" parent="." unique_id=108602431 instance=ExtResource("1_5402b")]
 position = Vector2(98, 0)
 
 [node name="Sprite" parent="turtle_head" index="0"]
@@ -188,10 +188,10 @@ frame = 5
 [node name="DropArea" parent="turtle_head" index="1"]
 position = Vector2(-31, -5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="turtle_head/DropArea" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="turtle_head/DropArea" index="0" unique_id=1736744057]
 shape = SubResource("CircleShape2D_ow60t")
 
-[node name="turtle_shell" parent="." instance=ExtResource("1_5402b")]
+[node name="turtle_shell" parent="." unique_id=1036195294 instance=ExtResource("1_5402b")]
 position = Vector2(318, -12)
 
 [node name="Sprite" parent="turtle_shell" index="0"]
@@ -205,13 +205,13 @@ frame = 4
 [node name="DropArea" parent="turtle_shell" index="1"]
 position = Vector2(0, -42)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="turtle_shell/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="turtle_shell/DropArea" index="0" unique_id=1541163777]
 polygon = PackedVector2Array(-80, 42, 80, 42, 80, -6, 16, -54, -24, -54, -80, -6)
 
 [node name="ConnectTo" parent="turtle_shell" index="2"]
 connect_to = 1
 
-[node name="apple_shell" parent="." instance=ExtResource("1_5402b")]
+[node name="apple_shell" parent="." unique_id=395063745 instance=ExtResource("1_5402b")]
 position = Vector2(-563, 372)
 
 [node name="Sprite" parent="apple_shell" index="0"]
@@ -223,14 +223,14 @@ texture = ExtResource("5_v34og")
 [node name="DropArea" parent="apple_shell" index="1"]
 position = Vector2(12, -48)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="apple_shell/DropArea" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="apple_shell/DropArea" index="0" unique_id=1016502180]
 position = Vector2(-12, 24)
 shape = SubResource("CircleShape2D_lverr")
 
 [node name="ConnectTo" parent="apple_shell" index="2"]
 connect_to = 1
 
-[node name="file_shell" parent="." instance=ExtResource("1_5402b")]
+[node name="file_shell" parent="." unique_id=2064350687 instance=ExtResource("1_5402b")]
 position = Vector2(322, -379)
 
 [node name="Sprite" parent="file_shell" index="0"]
@@ -242,14 +242,14 @@ texture = ExtResource("5_jdisx")
 [node name="DropArea" parent="file_shell" index="1"]
 position = Vector2(4, -65.0801)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="file_shell/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="file_shell/DropArea" index="0" unique_id=1918743186]
 position = Vector2(9, 20)
 polygon = PackedVector2Array(-104, 32, -70, 50, 75, 50, 75, -60, 51, -68, -17, -68, -17, -77, -64, -88, -105, -88)
 
 [node name="ConnectTo" parent="file_shell" index="2"]
 connect_to = 1
 
-[node name="tank_shell" parent="." instance=ExtResource("1_5402b")]
+[node name="tank_shell" parent="." unique_id=2103846518 instance=ExtResource("1_5402b")]
 position = Vector2(665, -93)
 
 [node name="Sprite" parent="tank_shell" index="0"]
@@ -262,7 +262,7 @@ vframes = 2
 [node name="DropArea" parent="tank_shell" index="1"]
 position = Vector2(0, -42)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tank_shell/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tank_shell/DropArea" index="0" unique_id=1060160110]
 position = Vector2(-4, 10)
 scale = Vector2(8, 8)
 polygon = PackedVector2Array(-12, -19, 13, -19, 13, -14, 10.125, -14, 10, 5, 7, 7, -6, 7, -9, 5, -9, -10.125, -8.875, -14, -12, -14)
@@ -270,7 +270,7 @@ polygon = PackedVector2Array(-12, -19, 13, -19, 13, -14, 10.125, -14, 10, 5, 7, 
 [node name="ConnectTo" parent="tank_shell" index="2"]
 connect_to = 1
 
-[node name="tank_wheel" parent="." instance=ExtResource("1_5402b")]
+[node name="tank_wheel" parent="." unique_id=1998480753 instance=ExtResource("1_5402b")]
 position = Vector2(1283, 43)
 
 [node name="Sprite" parent="tank_wheel" index="0"]
@@ -284,14 +284,14 @@ frame = 1
 [node name="DropArea" parent="tank_wheel" index="1"]
 position = Vector2(0, -54)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tank_wheel/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tank_wheel/DropArea" index="0" unique_id=904800775]
 position = Vector2(0, 111)
 polygon = PackedVector2Array(-4, -65, -4, -25, -28, -9, -28, 15, -12, 31, 12, 31, 28, 15, 28, -9, 4, -25, 4, -65)
 
 [node name="ConnectTo" parent="tank_wheel" index="2"]
 connect_to = 3
 
-[node name="turtle_legs" parent="." instance=ExtResource("1_5402b")]
+[node name="turtle_legs" parent="." unique_id=1480664702 instance=ExtResource("1_5402b")]
 position = Vector2(-133, 106)
 
 [node name="Sprite" parent="turtle_legs" index="0"]
@@ -305,14 +305,14 @@ frame = 7
 [node name="DropArea" parent="turtle_legs" index="1"]
 position = Vector2(-6, 19)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="turtle_legs/DropArea" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="turtle_legs/DropArea" index="0" unique_id=378942309]
 position = Vector2(5, 5)
 shape = SubResource("CircleShape2D_jdisx")
 
 [node name="ConnectTo" parent="turtle_legs" index="2"]
 connect_to = 3
 
-[node name="Sprite2" type="Sprite2D" parent="turtle_legs"]
+[node name="Sprite2" type="Sprite2D" parent="turtle_legs" unique_id=409313619]
 z_index = 7
 position = Vector2(33, -31)
 scale = Vector2(8, 8)
@@ -320,7 +320,7 @@ texture = ExtResource("2_5404i")
 vframes = 8
 frame = 1
 
-[node name="turtle_tail" parent="." instance=ExtResource("1_5402b")]
+[node name="turtle_tail" parent="." unique_id=686963120 instance=ExtResource("1_5402b")]
 position = Vector2(43, 108)
 
 [node name="Sprite" parent="turtle_tail" index="0"]
@@ -331,14 +331,14 @@ texture = ExtResource("2_5404i")
 vframes = 8
 frame = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="turtle_tail/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="turtle_tail/DropArea" index="0" unique_id=1580839077]
 position = Vector2(16, 0)
 polygon = PackedVector2Array(-16, -16, 16, -16, 0, 16, -16, 16)
 
 [node name="ConnectTo" parent="turtle_tail" index="2"]
 connect_to = 2
 
-[node name="mace_tail" parent="." instance=ExtResource("1_5402b")]
+[node name="mace_tail" parent="." unique_id=1405113401 instance=ExtResource("1_5402b")]
 position = Vector2(-138, -37)
 
 [node name="Sprite" parent="mace_tail" index="0"]
@@ -347,156 +347,156 @@ scale = Vector2(8, 8)
 texture = ExtResource("3_2wtpt")
 vframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/DropArea" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/DropArea" index="0" unique_id=17063321]
 position = Vector2(8, -4)
 shape = SubResource("CircleShape2D_v34og")
 
 [node name="ConnectTo" parent="mace_tail" index="2"]
 connect_to = 2
 
-[node name="Battle" type="Node2D" parent="mace_tail"]
+[node name="Battle" type="Node2D" parent="mace_tail" unique_id=309107269]
 position = Vector2(35, -4)
 
-[node name="base" type="StaticBody2D" parent="mace_tail/Battle"]
+[node name="base" type="StaticBody2D" parent="mace_tail/Battle" unique_id=502893279]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/base"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/base" unique_id=1344246095]
 z_index = 12
 position = Vector2(-27, 0)
 shape = SubResource("CircleShape2D_mof4j")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/base"]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/base" unique_id=124314825]
 position = Vector2(25, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../chain")
 bias = 0.52
 
-[node name="base" type="Sprite2D" parent="mace_tail/Battle/base"]
+[node name="base" type="Sprite2D" parent="mace_tail/Battle/base" unique_id=1139623906]
 position = Vector2(21, -4)
 scale = Vector2(8, 8)
 texture = ExtResource("3_2wtpt")
 vframes = 2
 
-[node name="chain" type="RigidBody2D" parent="mace_tail/Battle"]
+[node name="chain" type="RigidBody2D" parent="mace_tail/Battle" unique_id=352097320]
 position = Vector2(25, 0)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain" unique_id=2145873196]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain"]
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain" unique_id=1120332153]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain"]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain" unique_id=132149412]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../chain2")
 bias = 0.52
 
-[node name="chain2" type="RigidBody2D" parent="mace_tail/Battle"]
+[node name="chain2" type="RigidBody2D" parent="mace_tail/Battle" unique_id=95805266]
 position = Vector2(49, 0)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain2" unique_id=1490850344]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain2"]
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain2" unique_id=1363043724]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain2"]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain2" unique_id=306883903]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../chain3")
 bias = 0.52
 
-[node name="chain3" type="RigidBody2D" parent="mace_tail/Battle"]
+[node name="chain3" type="RigidBody2D" parent="mace_tail/Battle" unique_id=1050151679]
 position = Vector2(73, 0)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain3" unique_id=621522327]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain3"]
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain3" unique_id=911624242]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain3"]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain3" unique_id=1037173479]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../chain4")
 bias = 0.52
 
-[node name="chain4" type="RigidBody2D" parent="mace_tail/Battle"]
+[node name="chain4" type="RigidBody2D" parent="mace_tail/Battle" unique_id=1288606788]
 position = Vector2(97, 0)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain4" unique_id=768163926]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain4"]
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain4" unique_id=1867254762]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain4"]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain4" unique_id=1132936140]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../chain5")
 bias = 0.52
 
-[node name="chain5" type="RigidBody2D" parent="mace_tail/Battle"]
+[node name="chain5" type="RigidBody2D" parent="mace_tail/Battle" unique_id=1885143244]
 position = Vector2(121, 0)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain5" unique_id=499920515]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain5"]
+[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain5" unique_id=634261771]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain5"]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain5" unique_id=106442275]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../mace")
 bias = 0.52
 softness = 1.78
 
-[node name="mace" type="RigidBody2D" parent="mace_tail/Battle"]
+[node name="mace" type="RigidBody2D" parent="mace_tail/Battle" unique_id=1235866679]
 position = Vector2(145, 0)
 collision_layer = 8
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/mace"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/mace" unique_id=1838124417]
 z_index = 12
 position = Vector2(44, 2)
 shape = SubResource("CapsuleShape2D_ordi7")
 
-[node name="mace" type="Sprite2D" parent="mace_tail/Battle/mace"]
+[node name="mace" type="Sprite2D" parent="mace_tail/Battle/mace" unique_id=164879918]
 position = Vector2(-164, -4)
 scale = Vector2(8, 8)
 texture = ExtResource("3_2wtpt")
 vframes = 2
 frame = 1
 
-[node name="scorpion_tail" parent="." instance=ExtResource("1_5402b")]
+[node name="scorpion_tail" parent="." unique_id=1054008860 instance=ExtResource("1_5402b")]
 position = Vector2(852, 364)
 
 [node name="Sprite" parent="scorpion_tail" index="0"]
@@ -505,7 +505,7 @@ rotation = -5.98591
 scale = Vector2(8, 8)
 texture = ExtResource("2_rpc7s")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="scorpion_tail/DropArea" index="0"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="scorpion_tail/DropArea" index="0" unique_id=1694714624]
 position = Vector2(38, 15)
 polygon = PackedVector2Array(-60, -42, -72, -5, -54, 17, -1, 33, 59, 26, 147, -16, 168, -35, 198, -123, 182, -154, 166, -156, 184, -127, 116, -22, -8, -27, -20, -48, -41, -54)
 

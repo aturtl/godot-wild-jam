@@ -44,6 +44,85 @@ Collisions:
 	3 - ignore
 	4 - damage
 
+
+Attachment/Chassis Behaviors, Modifiers, Actions:
+	Chassis:
+		Turtle
+			Behaviors: Falls faster
+			Modifiers: -2 spd
+		Dragon
+			Behaviors: Slow-fall
+		Ant
+			Behaviors: Small
+			Modifiers: +4 spd, -4 hp
+		* Glitch
+			Actions: Corruption (ignores all gravity and floats towards opponent at a constant speed)
+			Behaviors: Disabled after corruption for 3s (cannot deal any damage)
+			Modifiers: Random +2/-2 to each stat
+	Heads: ATTACK/VULNERABILITY
+		Turtle
+			Actions: Chomp
+		Dragon
+			Actions: Fire-breath
+		* Godot (but like, actually a unique sprite)
+			Actions: Program (disable one attachment of enemy temporarily)
+		* Nightmare
+			Actions: Haunt (stuns opponent)
+		* Glitch
+			Actions: Head grows x2 size
+			Modifiers: Head dmg x2
+	Shells: DURABILITY
+		Turtle
+			Actions: Tuck
+			Modifiers: +4 def
+		File (Glitch)
+			Actions: Duplicate (temporary ~5s)
+			Modifiers: +2 def, +2 spd
+		Apple
+			Actions: Heal
+			Modifiers: +6 hp, +1 def
+		Tank
+			Actions: Shoot explosive bullet
+			Modifiers: +6 def, -2 spd
+		* Plushie
+	Legs: MOBILITY
+		Turtle
+			Actions: Stabilize (cannot knock down)
+			Modifiers: +1 spd
+		Dragon
+			Actions: Hover
+			Modifiers: +2 air spd
+		Wheels
+			Behaviors: Grounded (Cannot jump to leave the ground)
+			Modifiers: +3 spd
+		* Ant
+			Actions: Scent-path (retraces path)
+			Behaviors: Can crawl on walls
+			Modifiers: +3 spd
+		* Glitch
+			Actions: Teleport
+			Modifiers: +2 spd
+	Tails: ATTACK
+		Turtle
+			Actions: None
+			Modifiers: None
+		Dragon
+			Actions: Whip
+			Modifiers: +2 air dmg
+		Scorpion
+			Actions: Whip
+			Modifiers: -2 spd
+			Behaviors: Contact inflicts poison
+		Mace
+			Actions: Swing
+			Modifiers: -1 spd
+			Behaviors: Swing speed determines damage
+		* Glitch
+			Actions: Random-tail (tail replaced by another for 10s, has glitch artifacts)
+			Behaviors: Still-frame (freezes randomly but all damage is x2 during that time)
+			Modifiers: -2 def
+
+
 Mechanics in relation to Dynamics and Aesthetics: (With the time constraint, a lot of these will probably not make it into the game. But I will try to perform as many as possible)
 	Assembly:
 		M: Assembly sign tilts to the right by a screw

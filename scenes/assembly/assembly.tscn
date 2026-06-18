@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cl05xqe68w5bc"]
+[gd_scene format=3 uid="uid://cl05xqe68w5bc"]
 
 [ext_resource type="Script" uid="uid://cd3c688d1tslm" path="res://assembly/load_assembly_chassis.gd" id="1_ftk04"]
 [ext_resource type="Script" uid="uid://dlg0fx3nqyqy2" path="res://attachments/assembly/assembly_attachment_manager.gd" id="2_wkeal"]
@@ -6,17 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://dqt8exjsvy4j1" path="res://assembly/assembly_hand/assembly_hand.png" id="4_c1tg4"]
 [ext_resource type="Texture2D" uid="uid://bmskc4idnkqna" path="res://icon.svg" id="5_db37m"]
 [ext_resource type="Script" uid="uid://bn8xjmftaluc1" path="res://scenes/loading_screen.gd" id="6_sfu06"]
+[ext_resource type="Script" uid="uid://bu6tlhwbqh7th" path="res://scenes/world/open_world.gd" id="7_wkeal"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3d87l"]
 radius = 1.41421
 
-[node name="TurtleAssembly" type="Node2D"]
+[node name="TurtleAssembly" type="Node2D" unique_id=1036446128]
 
-[node name="Chassis" type="Node2D" parent="."]
+[node name="Chassis" type="Node2D" parent="." unique_id=175706396]
 unique_name_in_owner = true
 script = ExtResource("1_ftk04")
 
-[node name="AttachmentsManager" type="Node" parent="." node_paths=PackedStringArray("head_list", "shell_list", "tail_list", "foot_list")]
+[node name="AttachmentsManager" type="Node" parent="." unique_id=1476605345 node_paths=PackedStringArray("head_list", "shell_list", "tail_list", "foot_list")]
 unique_name_in_owner = true
 script = ExtResource("2_wkeal")
 head_list = NodePath("../UI/AttachmentLayout/Head")
@@ -24,24 +25,23 @@ shell_list = NodePath("../UI/AttachmentLayout/Shell")
 tail_list = NodePath("../UI/AttachmentLayout/Tail")
 foot_list = NodePath("../UI/AttachmentLayout/Foot")
 
-[node name="Hand" type="Node2D" parent="."]
+[node name="Hand" type="Node2D" parent="." unique_id=64550811]
 unique_name_in_owner = true
 script = ExtResource("3_q7ofn")
 hand_default = ExtResource("4_c1tg4")
 
-[node name="InteractArea" type="Area2D" parent="Hand"]
+[node name="InteractArea" type="Area2D" parent="Hand" unique_id=1133009774]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand/InteractArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand/InteractArea" unique_id=543457512]
 shape = SubResource("CircleShape2D_3d87l")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=906572917]
 
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." unique_id=666143073]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="AttachmentBtns" type="Control" parent="UI"]
-layout_mode = 3
+[node name="AttachmentBtns" type="Control" parent="UI" unique_id=1548473520]
 anchors_preset = 0
 offset_left = -541.0
 offset_top = 216.0
@@ -49,34 +49,34 @@ offset_right = -13.0
 offset_bottom = 344.0
 scale = Vector2(1, 0.6)
 
-[node name="BtnHead" type="TextureButton" parent="UI/AttachmentBtns"]
+[node name="BtnHead" type="TextureButton" parent="UI/AttachmentBtns" unique_id=1271238935]
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
 texture_normal = ExtResource("5_db37m")
 
-[node name="BtnShell" type="TextureButton" parent="UI/AttachmentBtns"]
+[node name="BtnShell" type="TextureButton" parent="UI/AttachmentBtns" unique_id=220771169]
 layout_mode = 0
 offset_left = 132.0
 offset_right = 260.0
 offset_bottom = 128.0
 texture_normal = ExtResource("5_db37m")
 
-[node name="BtnTail" type="TextureButton" parent="UI/AttachmentBtns"]
+[node name="BtnTail" type="TextureButton" parent="UI/AttachmentBtns" unique_id=675496523]
 layout_mode = 0
 offset_left = 264.0
 offset_right = 392.0
 offset_bottom = 128.0
 texture_normal = ExtResource("5_db37m")
 
-[node name="BtnFoot" type="TextureButton" parent="UI/AttachmentBtns"]
+[node name="BtnFoot" type="TextureButton" parent="UI/AttachmentBtns" unique_id=2120025895]
 layout_mode = 0
 offset_left = 396.0
 offset_right = 524.0
 offset_bottom = 128.0
 texture_normal = ExtResource("5_db37m")
 
-[node name="BtnInteract" type="TextureButton" parent="UI"]
+[node name="BtnInteract" type="TextureButton" parent="UI" unique_id=1878977897]
 layout_mode = 0
 offset_left = 223.0
 offset_top = 45.0
@@ -85,15 +85,14 @@ offset_bottom = 305.0
 texture_normal = ExtResource("5_db37m")
 stretch_mode = 0
 
-[node name="AttachmentLayout" type="Control" parent="UI"]
-layout_mode = 3
+[node name="AttachmentLayout" type="Control" parent="UI" unique_id=1531399518]
 anchors_preset = 0
 offset_left = -541.0
 offset_top = 112.0
 offset_right = -541.0
 offset_bottom = 112.0
 
-[node name="ScrollBackground" type="TextureRect" parent="UI/AttachmentLayout"]
+[node name="ScrollBackground" type="TextureRect" parent="UI/AttachmentLayout" unique_id=1416172318]
 visible = false
 layout_mode = 0
 offset_right = 525.0
@@ -101,68 +100,78 @@ offset_bottom = 94.0
 texture = ExtResource("5_db37m")
 expand_mode = 1
 
-[node name="Head" type="Control" parent="UI/AttachmentLayout"]
+[node name="Head" type="Control" parent="UI/AttachmentLayout" unique_id=2110363849]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ListHead" type="ScrollContainer" parent="UI/AttachmentLayout/Head"]
+[node name="ListHead" type="ScrollContainer" parent="UI/AttachmentLayout/Head" unique_id=587065860]
 layout_mode = 0
 offset_right = 525.0
 offset_bottom = 94.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/Head/ListHead"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/Head/ListHead" unique_id=329362511]
 layout_mode = 2
 
-[node name="Tail" type="Control" parent="UI/AttachmentLayout"]
+[node name="Tail" type="Control" parent="UI/AttachmentLayout" unique_id=1194557970]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ListTail" type="ScrollContainer" parent="UI/AttachmentLayout/Tail"]
+[node name="ListTail" type="ScrollContainer" parent="UI/AttachmentLayout/Tail" unique_id=689360474]
 layout_mode = 0
 offset_right = 525.0
 offset_bottom = 94.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/Tail/ListTail"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/Tail/ListTail" unique_id=1789464329]
 layout_mode = 2
 
-[node name="Shell" type="Control" parent="UI/AttachmentLayout"]
+[node name="Shell" type="Control" parent="UI/AttachmentLayout" unique_id=1610830992]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ListShell" type="ScrollContainer" parent="UI/AttachmentLayout/Shell"]
+[node name="ListShell" type="ScrollContainer" parent="UI/AttachmentLayout/Shell" unique_id=156067536]
 layout_mode = 0
 offset_right = 525.0
 offset_bottom = 94.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/Shell/ListShell"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/Shell/ListShell" unique_id=1383972613]
 layout_mode = 2
 
-[node name="Foot" type="Control" parent="UI/AttachmentLayout"]
+[node name="Foot" type="Control" parent="UI/AttachmentLayout" unique_id=130415070]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ListFoot" type="ScrollContainer" parent="UI/AttachmentLayout/Foot"]
+[node name="ListFoot" type="ScrollContainer" parent="UI/AttachmentLayout/Foot" unique_id=178633113]
 layout_mode = 0
 offset_right = 525.0
 offset_bottom = 94.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/Foot/ListFoot"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/Foot/ListFoot" unique_id=1667142354]
 layout_mode = 2
 
-[node name="Attachments" type="Node2D" parent="."]
+[node name="Attachments" type="Node2D" parent="." unique_id=2115735469]
 unique_name_in_owner = true
 
-[node name="LoadingScreen" type="Sprite2D" parent="."]
+[node name="LoadingScreen" type="Sprite2D" parent="." unique_id=1515218504]
 visible = false
 scale = Vector2(21.7315, 7.2515)
 texture = ExtResource("5_db37m")
 script = ExtResource("6_sfu06")
 
+[node name="btn_world" type="Button" parent="." unique_id=446842618]
+offset_left = -559.0
+offset_top = -310.0
+offset_right = -398.0
+offset_bottom = -272.0
+text = "World
+"
+script = ExtResource("7_wkeal")
+
 [connection signal="button_down" from="UI/AttachmentBtns/BtnHead" to="AttachmentsManager" method="_on_head_button_down"]
 [connection signal="button_down" from="UI/AttachmentBtns/BtnShell" to="AttachmentsManager" method="_on_shell_button_down"]
 [connection signal="button_down" from="UI/AttachmentBtns/BtnTail" to="AttachmentsManager" method="_on_tail_button_down"]
 [connection signal="button_down" from="UI/AttachmentBtns/BtnFoot" to="AttachmentsManager" method="_on_foot_button_down"]
+[connection signal="button_down" from="btn_world" to="btn_world" method="_on_button_down"]
