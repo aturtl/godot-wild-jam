@@ -6,3 +6,4 @@ class_name AttachmentInfo extends Node
 func _init(id, slot):
 	self.id = id
 	self.slot = slot
+	

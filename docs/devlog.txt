@@ -79,7 +79,10 @@ GODOT WILD JAM DEVLOG
 	- Created plan for attachment attributes in design.txt
 	- Created classes for each battle behavior
 	- Added health bar
-	- Functionality for Attachment Actions
+	- Basic functionality for Attachment Actions
 		- Duplicate
 		- Hover
 		- Tackle
+		- Whip
+		- Chomp
+	- Added damage for Duplicate, Tackle, Whip, Chomp

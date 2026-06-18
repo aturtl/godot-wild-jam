@@ -10,7 +10,7 @@ func on_contact(): #not incl yet
 
 
 func passive():
-	print("mech passive")
+	pass
 
 
 func modify_mech_stats(mech_stats: MechStats):

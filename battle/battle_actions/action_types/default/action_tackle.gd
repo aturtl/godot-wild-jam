@@ -1,17 +1,20 @@
 class_name ActionTackle extends Action
 
-
+var dmg = 5.0
 var initial_direction = Vector2(0,0)
 
+var can_damage = false
 
-func wall_bounce(info: ActionInfo):
-	if info.is_wall_collision:
-		initial_direction.x = -initial_direction.x
-		info.move_velocity = -info.move_velocity
-		info.rot_velocity /= 2.0
+
+func enemy_bounce(info: ActionInfo):
+	initial_direction = wall_bounce(info, initial_direction)
+	if can_damage:
+		info.enemy_mech.mech_stats.damage(dmg)
+		can_damage = false
 
 
 func action_began(info: ActionInfo) -> ActionInfo:
+	can_damage = true
 	initial_direction = info.direction_to_enemy
 	return info
 
@@ -20,7 +23,11 @@ func action_looped(info: ActionInfo) -> ActionInfo:
 	#var rot_factor = initial_direction.angle_to(Vector2(-1,0))
 	#var rot = info.mech.rotation
 	
-	wall_bounce(info)
+	if info.is_wall_collision:
+		initial_direction = wall_bounce(info, initial_direction)
+	if info.is_enemy_collision:
+		enemy_bounce(info)
+	
 	info.move_velocity += initial_direction*12.0
 	info.rot_velocity /= 2.0
 	

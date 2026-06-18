@@ -38,7 +38,7 @@ func load_equipped_attachments():
 			dup_attachment.owned_index = i
 			dup_attachment.type = dup_attachment.Type.BATTLE
 			var attached_to = attachment_array[1]
-			if attached_to != -1 and attached_to < mech_stats.equipped_chassis.get_slot_count()-1:
+			if attached_to != -1 and attached_to <= mech_stats.equipped_chassis.get_slot_count()-1:
 				#equip
 				print("EQUIPPING")
 				dup_attachment.add_battle_behavior()
@@ -46,6 +46,7 @@ func load_equipped_attachments():
 				mech_stats.attachment_behaviors.append(dup_attachment.battle_behavior)
 				mech_stats.equipped_attachments.append(dup_attachment)
 				print("modify 01:", mech_stats.equipped_attachments)
+				dup_attachment.add_collision_exception_with(mech)
 				mech_stats.equipped_chassis.add_child(dup_attachment)
 				dup_attachment.attach(mech_stats.equipped_chassis.get_slot_by_number(attached_to))
 		i += 1

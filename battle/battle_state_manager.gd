@@ -39,6 +39,9 @@ func build_mechs():
 	p_mech = create_mech(p_mech_setup, p_spawnpoint.position)
 	e_mech = create_mech(e_mech_setup, e_spawnpoint.position)
 	
+	p_mech.name = "PlayerMech"
+	e_mech.name = "EnemyMech"
+	
 	print("ADDED")
 	p_mech.enemy = e_mech
 	e_mech.enemy = p_mech

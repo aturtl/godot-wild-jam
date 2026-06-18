@@ -27,17 +27,29 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow60t"]
 radius = 52.0384
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bmfde"]
+radius = 35.846897
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_lverr"]
 radius = 35.0571
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_01g76"]
+radius = 27.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ma1s"]
+size = Vector2(140, 93)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4dc7"]
+radius = 28.071337
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdisx"]
 radius = 24.0208
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bu2dk"]
+radius = 21.023796
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_v34og"]
 radius = 29.0172
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_mof4j"]
-radius = 26.0768
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ordi7"]
 radius = 15.0
@@ -45,6 +57,9 @@ radius = 15.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ordi7"]
 radius = 30.0
 height = 96.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mof4j"]
+radius = 26.0768
 
 [node name="AttachmentsData" type="Node2D" unique_id=1618873691]
 metadata/_edit_vertical_guides_ = [-264.0]
@@ -114,6 +129,10 @@ script = ExtResource("4_ow60t")
 script = ExtResource("4_bmfde")
 metadata/_custom_type_script = "uid://c58blluv0gyod"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_head" unique_id=975594046]
+position = Vector2(-33, -22)
+polygon = PackedVector2Array(56, -16, 59, 40, 10, 54, -32, 17, -161, 7, -183, -27, -136, -28, -123, -46, -89, -56, -62, -67, -9, -71, -9, -60, -33, -43, -25, -34)
+
 [node name="dragon_foot" parent="." unique_id=489414398 instance=ExtResource("1_5402b")]
 position = Vector2(-658, -75)
 
@@ -147,6 +166,10 @@ vframes = 6
 script = ExtResource("5_01g76")
 metadata/_custom_type_script = "uid://b7xjjekcqqh4y"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_foot" unique_id=263954792]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(-5, -26, -27, -2, 21, 96, 61, 105, 93, 95, 106, 80, 96, 45, 69, 47, 51, 32, 8, -26)
+
 [node name="dragon_wing_shell" parent="." unique_id=1531130714 instance=ExtResource("1_5402b")]
 position = Vector2(-1043, -233)
 
@@ -174,6 +197,10 @@ script = ExtResource("4_ow60t")
 frames_between_switch = 5
 anim_frame_count = 3
 
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="dragon_wing_shell" unique_id=250016624]
+position = Vector2(20, 14)
+polygon = PackedVector2Array(11, -16, 11, -28, 54, -70, 94, -86, 101, -94, 95, -113, 63, -150, 71, -194, 120, -213, 171, -217, 223, -220, 263, -214, 296, -204, 335, -186, 380, -156, 359, -192, 310, -232, 238, -255, 91, -260, -16, -228, -80, -190, -86, -172, -23, -118, 26, -91, 1, -61, -15, -45, -29, -43, -43, -30, -43, -10, -27, 6, -6, 6, 2, -3)
+
 [node name="dragon_tail" parent="." unique_id=2043376949 instance=ExtResource("1_5402b")]
 position = Vector2(-1457, 138)
 
@@ -199,6 +226,10 @@ connect_to = 2
 script = ExtResource("6_2ma1s")
 metadata/_custom_type_script = "uid://ufjdvopudvyp"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="dragon_tail" unique_id=1702012580]
+position = Vector2(19, 14)
+polygon = PackedVector2Array(-49, -29, -48, 0, -35, 22, -12, 32, 92, 2, 203, -50, 240, -72, 259, -92, 204, -67, 157, -53, 84, -44, 44, -44, -10, -56, -31, -49)
+
 [node name="turtle_head" parent="." unique_id=108602431 instance=ExtResource("1_5402b")]
 position = Vector2(98, 0)
 
@@ -219,6 +250,10 @@ shape = SubResource("CircleShape2D_ow60t")
 [node name="BBHeadTurtle" type="Node" parent="turtle_head" unique_id=1930611459]
 script = ExtResource("8_b4dc7")
 metadata/_custom_type_script = "uid://bdow0xsqy8ttd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="turtle_head" unique_id=1687134153]
+position = Vector2(-29, -6)
+shape = SubResource("CircleShape2D_bmfde")
 
 [node name="turtle_shell" parent="." unique_id=1036195294 instance=ExtResource("1_5402b")]
 position = Vector2(318, -12)
@@ -244,6 +279,10 @@ connect_to = 1
 script = ExtResource("9_bu2dk")
 metadata/_custom_type_script = "uid://bay312bmkxeln"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="turtle_shell" unique_id=960018861]
+position = Vector2(0, -42)
+polygon = PackedVector2Array(-75, 34, 76, 34, 76, -6, 16, -38, -24, -38, -76, -6)
+
 [node name="apple_shell" parent="." unique_id=395063745 instance=ExtResource("1_5402b")]
 position = Vector2(-563, 372)
 
@@ -267,6 +306,10 @@ connect_to = 1
 script = ExtResource("11_acr78")
 metadata/_custom_type_script = "uid://boq8yoex38jd2"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="apple_shell" unique_id=1509424135]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_01g76")
+
 [node name="file_shell" parent="." unique_id=2064350687 instance=ExtResource("1_5402b")]
 position = Vector2(322, -379)
 
@@ -289,6 +332,10 @@ connect_to = 1
 [node name="BBShellFile" type="Node" parent="file_shell" unique_id=117215916]
 script = ExtResource("13_iyl2u")
 metadata/_custom_type_script = "uid://byr5yrdlwird1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="file_shell" unique_id=528883317]
+position = Vector2(-2, -58.5)
+shape = SubResource("RectangleShape2D_2ma1s")
 
 [node name="tank_shell" parent="." unique_id=2103846518 instance=ExtResource("1_5402b")]
 position = Vector2(665, -93)
@@ -315,6 +362,11 @@ connect_to = 1
 script = ExtResource("15_fqr8a")
 metadata/_custom_type_script = "uid://dktmya03bweau"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tank_shell" unique_id=1042245348]
+position = Vector2(-5, -45)
+scale = Vector2(8, 8)
+polygon = PackedVector2Array(10.125, -16.375, 10, 5, 7, 7, -6, 7, -9, 5, -9.125, -16.375)
+
 [node name="tank_wheel" parent="." unique_id=1998480753 instance=ExtResource("1_5402b")]
 position = Vector2(1283, 43)
 
@@ -339,6 +391,10 @@ connect_to = 3
 [node name="BBLegsWheel" type="Node" parent="tank_wheel" unique_id=803424034]
 script = ExtResource("16_ip422")
 metadata/_custom_type_script = "uid://bfx1roduf36ga"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tank_wheel" unique_id=667935881]
+position = Vector2(0, 60)
+shape = SubResource("CircleShape2D_b4dc7")
 
 [node name="turtle_legs" parent="." unique_id=1480664702 instance=ExtResource("1_5402b")]
 position = Vector2(-133, 106)
@@ -373,6 +429,10 @@ frame = 1
 script = ExtResource("17_n22id")
 metadata/_custom_type_script = "uid://bdi8y05d6f43b"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="turtle_legs" unique_id=2062723908]
+position = Vector2(-1, 24)
+shape = SubResource("CircleShape2D_bu2dk")
+
 [node name="turtle_tail" parent="." unique_id=686963120 instance=ExtResource("1_5402b")]
 position = Vector2(43, 108)
 
@@ -395,6 +455,10 @@ connect_to = 2
 script = ExtResource("18_oxqlx")
 metadata/_custom_type_script = "uid://dj5mfjxakbfb5"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="turtle_tail" unique_id=1610207580]
+position = Vector2(16, 0)
+polygon = PackedVector2Array(-16, -16, 16, -16, 0, 16, -16, 16)
+
 [node name="mace_tail" parent="." unique_id=1405113401 instance=ExtResource("1_5402b")]
 position = Vector2(-138, -37)
 
@@ -411,151 +475,151 @@ shape = SubResource("CircleShape2D_v34og")
 [node name="ConnectTo" parent="mace_tail" index="2" unique_id=942248921]
 connect_to = 2
 
-[node name="Battle" type="Node2D" parent="mace_tail" unique_id=309107269]
+[node name="chained" type="Node2D" parent="mace_tail" unique_id=309107269]
 position = Vector2(35, -4)
 
-[node name="base" type="StaticBody2D" parent="mace_tail/Battle" unique_id=502893279]
-collision_layer = 4
-collision_mask = 4
+[node name="BBTailMace" type="Node" parent="mace_tail" unique_id=1854195826]
+script = ExtResource("21_m2dni")
+metadata/_custom_type_script = "uid://dqsdfcnmlpgar"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/base" unique_id=1344246095]
-z_index = 12
-position = Vector2(-27, 0)
-shape = SubResource("CircleShape2D_mof4j")
-
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/base" unique_id=124314825]
-position = Vector2(25, 0)
-node_a = NodePath("..")
-node_b = NodePath("../../chain")
-bias = 0.52
-
-[node name="base" type="Sprite2D" parent="mace_tail/Battle/base" unique_id=1139623906]
-position = Vector2(21, -4)
-scale = Vector2(8, 8)
-texture = ExtResource("3_2wtpt")
-vframes = 2
-
-[node name="chain" type="RigidBody2D" parent="mace_tail/Battle" unique_id=352097320]
-position = Vector2(25, 0)
+[node name="chain" type="RigidBody2D" parent="mace_tail" unique_id=167609967]
+position = Vector2(60, -4)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain" unique_id=2145873196]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/chain" unique_id=2145873196]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain" unique_id=1120332153]
+[node name="Sprite" type="Sprite2D" parent="mace_tail/chain" unique_id=1120332153]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain" unique_id=132149412]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/chain" unique_id=132149412]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../chain2")
 bias = 0.52
+softness = 0.5
 
-[node name="chain2" type="RigidBody2D" parent="mace_tail/Battle" unique_id=95805266]
-position = Vector2(49, 0)
+[node name="chain2" type="RigidBody2D" parent="mace_tail" unique_id=721691066]
+position = Vector2(84, -4)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain2" unique_id=1490850344]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/chain2" unique_id=1490850344]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain2" unique_id=1363043724]
+[node name="Sprite" type="Sprite2D" parent="mace_tail/chain2" unique_id=1363043724]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain2" unique_id=306883903]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/chain2" unique_id=306883903]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../chain3")
 bias = 0.52
+softness = 0.5
 
-[node name="chain3" type="RigidBody2D" parent="mace_tail/Battle" unique_id=1050151679]
-position = Vector2(73, 0)
+[node name="chain3" type="RigidBody2D" parent="mace_tail" unique_id=297914177]
+position = Vector2(108, -4)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain3" unique_id=621522327]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/chain3" unique_id=621522327]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain3" unique_id=911624242]
+[node name="Sprite" type="Sprite2D" parent="mace_tail/chain3" unique_id=911624242]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain3" unique_id=1037173479]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/chain3" unique_id=1037173479]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../chain4")
 bias = 0.52
+softness = 0.5
 
-[node name="chain4" type="RigidBody2D" parent="mace_tail/Battle" unique_id=1288606788]
-position = Vector2(97, 0)
+[node name="chain4" type="RigidBody2D" parent="mace_tail" unique_id=60658003]
+position = Vector2(132, -4)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain4" unique_id=768163926]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/chain4" unique_id=768163926]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain4" unique_id=1867254762]
+[node name="Sprite" type="Sprite2D" parent="mace_tail/chain4" unique_id=1867254762]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain4" unique_id=1132936140]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/chain4" unique_id=1132936140]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../chain5")
 bias = 0.52
+softness = 0.5
 
-[node name="chain5" type="RigidBody2D" parent="mace_tail/Battle" unique_id=1885143244]
-position = Vector2(121, 0)
+[node name="chain5" type="RigidBody2D" parent="mace_tail" unique_id=22172195]
+position = Vector2(156, -4)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/chain5" unique_id=499920515]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/chain5" unique_id=499920515]
 z_index = 12
 shape = SubResource("CircleShape2D_ordi7")
 
-[node name="BaseSeg3" type="Sprite2D" parent="mace_tail/Battle/chain5" unique_id=634261771]
+[node name="Sprite" type="Sprite2D" parent="mace_tail/chain5" unique_id=634261771]
 position = Vector2(12, 0)
 scale = Vector2(8, 8)
 texture = ExtResource("4_ordi7")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/Battle/chain5" unique_id=106442275]
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail/chain5" unique_id=106442275]
 position = Vector2(24, 0)
 node_a = NodePath("..")
 node_b = NodePath("../../mace")
 bias = 0.52
-softness = 1.78
+softness = 0.5
 
-[node name="mace" type="RigidBody2D" parent="mace_tail/Battle" unique_id=1235866679]
-position = Vector2(145, 0)
+[node name="mace" type="RigidBody2D" parent="mace_tail" unique_id=1009035160]
+position = Vector2(180, -4)
 collision_layer = 8
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/Battle/mace" unique_id=1838124417]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail/mace" unique_id=1838124417]
 z_index = 12
 position = Vector2(44, 2)
 shape = SubResource("CapsuleShape2D_ordi7")
 
-[node name="mace" type="Sprite2D" parent="mace_tail/Battle/mace" unique_id=164879918]
+[node name="Sprite" type="Sprite2D" parent="mace_tail/mace" unique_id=164879918]
 position = Vector2(-164, -4)
 scale = Vector2(8, 8)
 texture = ExtResource("3_2wtpt")
 vframes = 2
 frame = 1
 
-[node name="BBTailMace" type="Node" parent="mace_tail" unique_id=1854195826]
-script = ExtResource("21_m2dni")
-metadata/_custom_type_script = "uid://dqsdfcnmlpgar"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail" unique_id=1344246095]
+z_index = 12
+position = Vector2(8, -4)
+shape = SubResource("CircleShape2D_mof4j")
+
+[node name="base2" type="Sprite2D" parent="mace_tail" unique_id=1139623906]
+position = Vector2(56, -8)
+scale = Vector2(8, 8)
+texture = ExtResource("3_2wtpt")
+vframes = 2
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail" unique_id=124314825]
+position = Vector2(60, -4)
+node_a = NodePath("..")
+node_b = NodePath("../chain")
+bias = 0.52
 
 [node name="scorpion_tail" parent="." unique_id=1054008860 instance=ExtResource("1_5402b")]
 position = Vector2(852, 364)
@@ -576,6 +640,10 @@ connect_to = 2
 [node name="BBTailScorpion" type="Node" parent="scorpion_tail" unique_id=169370446]
 script = ExtResource("23_5mwfc")
 metadata/_custom_type_script = "uid://yhmpbhle66y0"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="scorpion_tail" unique_id=991254969]
+position = Vector2(38, 15)
+polygon = PackedVector2Array(-60, -42, -72, -5, -54, 17, -1, 33, 59, 26, 147, -16, 168, -35, 198, -123, 182, -154, 166, -156, 184, -127, 116, -22, -8, -27, -20, -48, -41, -54)
 
 [editable path="prototype_tail"]
 [editable path="prototype_foot"]

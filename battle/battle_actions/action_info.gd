@@ -11,6 +11,9 @@ var direction_to_enemy: Vector2
 var is_wall_collision = false
 var wall_collision_normal: Vector2
 
+var is_enemy_collision = false
+var enemy_collision_normal: Vector2
+
 var max_action_speed: float
 
 var mech: Mech

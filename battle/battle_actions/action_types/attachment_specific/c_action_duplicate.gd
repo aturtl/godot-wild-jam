@@ -6,6 +6,11 @@ var clone_life_time = 5.0
 var max_clones = 5
 var current_clone_count = 0
 
+var clones = []
+
+var clone_dmg = 1.5
+
+
 func action_began(info: ActionInfo) -> ActionInfo:
 	while current_clone_count < max_clones:
 		create_clone(info)
@@ -18,8 +23,9 @@ func create_clone(info: ActionInfo):
 	var dup_mech: Mech = info.mech.duplicate()
 	
 	dup_mech.modulate = Color(.5,.5,.5,.7)
+	
 	dup_mech.collision_layer = 0
-	dup_mech.collision_mask = 0b10000
+	dup_mech.collision_mask = 0b10001
 	
 	dup_mech.perform_gravity = false
 	dup_mech.enemy = info.mech.enemy
@@ -39,6 +45,12 @@ func create_clone(info: ActionInfo):
 	redirect_timer.timeout.connect(redirect_clone.bind(redirect_timer,dup_mech))
 	life_timer.timeout.connect(delete_clone.bind(life_timer,dup_mech))
 	dup_mech.hit_wall.connect(bounce_clone.bind(dup_mech))
+	dup_mech.hit_enemy.connect(clone_damage.bind(info.mech.enemy, dup_mech))
+
+
+func clone_damage(enemy: Mech, clone: Mech):
+	enemy.mech_stats.damage(clone_dmg)
+	delete_clone(null, clone)
 
 
 func bounce_clone(clone: Mech):

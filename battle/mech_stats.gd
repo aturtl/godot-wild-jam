@@ -1,12 +1,12 @@
 class_name MechStats extends Node
 
 var actions = [
-	ActionIdle.new(),
-	ActionDodge.new(),
-	ActionJump.new(),
+	#ActionIdle.new(),
+	#ActionDodge.new(),
+	#ActionJump.new(),
 	ActionJumpAt.new(),
 	ActionBackup.new(),
-	ActionRandomDirection.new(),
+	#ActionRandomDirection.new(),
 	ActionTackle.new()
 ]
 

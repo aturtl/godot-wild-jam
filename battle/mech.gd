@@ -22,14 +22,14 @@ var initial_direction = Vector2.ZERO
 
 var shake_amount: float = 0.0
 
-@export var enemy: CharacterBody2D
+@export var enemy: Mech
 
 @onready var screen_shake: Sprite2D = %ScreenShake
 
 var mech_stats: MechStats
 var chassis_collision
 
-var do_overwrite_actions = true
+var do_overwrite_actions = false
 var overwrite_actions = [
 	ActionHover.new(),
 	ActionTackle.new(),
@@ -39,6 +39,7 @@ var overwrite_actions = [
 var perform_gravity = true
 
 signal hit_wall
+signal hit_enemy
 
 func _ready():
 	action_info.max_action_speed = max_action_speed
@@ -55,6 +56,7 @@ func _ready():
 	
 	action_info.mech = self
 	action_info.enemy_mech = enemy
+
 	
 	for behavior: BattleBehavior in mech_stats.attachment_behaviors:
 		behavior.on_creation()
@@ -68,6 +70,9 @@ func begin_action_timer():
 
 
 func _physics_process(delta):
+	action_info.is_enemy_collision = false
+	action_info.is_wall_collision = false
+	
 	loop_through_slide_collisions()
 	
 	print(name, action_info.move_velocity, velocity)
@@ -85,11 +90,19 @@ func _physics_process(delta):
 	
 	#screen_shake.material.set("shader_parameter/intensity",shake_amount)
 	
+	if action_info.rot_velocity == 0:
+		correct_orientation()
+	
+	
 	for behavior: BattleBehavior in mech_stats.attachment_behaviors:
 		behavior.passive()
 	
 	print(name, "sliding and moving", position)
 	move_and_slide()
+
+
+func correct_orientation():
+	rotation = lerp(rotation, 0.0, .035)
 
 
 func set_stats(stats: MechStats):
@@ -126,26 +139,39 @@ func handle_actions():
 		action_info.move_velocity = action_info.move_velocity.normalized()*max_action_speed
 
 
+func on_wall_collision(collision: KinematicCollision2D):
+	action_info.is_wall_collision = true
+	action_info.wall_collision_normal = collision.get_normal()
+	hit_wall.emit()
+
+
+func on_enemy_collision(collision: KinematicCollision2D):
+	action_info.enemy_collision_normal = collision.get_normal()
+	action_info.is_enemy_collision = true
+	action_info.move_velocity = collision.get_normal() * 100.0
+	hit_enemy.emit()
+
+
 func loop_through_slide_collisions():
 	var num = get_slide_collision_count()
 	
 	var wall_collision = false
-	
 	var wall_collision_normal: Vector2
+	
+	var enemy_collision = false
+	var enemy_collision_normal: Vector2
 	
 	for i in range(0, num):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		collision.get_collider_shape()
 		if collider is WallBody:
-			wall_collision_normal = collision.get_normal()
-			wall_collision = true
-	
-	if wall_collision:
-		hit_wall.emit()
-	
-	action_info.is_wall_collision = wall_collision
-	action_info.wall_collision_normal = wall_collision_normal
+			on_wall_collision(collision)
+		if collider == enemy:
+			on_enemy_collision(collision)
+		if collider is Attachment and collider.battle_behavior and collider.battle_behavior.mech == enemy:
+			collider.battle_behavior.on_contact()
+			on_enemy_collision(collision)
 
 
 func set_behavior_variables():
@@ -187,6 +213,11 @@ func _on_action_timeout():
 
 
 func randomize_action():
+	action_info.rot_velocity = 0
+	
+	if current_action:
+		current_action.action_ended(action_info)
+	
 	if mech_stats.actions.size() != 0:
 		var ran = randi_range(0,mech_stats.actions.size()-1)
 		current_action = mech_stats.actions[ran]

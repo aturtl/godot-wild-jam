@@ -2,7 +2,11 @@ class_name BBTailMace extends BattleBehavior
 
 
 func on_creation():
-	print("mech created")
+	for chain in attachment.get_children():
+		if chain is RigidBody2D:
+			var s: Sprite2D = chain.get_node("Sprite")
+			pass
+			
 
 
 func on_contact(): #not incl yet
