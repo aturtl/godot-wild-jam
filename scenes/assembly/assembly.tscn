@@ -16,6 +16,7 @@ radius = 1.41421
 
 [node name="Chassis" type="Node2D" parent="." unique_id=175706396]
 unique_name_in_owner = true
+position = Vector2(569, 329)
 script = ExtResource("1_ftk04")
 
 [node name="AttachmentsManager" type="Node" parent="." unique_id=1476605345 node_paths=PackedStringArray("head_list", "shell_list", "tail_list", "foot_list")]
@@ -36,11 +37,13 @@ hand_default = ExtResource("4_c1tg4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand/InteractArea" unique_id=543457512]
 shape = SubResource("CircleShape2D_3d87l")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=906572917]
-
 [node name="UI" type="Control" parent="." unique_id=666143073]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 569.0
+offset_top = 329.0
+offset_right = 569.0
+offset_bottom = 329.0
 
 [node name="AttachmentBtns" type="Control" parent="UI" unique_id=1548473520]
 anchors_preset = 0
@@ -172,10 +175,10 @@ texture = ExtResource("5_db37m")
 script = ExtResource("6_sfu06")
 
 [node name="btn_world" type="Button" parent="." unique_id=446842618]
-offset_left = -559.0
-offset_top = -310.0
-offset_right = -398.0
-offset_bottom = -272.0
+offset_left = 10.0
+offset_top = 19.0
+offset_right = 171.0
+offset_bottom = 57.0
 text = "World
 "
 script = ExtResource("7_wkeal")

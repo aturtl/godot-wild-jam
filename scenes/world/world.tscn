@@ -8,16 +8,15 @@
 [node name="World" type="Node2D" unique_id=227908816]
 
 [node name="btn_assembly" type="Button" parent="." unique_id=1838384579]
-offset_left = -573.0
-offset_top = -321.0
-offset_right = -412.0
-offset_bottom = -283.0
+offset_left = 28.0
+offset_top = 26.0
+offset_right = 189.0
+offset_bottom = 64.0
 text = "Assembly"
 script = ExtResource("1_sl2e5")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=74295983]
-
 [node name="WorldLevels" type="Node2D" parent="." unique_id=50817969]
+position = Vector2(601, 347)
 script = ExtResource("3_v5dby")
 
 [node name="factory1" type="Node2D" parent="WorldLevels" unique_id=704241437]

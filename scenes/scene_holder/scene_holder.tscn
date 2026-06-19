@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dnjkh64dknekk"]
+
+[ext_resource type="Script" uid="uid://bf6gm8qo401wi" path="res://scenes/scene_holder/scene_holder.gd" id="1_ttgl8"]
+[ext_resource type="Script" uid="uid://btmtou4spalfg" path="res://scenes/scene_holder/loading_screen.gd" id="2_dgol8"]
+[ext_resource type="Texture2D" uid="uid://bmskc4idnkqna" path="res://icon.svg" id="2_scd1s"]
+
+[node name="Tree2" type="Node2D" unique_id=1495002840]
+script = ExtResource("1_ttgl8")
+
+[node name="LoadingScreen" type="Node2D" parent="." unique_id=1781979277]
+z_index = 100
+script = ExtResource("2_dgol8")
+
+[node name="Slider" type="TextureRect" parent="LoadingScreen" unique_id=94630360]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_scd1s")
+expand_mode = 1
+
+[node name="Slider2" type="TextureRect" parent="LoadingScreen/Slider" unique_id=96482019]
+layout_mode = 0
+offset_left = -55.0
+offset_top = -49.0
+offset_right = 1212.115
+offset_bottom = 707.095
+texture = ExtResource("2_scd1s")
+expand_mode = 1
+
+[node name="Scene" type="Node2D" parent="." unique_id=776871889]

@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="godot wild jam"
-run/main_scene="uid://c8ei6mxeiwijv"
+run/main_scene="uid://dnjkh64dknekk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=120
 config/icon="res://icon.svg"
@@ -26,6 +26,7 @@ config/canvas_textures/default_texture_filter=0
 GlobalData="*res://data/global_data.gd"
 SESSIONSTATS="*res://data/stats/session_stats.gd"
 LevelInfo="*uid://dhat8quhyx1wq"
+SceneLoader="*uid://calxotxulqedv"
 
 [display]
 

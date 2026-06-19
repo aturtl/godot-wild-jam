@@ -1,7 +1,6 @@
 extends Button
 
 
-
 func _on_button_down():
 	var chasses: Array = SESSIONSTATS.stats.owned_chasses
 	
@@ -14,4 +13,5 @@ func _on_button_down():
 	
 	SESSIONSTATS.stats.equipped_chassis = chasses[loc]
 	
-	get_tree().reload_current_scene()
+	SceneLoader.instantiate_file_with_loading_screen(SceneLoader.scene_path)
+	print('done')

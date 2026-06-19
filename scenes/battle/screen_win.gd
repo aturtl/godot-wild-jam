@@ -16,7 +16,7 @@ func _ready():
 
 
 func return_home():
-	get_tree().change_scene_to_file("res://scenes/world/world.tscn")
+	SceneLoader.instantiate_file_with_loading_screen("res://scenes/world/world.tscn")
 
 
 func btn_tween(btn):

@@ -92,9 +92,6 @@ position = Vector2(0.207619, -0.550415)
 shape = SubResource("RectangleShape2D_a12nh")
 script = ExtResource("4_oiw7q")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1378595375]
-position = Vector2(576, 324)
-
 [node name="ScreenShake" type="Sprite2D" parent="." unique_id=1961084168]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_4k1nj")

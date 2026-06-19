@@ -100,3 +100,5 @@ GODOT WILD JAM DEVLOG
 		- Mirrored player mech
 		- Made movement feel more fluid
 		- Adjusted certain moves to be less static
+	- Created mock scene tree for loading scenes
+	- Loading screen
