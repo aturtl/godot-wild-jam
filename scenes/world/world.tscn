@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://c8ei6mxeiwijv"]
 
 [ext_resource type="Script" uid="uid://cjl24fr2nc7im" path="res://scenes/assembly/open_assembly.gd" id="1_sl2e5"]
-[ext_resource type="Script" uid="uid://26j5tknsk67j" path="res://scenes/battle/open_battle.gd" id="2_1fp7r"]
+[ext_resource type="Script" uid="uid://dmcm2nj5500f7" path="res://levels/load_world_levels.gd" id="3_v5dby"]
+[ext_resource type="Texture2D" uid="uid://bmskc4idnkqna" path="res://icon.svg" id="4_6m72w"]
+[ext_resource type="Script" uid="uid://cdkeullx7pahb" path="res://levels/world_level.gd" id="4_v5dby"]
 
 [node name="World" type="Node2D" unique_id=227908816]
 
@@ -13,15 +15,45 @@ offset_bottom = -283.0
 text = "Assembly"
 script = ExtResource("1_sl2e5")
 
-[node name="btn_battle" type="Button" parent="." unique_id=38861360]
-offset_left = -572.0
-offset_top = -275.0
-offset_right = -411.0
-offset_bottom = -237.0
-text = "Battle"
-script = ExtResource("2_1fp7r")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=74295983]
 
+[node name="WorldLevels" type="Node2D" parent="." unique_id=50817969]
+script = ExtResource("3_v5dby")
+
+[node name="factory1" type="Node2D" parent="WorldLevels" unique_id=704241437]
+position = Vector2(-287, 133)
+script = ExtResource("4_v5dby")
+
+[node name="Button" type="TextureButton" parent="WorldLevels/factory1" unique_id=647747065]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_6m72w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="factory2" type="Node2D" parent="WorldLevels" unique_id=367235604]
+position = Vector2(-115, 78)
+script = ExtResource("4_v5dby")
+
+[node name="Button" type="TextureButton" parent="WorldLevels/factory2" unique_id=1079722252]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_6m72w")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="button_down" from="btn_assembly" to="btn_assembly" method="_on_button_down"]
-[connection signal="button_down" from="btn_battle" to="btn_battle" method="_on_button_down"]

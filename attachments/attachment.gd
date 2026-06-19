@@ -6,9 +6,12 @@ class_name Attachment extends AnimatableBody2D
 @onready var drop_area: Area2D = $DropArea
 @onready var connect_to_info = $ConnectTo
 @onready var sprite = $Sprite
+@onready var back_sprite = $Sprite2
 
 var battle_behavior: BattleBehavior
 @export var assembly_behavior: AssemblyBehavior
+
+var mirrored = false
 
 enum Type {
 	UNASSIGNED,
@@ -90,6 +93,14 @@ func attach(slot: AttachmentSlot):
 	global_position = slot.global_position
 	rotation = slot.rotation
 	global_scale = slot.global_scale
+	if mirrored:
+		position.x *= -1
+		rotation *= -1
+		sprite.position.x *= -1
+		sprite.flip_h = true
+		if back_sprite:
+			back_sprite.position.x *= -1
+			back_sprite.flip_h = true
 	visible = true
 	
 

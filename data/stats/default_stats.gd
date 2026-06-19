@@ -27,3 +27,6 @@ class_name DefaultStats extends Resource
 	["file_shell", -1],
 	["apple_shell", -1]
 ]
+
+@export var unlocked_levels = []
+@export var completed_levels = []

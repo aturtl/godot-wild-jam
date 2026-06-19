@@ -31,13 +31,8 @@ position = Vector2(-39, 8)
 scale = Vector2(0.2, 0.2)
 type = 3
 
-[node name="AttachmentSlot6" parent="AttachmentSlots" unique_id=519952907 instance=ExtResource("4_lcmv3")]
+[node name="AttachmentSlot3" parent="AttachmentSlots" unique_id=519952907 instance=ExtResource("4_lcmv3")]
 position = Vector2(-23, 8)
-scale = Vector2(0.2, 0.2)
-type = 3
-
-[node name="AttachmentSlot7" parent="AttachmentSlots" unique_id=337889432 instance=ExtResource("4_lcmv3")]
-position = Vector2(-7, 8)
 scale = Vector2(0.2, 0.2)
 type = 3
 
@@ -50,6 +45,11 @@ type = 2
 position = Vector2(29, -32)
 scale = Vector2(0.5, 0.5)
 type = 1
+
+[node name="AttachmentSlot6" parent="AttachmentSlots" unique_id=337889432 instance=ExtResource("4_lcmv3")]
+position = Vector2(-7, 8)
+scale = Vector2(0.2, 0.2)
+type = 3
 
 [node name="ChassisCollision" type="CollisionShape2D" parent="." unique_id=1731867524]
 position = Vector2(-3.01981e-14, -9.44444)

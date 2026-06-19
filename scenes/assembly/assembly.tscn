@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ehl2mjgwbf1u" path="res://assembly/assembly_hand/assembly_hand.gd" id="3_q7ofn"]
 [ext_resource type="Texture2D" uid="uid://dqt8exjsvy4j1" path="res://assembly/assembly_hand/assembly_hand.png" id="4_c1tg4"]
 [ext_resource type="Texture2D" uid="uid://bmskc4idnkqna" path="res://icon.svg" id="5_db37m"]
+[ext_resource type="Script" uid="uid://bpjmu34p7g2fn" path="res://scenes/assembly/switch.gd" id="6_q7ofn"]
 [ext_resource type="Script" uid="uid://bn8xjmftaluc1" path="res://scenes/loading_screen.gd" id="6_sfu06"]
 [ext_resource type="Script" uid="uid://bu6tlhwbqh7th" path="res://scenes/world/open_world.gd" id="7_wkeal"]
 
@@ -152,6 +153,15 @@ offset_bottom = 94.0
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/AttachmentLayout/Foot/ListFoot" unique_id=1667142354]
 layout_mode = 2
 
+[node name="Switch" type="Button" parent="UI" unique_id=1727414416]
+layout_mode = 0
+offset_left = -148.0
+offset_top = -310.0
+offset_right = 149.0
+offset_bottom = -268.0
+text = "Switch"
+script = ExtResource("6_q7ofn")
+
 [node name="Attachments" type="Node2D" parent="." unique_id=2115735469]
 unique_name_in_owner = true
 
@@ -174,4 +184,5 @@ script = ExtResource("7_wkeal")
 [connection signal="button_down" from="UI/AttachmentBtns/BtnShell" to="AttachmentsManager" method="_on_shell_button_down"]
 [connection signal="button_down" from="UI/AttachmentBtns/BtnTail" to="AttachmentsManager" method="_on_tail_button_down"]
 [connection signal="button_down" from="UI/AttachmentBtns/BtnFoot" to="AttachmentsManager" method="_on_foot_button_down"]
+[connection signal="button_down" from="UI/Switch" to="UI/Switch" method="_on_button_down"]
 [connection signal="button_down" from="btn_world" to="btn_world" method="_on_button_down"]

@@ -93,3 +93,10 @@ GODOT WILD JAM DEVLOG
 	- Made initial_direction a variable of Action
 	- JSON info for enemies
 	- Win/lose conditions & Screens
+	- Chassis swapping
+	- Loadable Levels & Level Info
+	- World Levels (different behaviors based on locked/unlocked/completion)
+	- Battle Tweaks:
+		- Mirrored player mech
+		- Made movement feel more fluid
+		- Adjusted certain moves to be less static

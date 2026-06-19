@@ -8,14 +8,16 @@ var mech_stats: MechStats = MechStats.new()
 var spawn_position = position
 
 var is_player: bool
-var id = "debug_enemy1"
+var id = ""
 
 var chassis_name = ""
 var equipped_attachments = []
 
 var attach_behaviors = true
 
-@onready var enemy_data_path = "res://data/enemy_data/enemy_data.json"
+var mirrored = false
+
+@onready var enemy_data_path = "res://data/enemy_info.json"
 var e_data_json: Dictionary
 
 func setup_mech() -> Mech:
@@ -34,7 +36,7 @@ func setup_mech() -> Mech:
 
 
 func setup_e_data_json():
-	var file = FileAccess.open("res://data/enemy_data/enemy_data.json", FileAccess.READ)
+	var file = FileAccess.open(enemy_data_path, FileAccess.READ)
 	var data = JSON.parse_string(file.get_as_text())
 	e_data_json = data
 
@@ -61,6 +63,11 @@ func get_enemy_info():
 
 func load_chassis():
 	var ec: Chassis = load("res://chasses/types/"+chassis_name+".tscn").instantiate()
+	
+	if mirrored:
+		print("the mirroring")
+		ec.mirror()
+	
 	mech.add_child(mech_stats.equipped_chassis)
 	mech_stats.equipped_chassis = ec
 
@@ -85,6 +92,10 @@ func load_equipped_attachments():
 			if attach_behaviors:
 				set_behavior_from_attachment(dup_attachment)
 			
+			mech_stats.equipped_chassis.add_child(dup_attachment)
+			
+			if mirrored:
+				dup_attachment.mirrored = true
 			dup_attachment.add_collision_exception_with(mech)
 			dup_attachment.attach(mech_stats.equipped_chassis.get_slot_by_number(attached_to))
 		i += 1
@@ -94,7 +105,6 @@ func set_behavior_from_attachment(dup_attachment):
 	dup_attachment.add_battle_behavior()
 	dup_attachment.battle_behavior.modify_mech_stats(mech_stats)
 	mech_stats.attachment_behaviors.append(dup_attachment.battle_behavior)
-	mech_stats.equipped_chassis.add_child(dup_attachment)
 
 
 func parent_mech_items():

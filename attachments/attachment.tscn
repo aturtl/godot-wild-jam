@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://dxmrawxadbil3" path="res://attachments/connect_to.gd" id="4_i5r4i"]
 
 [node name="Attachment" type="AnimatableBody2D" unique_id=551987280]
+collision_layer = 0
+collision_mask = 0
 sync_to_physics = false
 script = ExtResource("1_vnavf")
 metadata/_custom_type_script = "uid://bcs6k6biogycg"

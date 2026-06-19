@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bb4og3gm0oc21"]
+
+[ext_resource type="Script" uid="uid://5023f285bvj6" path="res://levels/levels_holder.gd" id="1_7nsre"]
+[ext_resource type="Script" uid="uid://nygkegmarce3" path="res://levels/level.gd" id="1_cmi1o"]
+
+[node name="Levels" type="Node2D" unique_id=795558777]
+script = ExtResource("1_7nsre")
+
+[node name="factory1" type="Node" parent="." unique_id=1102410882]
+script = ExtResource("1_cmi1o")
+enemy_id = "factory1"
+location = "debug"
+metadata/_custom_type_script = "uid://nygkegmarce3"
+
+[node name="factory2" type="Node" parent="." unique_id=2147417647]
+script = ExtResource("1_cmi1o")
+enemy_id = "factory2"
+location = "debug"
+metadata/_custom_type_script = "uid://nygkegmarce3"

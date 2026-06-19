@@ -7,11 +7,11 @@ var gravity: float = -12
 
 var g_velocity = 0.0
 
-var bounce_velocity = Vector2(0,0)
+var bounce_velocity: Vector2 = Vector2(0,0)
 
 @onready var action_timer = Timer.new()
-var max_wait = 3.0
-var min_wait = 2.0
+var max_wait = 1.5
+var min_wait = .5
 
 var current_action: Action
 
@@ -43,6 +43,8 @@ signal hit_enemy
 signal death
 
 var looping = true
+
+var bounce_cd = 0
 
 func on_death():
 	looping = false
@@ -78,6 +80,11 @@ func begin_action_timer():
 
 
 func _physics_process(delta):
+	if bounce_cd > 0:
+		bounce_cd -= 1
+	
+	correct_orientation()
+	
 	action_info.is_enemy_collision = false
 	action_info.is_wall_collision = false
 	
@@ -87,6 +94,8 @@ func _physics_process(delta):
 	
 	if enemy and current_action:
 		handle_actions()
+	
+	bounce_velocity.y /= 1.2
 	
 	handle_gravity()
 	compile_velocities()
@@ -109,21 +118,16 @@ func set_stats(stats: MechStats):
 	mech_stats = stats
 
 
-#func wall_bounce():
-	#if is_on_wall(): #stop from sticking to walls
-		#initial_direction.x = -initial_direction.x
-		#action_info.move_velocity.x = action_info.move_velocity.x
-		#bounce_velocity = get_wall_normal()*max_action_speed*2.0
-		#bounce_velocity.y = -1400.0
-		#action_info.rot_velocity /= 2.0
-		#
-		#add_screen_shake()
-	#else:
-		#bounce_velocity /= 1.2
-
-
-func add_screen_shake():
-	shake_amount += 10.0
+func wall_bounce(normal):
+	if bounce_cd <= 0:
+		print("BOUNCE")
+		action_info.move_velocity.x = action_info.move_velocity.x
+		g_velocity = normal*max_action_speed
+		g_velocity.y = -500.0
+		bounce_velocity = normal * 600
+		bounce_velocity.y = -1400
+		action_info.rot_velocity /= 2.0
+		bounce_cd = 20
 
 
 func handle_actions():
@@ -143,6 +147,7 @@ func on_wall_collision(collision: KinematicCollision2D):
 	action_info.is_wall_collision = true
 	action_info.wall_collision_normal = collision.get_normal()
 	hit_wall.emit()
+	wall_bounce(collision.get_normal())
 
 
 func on_enemy_collision(collision: KinematicCollision2D):
@@ -150,6 +155,7 @@ func on_enemy_collision(collision: KinematicCollision2D):
 	action_info.is_enemy_collision = true
 	action_info.move_velocity = collision.get_normal() * 100.0
 	hit_enemy.emit()
+	wall_bounce(collision.get_normal())
 
 
 func loop_through_slide_collisions():

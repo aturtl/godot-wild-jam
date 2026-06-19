@@ -1,5 +1,7 @@
 extends Node
 
+@export var mech_scale = .5
+
 @export var display_action_statuses = false
 
 @onready var p_mech_setup = MechSetup.new()
@@ -27,6 +29,8 @@ var winner: String = ""
 var shake_amount: int = 0
 
 func _ready():
+	read_level_info()
+
 	start_battle()
 	
 	if display_action_statuses:
@@ -38,6 +42,10 @@ func _physics_process(delta):
 	if shake_amount > 0:
 		shake_amount = max(0,shake_amount - 1)
 		screen_shake.material.set("shader_parameter/intensity",shake_amount)
+
+
+func read_level_info():
+	e_mech_setup.id = LevelInfo.enemy_id
 
 
 func start_battle():
@@ -63,6 +71,8 @@ func setup_displays():
 
 
 func build_mechs():
+	p_mech_setup.mirrored = true
+	
 	p_mech_setup.is_player = true
 	
 	p_mech = create_mech(p_mech_setup, p_spawnpoint.position)
@@ -80,6 +90,8 @@ func build_mechs():
 	p_mech.enemy = e_mech
 	e_mech.enemy = p_mech
 	
+	p_mech.scale = Vector2(mech_scale,mech_scale)
+	e_mech.scale = Vector2(mech_scale,mech_scale)
 
 
 func spawn_mechs():

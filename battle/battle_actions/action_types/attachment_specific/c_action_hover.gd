@@ -16,7 +16,6 @@ func action_looped():
 	var dir = Vector2.from_angle(rot-PI/2)
 	
 	action_info.jump_velocity = dir*hover_speed
-	action_info.move_velocity = Vector2.ZERO
 	action_info.rot_velocity /= 2.0
 	action_info.g_velocity.y = 0
 	
