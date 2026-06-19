@@ -6,6 +6,8 @@ class_name AttachmentSlot extends Node2D
 var number: int
 var connected_attachment: Attachment = null
 
+var save_changes: bool = false
+
 func _process(delta):
 	queue_redraw()
 
@@ -26,13 +28,14 @@ func set_new_attachment(attach: Attachment):
 		connected_attachment.detach()
 	connected_attachment = attach
 	connected_attachment.detached.connect(on_attachment_detach)
-	var attachment_array = SESSIONSTATS.stats.owned_attachments[attach.owned_index]
-	attachment_array[1] = number
-	SESSIONSTATS.save_stats()
+	if save_changes:
+		var attachment_array = SESSIONSTATS.stats.owned_attachments[attach.owned_index]
+		attachment_array[1] = number
+		SESSIONSTATS.save_stats()
 
 func on_attachment_detach():
 	connected_attachment.detached.disconnect(on_attachment_detach)
-	if connected_attachment:
+	if save_changes and connected_attachment:
 		var attachment_array = SESSIONSTATS.stats.owned_attachments[connected_attachment.owned_index]
 		attachment_array[1] = -1
 		SESSIONSTATS.save_stats()

@@ -1,0 +1,14 @@
+{
+	"debug_enemy1": {
+		"name": "Antony",
+		"chassis": "ant_chassis",
+		"attachments": [
+			["dragon_head", 0],
+			["dragon_tail", 4],
+			["dragon_foot", 1],
+			["dragon_foot", 3],
+			["dragon_foot", 2],
+			["apple_shell", 5],
+		],
+	}
+}

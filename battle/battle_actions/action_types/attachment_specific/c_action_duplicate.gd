@@ -37,7 +37,7 @@ func create_clone():
 	action_info.mech.add_child(life_timer)
 	action_info.mech.add_child(redirect_timer)
 	
-	dup_mech.action_action_info.move_velocity = Vector2.from_angle(randf_range(0,2*PI)) * 444.0
+	dup_mech.action_info.move_velocity = Vector2.from_angle(randf_range(0,2*PI)) * 444.0
 	
 	redirect_timer.start(redirect_time)
 	life_timer.start(clone_life_time)
@@ -54,11 +54,11 @@ func clone_damage(enemy: Mech, clone: Mech):
 
 
 func bounce_clone(clone: Mech):
-	clone.action_action_info.move_velocity = -clone.action_action_info.move_velocity
+	clone.action_info.move_velocity = -clone.action_info.move_velocity
 
 
 func redirect_clone(redirect_timer: Timer, clone: Mech):
-	clone.action_action_info.move_velocity = clone.position.direction_to(clone.enemy.position) * 800.0
+	clone.action_info.move_velocity = clone.position.direction_to(clone.enemy.position) * 800.0
 	redirect_timer.queue_free()
 
 

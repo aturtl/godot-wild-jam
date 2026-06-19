@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://b8w0r3n5d05j2" path="res://attachments/areas/drop_area.gd" id="3_cfh1h"]
 [ext_resource type="Script" uid="uid://dxmrawxadbil3" path="res://attachments/connect_to.gd" id="4_i5r4i"]
 
-[node name="Attachment" type="StaticBody2D" unique_id=537584536]
+[node name="Attachment" type="AnimatableBody2D" unique_id=551987280]
+sync_to_physics = false
 script = ExtResource("1_vnavf")
 metadata/_custom_type_script = "uid://bcs6k6biogycg"
 

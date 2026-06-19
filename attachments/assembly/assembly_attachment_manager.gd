@@ -12,6 +12,7 @@ var equipped_chassis: Chassis
 func initial_setup():
 	await self.ready
 	equipped_chassis = %Chassis.get_child(0)
+	equipped_chassis.enable_saving()
 	set_other_lists_invisible(head_list)
 	load_owned_attachments()
 
@@ -30,6 +31,7 @@ func load_owned_attachments():
 			if attached_to != -1:
 				#equip
 				dup_attachment.attach(equipped_chassis.get_slot_by_number(attached_to))
+				print("Attachment: ", attachment_array[0], " ", attached_to)
 			assign_attachment_to_proper_list(dup_attachment)
 		i += 1
 

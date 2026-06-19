@@ -40,6 +40,14 @@ var perform_gravity = true
 
 signal hit_wall
 signal hit_enemy
+signal death
+
+var looping = true
+
+func on_death():
+	looping = false
+	death.emit()
+
 
 func _ready():
 	action_info.max_action_speed = max_action_speed
@@ -47,7 +55,9 @@ func _ready():
 	if !mech_stats:
 		mech_stats = MechStats.new()
 		mech_stats.name = "DEFAULT"
-		
+	
+	mech_stats.death.connect(on_death)
+	
 	if do_overwrite_actions:
 		mech_stats.actions = overwrite_actions
 	
@@ -80,10 +90,6 @@ func _physics_process(delta):
 	
 	handle_gravity()
 	compile_velocities()
-	
-	shake_amount = max(0,shake_amount - 1)
-	
-	#screen_shake.material.set("shader_parameter/intensity",shake_amount)
 	
 	if action_info.rot_velocity == 0:
 		correct_orientation()

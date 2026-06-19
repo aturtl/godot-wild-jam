@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccpudey38trpo"]
+[gd_scene format=3 uid="uid://ccpudey38trpo"]
 
 [ext_resource type="Script" uid="uid://dtf28fwr5cvso" path="res://chasses/chassis.gd" id="1_bnbbm"]
 [ext_resource type="Script" uid="uid://c1x455wt77cge" path="res://attachments/slots/attachment_slots_holder.gd" id="2_8gqy2"]
@@ -9,10 +9,10 @@
 radius = 14.4444
 height = 90.0
 
-[node name="DefaultChassis" type="Node2D"]
+[node name="DefaultChassis" type="Node2D" unique_id=636867847]
 script = ExtResource("1_bnbbm")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=197273614]
 z_index = 8
 position = Vector2(-13, -24)
 scale = Vector2(8, 8)
@@ -20,29 +20,29 @@ texture = ExtResource("2_bnbbm")
 vframes = 8
 frame = 2
 
-[node name="AttachmentSlots" type="Node2D" parent="."]
+[node name="AttachmentSlots" type="Node2D" parent="." unique_id=1837133766]
 script = ExtResource("2_8gqy2")
 
-[node name="AttachmentSlot" parent="AttachmentSlots" instance=ExtResource("2_qnurq")]
+[node name="AttachmentSlot" parent="AttachmentSlots" unique_id=1672469824 instance=ExtResource("2_qnurq")]
 position = Vector2(-62, -8)
 
-[node name="AttachmentSlot2" parent="AttachmentSlots" instance=ExtResource("2_qnurq")]
+[node name="AttachmentSlot2" parent="AttachmentSlots" unique_id=184774479 instance=ExtResource("2_qnurq")]
 position = Vector2(-47, 7)
 type = 3
 
-[node name="AttachmentSlot3" parent="AttachmentSlots" instance=ExtResource("2_qnurq")]
+[node name="AttachmentSlot3" parent="AttachmentSlots" unique_id=745693839 instance=ExtResource("2_qnurq")]
 position = Vector2(49, 7)
 type = 3
 
-[node name="AttachmentSlot4" parent="AttachmentSlots" instance=ExtResource("2_qnurq")]
+[node name="AttachmentSlot4" parent="AttachmentSlots" unique_id=709534555 instance=ExtResource("2_qnurq")]
 position = Vector2(67, 5)
 type = 2
 
-[node name="AttachmentSlot5" parent="AttachmentSlots" instance=ExtResource("2_qnurq")]
+[node name="AttachmentSlot5" parent="AttachmentSlots" unique_id=426217041 instance=ExtResource("2_qnurq")]
 position = Vector2(-6, 9)
 type = 1
 
-[node name="ChassisCollision" type="CollisionShape2D" parent="."]
+[node name="ChassisCollision" type="CollisionShape2D" parent="." unique_id=1001613223]
 position = Vector2(-3.01981e-14, 17)
 rotation = 1.5708
 scale = Vector2(-0.988064, 1.63753)

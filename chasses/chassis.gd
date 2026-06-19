@@ -7,3 +7,7 @@ func get_slot_count():
 
 func get_slot_by_number(n):
 	return slots.get_slot_by_number(n)
+
+func enable_saving():
+	for slot: AttachmentSlot in slots.get_children():
+		slot.save_changes = true

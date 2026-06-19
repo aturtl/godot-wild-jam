@@ -6,6 +6,8 @@ Main Goals:
 	Music & Sound Design
 	Write a basic narrative
 
+6/18: Given time limitations, I might just have to focus on the battle and build mechanics
+
 Roadmap (rough):
 	6/12: Documentation, Assembly Mechanics
 	6/13: Basic sprites (chassis, attachments)

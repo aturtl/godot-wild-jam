@@ -20,7 +20,7 @@ shader_parameter/intensity = 0.0
 
 [node name="Battle" type="Node2D" unique_id=610513562]
 
-[node name="BattleStateManager" type="Node" parent="." unique_id=1229100516 node_paths=PackedStringArray("p_spawnpoint", "e_spawnpoint", "p_healthbar", "e_healthbar", "win_screen", "lose_screen", "screen_shake")]
+[node name="BattleStateManager" type="Node" parent="." unique_id=1229100516 node_paths=PackedStringArray("p_spawnpoint", "e_spawnpoint", "p_healthbar", "e_healthbar", "win_screen")]
 unique_name_in_owner = true
 script = ExtResource("1_h0kxc")
 display_action_statuses = true
@@ -29,8 +29,6 @@ e_spawnpoint = NodePath("../EnemySpawnpoint")
 p_healthbar = NodePath("../HealthBars/PlayerHealthBar")
 e_healthbar = NodePath("../HealthBars/EnemyHealthBar")
 win_screen = NodePath("../WinScreen")
-lose_screen = NodePath("../LoseScreen")
-screen_shake = NodePath("../ScreenShake")
 
 [node name="Ground" type="Sprite2D" parent="." unique_id=121820980]
 position = Vector2(556, 619)

@@ -24,6 +24,8 @@ var equipped_chassis: Chassis
 
 var health_bar: HealthBar
 
+signal death
+
 func append_action(action, weight): #weight unused currently
 	actions.append(action)
 
@@ -37,6 +39,8 @@ func damage(dmg: float):
 	base_modifiers.hp -= calculate_damage(dmg)
 	health_bar.current_health = base_modifiers.hp
 	health_bar.update()
+	if base_modifiers.hp <= 0:
+		emit_signal("death")
 
 
 func add_modifier(nm: String, value: float):

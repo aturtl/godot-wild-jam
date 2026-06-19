@@ -1,4 +1,4 @@
-class_name Attachment extends StaticBody2D
+class_name Attachment extends AnimatableBody2D
 
 @export var control_marker: Control
 @export var z_index_override: int = -1
