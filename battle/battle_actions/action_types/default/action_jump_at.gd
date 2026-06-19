@@ -2,16 +2,16 @@ class_name ActionJumpAt extends Action
 
 var dmg = 2.0
 
-func action_began(info: ActionInfo) -> ActionInfo:
-	info.g_velocity = Vector2(0,0)
-	info.jump_velocity = Vector2(0,1200.0)
-	info.move_velocity = info.direction_to_enemy*64.0
-	return info
+func action_began():
+	action_info.g_velocity = Vector2(0,0)
+	action_info.jump_velocity = Vector2(0,1200.0)
+	action_info.move_velocity = action_info.direction_to_enemy*64.0
+	return action_info
 
-func action_looped(info: ActionInfo) -> ActionInfo:
-	if info.is_enemy_collision:
+func action_looped():
+	if action_info.is_enemy_collision:
 		pass
-	return info
+	return action_info
 
 
 func get_debug_name() -> String:

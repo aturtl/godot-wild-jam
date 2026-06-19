@@ -1,18 +1,16 @@
 class_name ActionBackup extends Action
 
-var initial_direction = Vector2(0,0)
+
+func action_began():
+	initial_direction = -action_info.direction_to_enemy
+	return action_info
 
 
-func action_began(info: ActionInfo) -> ActionInfo:
-	initial_direction = -info.direction_to_enemy
-	return info
-
-
-func action_looped(info: ActionInfo) -> ActionInfo:
-	if info.is_wall_collision:
-		initial_direction = wall_bounce(info, initial_direction)
-	info.move_velocity.x -= initial_direction.x*12.0
-	return info
+func action_looped():
+	if action_info.is_wall_collision:
+		wall_bounce()
+	action_info.move_velocity.x -= initial_direction.x*12.0
+	return action_info
 
 
 func get_debug_name() -> String:

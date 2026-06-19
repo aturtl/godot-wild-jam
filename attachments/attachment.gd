@@ -1,4 +1,4 @@
-class_name Attachment extends AnimatableBody2D
+class_name Attachment extends StaticBody2D
 
 @export var control_marker: Control
 @export var z_index_override: int = -1
@@ -65,7 +65,6 @@ func add_battle_behavior():
 	if !battle_behavior:
 		for child in get_children():
 			if child is BattleBehavior:
-				print("FOUND BEHAVIOR: ", child.name)
 				battle_behavior = child
 		if !battle_behavior:
 			battle_behavior = BattleBehavior.new()
@@ -84,22 +83,18 @@ func replace_slot(slot: AttachmentSlot):
 
 
 func attach(slot: AttachmentSlot):
-	print("ATTACHED")
 	if not slot:
 		return
-	print("ATTACHED CONTINUE")
 	attached = true
 	replace_slot(slot)
 	global_position = slot.global_position
 	rotation = slot.rotation
 	global_scale = slot.global_scale
 	visible = true
-	print("ATTACHED CONTINUE")
 	
 
 
 func detach():
-	print("DETACHING")
 	attached = false
 	detached.emit()
 	rotation = 0

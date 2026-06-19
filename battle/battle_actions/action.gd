@@ -1,24 +1,31 @@
 class_name Action extends Node
 
 
-func action_began(info: ActionInfo) -> ActionInfo:
-	return info
+var action_info: ActionInfo
+var initial_direction: Vector2
 
 
-func action_looped(info: ActionInfo) -> ActionInfo:
-	return info
+func action_began():
+	pass
 
 
-func action_ended(info: ActionInfo) -> ActionInfo:
-	return info
+func action_setup(info: ActionInfo):
+	action_info = info
 
 
-func wall_bounce(info: ActionInfo, direction: Vector2):
-	direction.x = -direction.x
-	info.move_velocity = -info.move_velocity
-	info.g_velocity = Vector2(0, -200)
-	info.rot_velocity /= 2.0
-	return direction
+func action_looped():
+	pass
+
+
+func action_ended():
+	pass
+
+
+func wall_bounce():
+	initial_direction.x = -initial_direction.x
+	action_info.move_velocity = -action_info.move_velocity
+	action_info.g_velocity = Vector2(0, -600)
+	action_info.rot_velocity /= 2.0
 
 
 func get_debug_name() -> String:

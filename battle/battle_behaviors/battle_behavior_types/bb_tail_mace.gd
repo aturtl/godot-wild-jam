@@ -6,15 +6,11 @@ func on_creation():
 		if chain is RigidBody2D:
 			var s: Sprite2D = chain.get_node("Sprite")
 			pass
-			
-
-
-func on_contact(): #not incl yet
-	print("mech contacted")
 
 
 func passive():
-	print("mech passive") #swing speed determines damage
+	#swing speed determines damage
+	pass
 
 
 func modify_mech_stats(mech_stats: MechStats):

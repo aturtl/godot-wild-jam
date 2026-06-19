@@ -86,3 +86,8 @@ GODOT WILD JAM DEVLOG
 		- Whip
 		- Chomp
 	- Added damage for Duplicate, Tackle, Whip, Chomp
+	- Added collisions for attachments
+
+6/18:
+	- Made action_info a variable of Action rather than returning it
+	- Made initial_direction a variable of Action

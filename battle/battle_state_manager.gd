@@ -42,7 +42,6 @@ func build_mechs():
 	p_mech.name = "PlayerMech"
 	e_mech.name = "EnemyMech"
 	
-	print("ADDED")
 	p_mech.enemy = e_mech
 	e_mech.enemy = p_mech
 

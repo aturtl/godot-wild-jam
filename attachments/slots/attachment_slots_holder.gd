@@ -12,3 +12,4 @@ func get_slot_by_number(n):
 	for slot: AttachmentSlot in get_children():
 		if slot.number == n:
 			return slot
+			

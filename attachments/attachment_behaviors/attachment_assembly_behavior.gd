@@ -27,7 +27,6 @@ func manage_dragging_and_dropping():
 		drop()
 	
 	if !dragging and !attachment.attached and control_marker:
-		print("CHANGE ATTACHMENT POS")
 		attachment.position = control_marker.global_position
 		attachment.visible = control_marker.is_visible_in_tree()
 

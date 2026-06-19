@@ -6,16 +6,16 @@ var enemy_mech: Mech
 var attachment: Attachment
 
 func on_creation():
-	print("mech created")
+	pass
 
 
 func on_contact(): #not incl yet
-	print("mech contacted")
+	pass
 
 
 func passive():
-	print("mech passive")
+	pass
 
 
 func modify_mech_stats(mech_stats: MechStats):
-	print("mech modified")
+	pass

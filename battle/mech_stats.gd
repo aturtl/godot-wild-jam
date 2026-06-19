@@ -34,7 +34,6 @@ func calculate_damage(dmg: float) -> float:
 
 
 func damage(dmg: float):
-	print(calculate_damage(dmg))
 	base_modifiers.hp -= calculate_damage(dmg)
 	health_bar.current_health = base_modifiers.hp
 	health_bar.update()

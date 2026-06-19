@@ -44,10 +44,7 @@ signal hit_enemy
 func _ready():
 	action_info.max_action_speed = max_action_speed
 	
-	print(name, "Ready")
-	
 	if !mech_stats:
-		print("Added to", name)
 		mech_stats = MechStats.new()
 		mech_stats.name = "DEFAULT"
 		
@@ -61,6 +58,7 @@ func _ready():
 	for behavior: BattleBehavior in mech_stats.attachment_behaviors:
 		behavior.on_creation()
 	
+	setup_actions()
 	set_behavior_variables()
 	
 func begin_action_timer():
@@ -74,9 +72,6 @@ func _physics_process(delta):
 	action_info.is_wall_collision = false
 	
 	loop_through_slide_collisions()
-	
-	print(name, action_info.move_velocity, velocity)
-	print(get_parent())
 	
 	handle_behavior_passives()
 	
@@ -97,7 +92,6 @@ func _physics_process(delta):
 	for behavior: BattleBehavior in mech_stats.attachment_behaviors:
 		behavior.passive()
 	
-	print(name, "sliding and moving", position)
 	move_and_slide()
 
 
@@ -131,7 +125,7 @@ func handle_actions():
 	
 	action_info.direction_to_enemy = position.direction_to(enemy.position).normalized()
 	
-	current_action.action_looped(action_info)
+	current_action.action_looped()
 	
 	action_info.rot_velocity = clamp(action_info.rot_velocity,-max_rotate_speed,max_rotate_speed)
 	
@@ -169,9 +163,15 @@ func loop_through_slide_collisions():
 			on_wall_collision(collision)
 		if collider == enemy:
 			on_enemy_collision(collision)
+					
 		if collider is Attachment and collider.battle_behavior and collider.battle_behavior.mech == enemy:
 			collider.battle_behavior.on_contact()
 			on_enemy_collision(collision)
+
+
+func setup_actions():
+	for action: Action in mech_stats.actions:
+		action.action_setup(action_info)
 
 
 func set_behavior_variables():
@@ -183,7 +183,6 @@ func set_behavior_variables():
 
 func handle_behavior_passives():
 	var bbs = mech_stats.attachment_behaviors
-	print(bbs, "H7")
 	for bb: BattleBehavior in bbs:
 		bb.passive()
 
@@ -191,7 +190,6 @@ func handle_behavior_passives():
 func compile_velocities():
 	velocity = action_info.move_velocity + Vector2.DOWN*action_info.g_velocity + action_info.jump_velocity + bounce_velocity
 	rotation += action_info.rot_velocity
-	print(velocity)
 
 
 func handle_gravity():
@@ -213,15 +211,14 @@ func _on_action_timeout():
 
 
 func randomize_action():
-	action_info.rot_velocity = 0
 	
 	if current_action:
-		current_action.action_ended(action_info)
+		current_action.action_ended()
 	
 	if mech_stats.actions.size() != 0:
 		var ran = randi_range(0,mech_stats.actions.size()-1)
 		current_action = mech_stats.actions[ran]
-		action_info = current_action.action_began(action_info)
+		current_action.action_began()
 	
 	if current_action:
 		action_changed.emit(current_action.get_debug_name())
