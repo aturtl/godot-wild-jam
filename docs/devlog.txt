@@ -118,3 +118,4 @@ GODOT WILD JAM DEVLOG
 	- GlobalCamera class (remains between scenes)
 	- CameraFocus class
 	- Camera follows Map Turtle
+	- Map Turtle Footstep sounds

@@ -43,7 +43,6 @@ func set_global_zoom(z: Vector2):
 
 
 func _process(delta):
-	print(local_children)
 	for child in local_children:
 		child.position = self.position - get_viewport_rect().size/2.0
 		child.reparent(local_node)

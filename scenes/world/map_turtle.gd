@@ -13,7 +13,7 @@ var state = State.STAND
 
 
 var current_walk_tween: Tween
-
+var last_frame = 0
 
 var current_world_level: WorldLevel
 @onready var level_menu = %LevelMenu
@@ -24,7 +24,7 @@ var current_world_level: WorldLevel
 func _ready():
 	SceneLoader.camera.follow(self)
 	initial_position()
-	
+
 
 func initial_position():
 	var lv = world_levels.last_level_completed
@@ -74,3 +74,14 @@ func walk_to_world_level(lv: WorldLevel):
 	await walk_tween.finished
 	if walk_tween:
 		arrived_at_world_level(lv)
+
+
+func frame_changed():
+	if frame == 1:
+		SceneLoader.play_sound("res://sound/walk.wav",0.0,-5.5)
+
+
+func _process(delta):
+	if frame != last_frame:
+		last_frame = frame
+		frame_changed()
