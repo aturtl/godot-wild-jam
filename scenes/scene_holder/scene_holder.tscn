@@ -27,3 +27,7 @@ texture = ExtResource("2_scd1s")
 expand_mode = 1
 
 [node name="Scene" type="Node2D" parent="." unique_id=776871889]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1178410322]
+
+[node name="GlobalSound" type="Node2D" parent="." unique_id=967233190]

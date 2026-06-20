@@ -116,5 +116,7 @@ func get_slot() -> AttachmentSlot:
 	for area in drop_area.get_overlapping_areas():
 		if area is SlotArea:
 			if connect_to_info.connect_to == area.get_parent().type:
+				SceneLoader.play_sound("res://sound/success.wav")
 				return area.get_parent()
+	SceneLoader.play_sound("res://sound/drop2.wav", 0.0, 6)
 	return null

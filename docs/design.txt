@@ -143,7 +143,7 @@ Mechanics in relation to Dynamics and Aesthetics: (With the time constraint, a l
 	
 	Battle:
 		M: Screen rumbles when battle opens or contact is made
-		A: Adds to intensity
+		A: Adds to intensity 
 		
 		M: Enemy drops in from the right with a zoom-in and a FIGHT sound
 		D: Player understands target and has a moment to gauge the intensity of the fight

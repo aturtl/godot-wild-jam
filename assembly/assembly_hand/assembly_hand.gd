@@ -32,4 +32,6 @@ func mouse_interact_check():
 			if dist < closest_dist:
 				closest_dist = dist
 				closest_area = area
+		if closest_area:
+			SceneLoader.play_sound("res://sound/selection2.wav")
 	GlobalData.selected_mouse_area = closest_area

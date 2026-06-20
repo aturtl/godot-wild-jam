@@ -13,5 +13,7 @@ func _on_button_down():
 	
 	SESSIONSTATS.stats.equipped_chassis = chasses[loc]
 	
+	SceneLoader.play_sound("res://sound/weird.wav")
+	SceneLoader.play_sound("res://sound/car_unlock.mp3",.6)
 	SceneLoader.instantiate_file_with_loading_screen(SceneLoader.scene_path)
 	print('done')

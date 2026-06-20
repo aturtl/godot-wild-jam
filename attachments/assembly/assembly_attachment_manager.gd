@@ -7,6 +7,8 @@ extends Node
 @export var tail_list: Control
 @export var foot_list: Control
 
+var sound = "res://sound/selection2.wav"
+
 var equipped_chassis: Chassis
 
 func initial_setup():
@@ -69,19 +71,23 @@ func set_other_lists_invisible(list):
 
 func _on_head_button_down():
 	head_list.visible = true
+	SceneLoader.play_sound(sound)
 	set_other_lists_invisible(head_list)
 
 
 func _on_shell_button_down():
 	shell_list.visible = true
+	SceneLoader.play_sound(sound)
 	set_other_lists_invisible(shell_list)
 
 
 func _on_tail_button_down():
 	tail_list.visible = true
+	SceneLoader.play_sound(sound)
 	set_other_lists_invisible(tail_list)
 
 
 func _on_foot_button_down():
 	foot_list.visible = true
+	SceneLoader.play_sound(sound)
 	set_other_lists_invisible(foot_list)

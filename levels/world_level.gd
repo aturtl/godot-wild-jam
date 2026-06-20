@@ -11,6 +11,7 @@ func open_level_menu():
 	
 
 func load_level_scene():
+	SceneLoader.play_sound("res://sound/success.wav")
 	LevelInfo.enemy_id = level.enemy_id
 	#level.location
 	#get_tree().change_scene_to_file("res://scenes/battle/battle.tscn")
