@@ -20,24 +20,28 @@ func action_began():
 
 
 func create_clone():
-	var dup_mech: Mech = action_info.mech.duplicate()
+	var dup_mech: Mech = action_info.mech.duplicate() # one day, I will fix you clone. Just not at 6 am running on no sleep
 	
+	dup_mech.is_clone = true
 	dup_mech.modulate = Color(.5,.5,.5,.7)
 	
 	dup_mech.collision_layer = 0
-	dup_mech.collision_mask = 0b10001
+	dup_mech.collision_mask = 0b00000
+	
 	
 	dup_mech.perform_gravity = false
 	dup_mech.enemy = action_info.mech.enemy
 	
-	action_info.mech.get_parent().add_child(dup_mech)
+	GlobalBattle.battle_holder.get_node("Projectiles").add_child(dup_mech)
+	
+	dup_mech.global_position = action_info.mech.global_position
 	
 	var life_timer = Timer.new()
 	var redirect_timer = Timer.new()
 	action_info.mech.add_child(life_timer)
 	action_info.mech.add_child(redirect_timer)
 	
-	dup_mech.action_info.move_velocity = Vector2.from_angle(randf_range(0,2*PI)) * 444.0
+	dup_mech.velocity = Vector2.from_angle(randf_range(0,2*PI)) * 700.0
 	
 	redirect_timer.start(redirect_time)
 	life_timer.start(clone_life_time)
@@ -54,11 +58,11 @@ func clone_damage(enemy: Mech, clone: Mech):
 
 
 func bounce_clone(clone: Mech):
-	clone.action_info.move_velocity = -clone.action_info.move_velocity
+	clone.velocity = -clone.action_info.move_velocity
 
 
 func redirect_clone(redirect_timer: Timer, clone: Mech):
-	clone.action_info.move_velocity = clone.position.direction_to(clone.enemy.position) * 800.0
+	clone.velocity = clone.position.direction_to(clone.enemy.position) * 800.0
 	redirect_timer.queue_free()
 
 

@@ -8,6 +8,7 @@ var can_damage = false
 func enemy_bounce():
 	wall_bounce()
 	if can_damage:
+		print("damaged")
 		action_info.enemy_mech.mech_stats.damage(dmg)
 		can_damage = false
 

@@ -136,3 +136,9 @@ GODOT WILD JAM DEVLOG
 		- Made levels rely on prerequisites instead of storing unlocked levels
 		- Back, Next, Try Again functionalities for battles
 		- Nicer health bars
+		- Chassis modifiers
+		- Functionality and visuals for fireballs, bullet, heal
+		- Adjusted mech stats (and fixed crucial bug)
+		- Jump At does damage
+		- Added basic levels to play through
+		- Tutorial hint at start

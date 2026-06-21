@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bqxhbbey8eu7v"]
+
+[ext_resource type="Texture2D" uid="uid://luv23sd7b3ti" path="res://sprites/bullet.png" id="1_gswc5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v8qja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gswc5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bullet" type="Node2D" unique_id=450497871]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1638035733]
+position = Vector2(0, -2.9999998)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_v8qja")

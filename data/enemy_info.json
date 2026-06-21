@@ -24,13 +24,47 @@
 	},
 	"factory2": {
 		"name": "turtle?",
+		"chassis": "turtle_chassis",
+		"attachments": [
+			["dragon_head", 0],
+			["turtle_legs", 1],
+			["turtle_legs", 2],
+			["turtle_tail", 3],
+			["turtle_shell", 4],
+		],
+	},
+	"factory3": {
+		"name": "dragon",
 		"chassis": "dragon_chassis",
 		"attachments": [
 			["dragon_head", 0],
 			["dragon_foot", 1],
 			["dragon_foot", 2],
 			["dragon_tail", 3],
-			["turtle_shell", 4],
+			["file_shell", 4],
 		],
 	},
+	"factory4": {
+		"name": "insect turtle",
+		"chassis": "ant_chassis",
+		"attachments": [
+			["turtle_head", 0],
+			["turtle_legs", 1],
+			["turtle_legs", 2],
+			["scorpion_tail", 3],
+			["apple_shell", 4],
+			["dragon_foot", 5]
+		],
+	},
+	"factory5": {
+		"name": "tank",
+		"chassis": "turtle_chassis",
+		"attachments": [
+			["turtle_head", 0],
+			["turtle_legs", 1],
+			["tank_wheel", 2],
+			["scorpion_tail", 3],
+			["tank_shell", 4],
+		],
+	}
 }

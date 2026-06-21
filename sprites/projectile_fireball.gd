@@ -1,0 +1,46 @@
+class_name ProjectileFireball extends Node2D
+
+
+@onready var fireball_scene = load("res://sprites/fireball.tscn").instantiate()
+var sprite: AnimatedSprite2D
+
+
+var dir: Vector2
+var mag: float
+var enemy: Mech
+
+
+func _init(pos: Vector2, direction: Vector2, mag: float, enemy: Mech):
+	self.dir = direction
+	self.mag = mag
+	self.enemy = enemy
+	global_position = pos
+	
+
+
+func _ready():
+	add_child(fireball_scene)
+	sprite = fireball_scene.get_node("Sprite")
+	sprite.rotation = Vector2(0,1).angle_to(dir) - PI/2.0
+	sprite.play()
+	add_child(sprite)
+
+
+func _physics_process(delta):
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(position, position + dir*mag)
+	query.collide_with_areas = false
+	query.collide_with_bodies = true
+	query.collision_mask = 0b1
+	var result = space_state.intersect_ray(query)
+	
+	if result and result.collider:
+		print("COLLISION")
+		if result.collider == enemy:
+			print("ENEMY COLLISION")
+			enemy.mech_stats.damage(1.8)
+		sprite.play("burst")
+		
+		queue_free()
+	
+	position += dir*mag

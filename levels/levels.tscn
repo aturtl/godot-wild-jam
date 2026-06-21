@@ -13,9 +13,33 @@ enemy_id = "factory1"
 location = "debug"
 metadata/_custom_type_script = "uid://nygkegmarce3"
 
-[node name="factory2" type="Node" parent="." unique_id=2147417647 node_paths=PackedStringArray("prerequisite")]
+[node name="factory2" type="Node" parent="." unique_id=2147417647 node_paths=PackedStringArray("next_level", "prerequisite")]
 script = ExtResource("1_cmi1o")
+next_level = NodePath("../factory3")
 enemy_id = "factory2"
 location = "debug"
 prerequisite = NodePath("../factory1")
+metadata/_custom_type_script = "uid://nygkegmarce3"
+
+[node name="factory3" type="Node" parent="." unique_id=1112496667 node_paths=PackedStringArray("next_level", "prerequisite")]
+script = ExtResource("1_cmi1o")
+next_level = NodePath("../factory4")
+enemy_id = "factory3"
+location = "debug"
+prerequisite = NodePath("../factory2")
+metadata/_custom_type_script = "uid://nygkegmarce3"
+
+[node name="factory4" type="Node" parent="." unique_id=48837895 node_paths=PackedStringArray("next_level", "prerequisite")]
+script = ExtResource("1_cmi1o")
+next_level = NodePath("../factory5")
+enemy_id = "factory4"
+location = "debug"
+prerequisite = NodePath("../factory3")
+metadata/_custom_type_script = "uid://nygkegmarce3"
+
+[node name="factory5" type="Node" parent="." unique_id=1341287004 node_paths=PackedStringArray("prerequisite")]
+script = ExtResource("1_cmi1o")
+enemy_id = "factory5"
+location = "debug"
+prerequisite = NodePath("../factory4")
 metadata/_custom_type_script = "uid://nygkegmarce3"

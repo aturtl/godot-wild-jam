@@ -11,10 +11,10 @@ var actions = [
 ]
 
 var base_modifiers = {
-	hp = 10,
-	def = 5,
-	spd = 8,
-	air_spd = 6,
+	hp = 10.0,
+	def = 5.0,
+	spd = 8.0,
+	air_spd = 6.0,
 }
 
 var attachment_behaviors = []
@@ -30,9 +30,15 @@ func append_action(action, weight): #weight unused currently
 	actions.append(action)
 
 
+func calculate_speed_multiplier(floored: bool):
+	var spd = base_modifiers.spd if floored else base_modifiers.air_spd
+		
+	return (spd-8)/6+1
+
+
 func calculate_damage(dmg: float) -> float:
 	var b = base_modifiers
-	return dmg/(b.def*1.5)
+	return dmg/(b.def*.2)
 
 
 func damage(dmg: float):
@@ -45,7 +51,7 @@ func damage(dmg: float):
 
 func add_modifier(nm: String, value: float):
 	if nm in base_modifiers:
-		base_modifiers[nm] = value
+		base_modifiers[nm] += value
 
 
 func get_modifier(nm: String):

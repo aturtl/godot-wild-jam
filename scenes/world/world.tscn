@@ -94,12 +94,12 @@ script = ExtResource("3_v5dby")
 [node name="factory1" type="Control" parent="WorldLevels" unique_id=420405975]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -287.0
-offset_top = 133.0
-offset_right = -287.0
-offset_bottom = 133.0
+offset_left = -289.0
+offset_top = 149.0
+offset_right = -289.0
+offset_bottom = 149.0
 script = ExtResource("4_v5dby")
-level_display = "1"
+level_display = "1-1"
 name_display = "The beginning"
 metadata/_custom_type_script = "uid://cdkeullx7pahb"
 
@@ -132,8 +132,8 @@ offset_top = 78.0
 offset_right = -115.0
 offset_bottom = 78.0
 script = ExtResource("4_v5dby")
-level_display = "2"
-name_display = "The mutant"
+level_display = "1-2"
+name_display = "Turtle?"
 metadata/_custom_type_script = "uid://cdkeullx7pahb"
 
 [node name="Button" type="TextureButton" parent="WorldLevels/factory2" unique_id=1079722252]
@@ -157,6 +157,105 @@ sprite_frames = SubResource("SpriteFrames_srmg5")
 animation = &"unlocked"
 frame_progress = 0.46865258
 
+[node name="factory3" type="Control" parent="WorldLevels" unique_id=549122748]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 79.0
+offset_top = -59.0
+offset_right = 79.0
+offset_bottom = -59.0
+script = ExtResource("4_v5dby")
+level_display = "1-3"
+name_display = "That's... not a turtle"
+metadata/_custom_type_script = "uid://cdkeullx7pahb"
+
+[node name="Button" type="TextureButton" parent="WorldLevels/factory3" unique_id=856704203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="WorldLevels/factory3/Button" unique_id=1252577746]
+position = Vector2(28, 1)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_srmg5")
+animation = &"unlocked"
+frame_progress = 0.46865258
+
+[node name="factory4" type="Control" parent="WorldLevels" unique_id=1046680399]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 23.0
+offset_top = -243.0
+offset_right = 23.0
+offset_bottom = -243.0
+script = ExtResource("4_v5dby")
+level_display = "1-4"
+name_display = "I can't even see this guy"
+metadata/_custom_type_script = "uid://cdkeullx7pahb"
+
+[node name="Button" type="TextureButton" parent="WorldLevels/factory4" unique_id=254911421]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="WorldLevels/factory4/Button" unique_id=1575210762]
+position = Vector2(28, 1)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_srmg5")
+animation = &"unlocked"
+frame_progress = 0.46865258
+
+[node name="factory5" type="Control" parent="WorldLevels" unique_id=1079780345]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 111.0
+offset_top = -363.0
+offset_right = 111.0
+offset_bottom = -363.0
+script = ExtResource("4_v5dby")
+level_display = "1-5"
+name_display = "TANK"
+metadata/_custom_type_script = "uid://cdkeullx7pahb"
+
+[node name="Button" type="TextureButton" parent="WorldLevels/factory5" unique_id=1352432224]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="WorldLevels/factory5/Button" unique_id=1574143690]
+position = Vector2(28, 1)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_srmg5")
+animation = &"unlocked"
+frame_progress = 0.46865258
+
 [node name="MapTurtle" type="AnimatedSprite2D" parent="." unique_id=1521150692]
 unique_name_in_owner = true
 position = Vector2(483, 324)
@@ -171,6 +270,7 @@ script = ExtResource("7_bq33v")
 metadata/_custom_type_script = "uid://c4277y7n1ja4i"
 
 [node name="Start" type="TextureRect" parent="LevelMenu" unique_id=957978580]
+z_index = 12
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -184,6 +284,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StartButton" type="TextureButton" parent="LevelMenu/Start" unique_id=813305243]
+z_index = 12
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -199,11 +300,13 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Fight" type="Sprite2D" parent="LevelMenu/Start/StartButton" unique_id=1363396227]
+z_index = 12
 position = Vector2(188, 66)
 scale = Vector2(8, 8)
 texture = ExtResource("7_gb53w")
 
 [node name="LevelHeader" type="TextureRect" parent="LevelMenu" unique_id=1658655750]
+z_index = 12
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -217,16 +320,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Text" type="RichTextLabel" parent="LevelMenu/LevelHeader" unique_id=1915923501]
+z_index = 12
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 7.0
-offset_top = 433.0
+offset_top = 9.0
 offset_right = 7.0
-offset_bottom = 433.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
@@ -238,15 +343,16 @@ script = ExtResource("7_j2gmx")
 metadata/_custom_type_script = "uid://c4277y7n1ja4i"
 
 [node name="btn_assembly" type="TextureButton" parent="Buttons" unique_id=1798210877]
+z_index = 12
 offset_left = 24.000002
 offset_top = 24.000023
 offset_right = 408.0
 offset_bottom = 128.00003
 scale = Vector2(0.6000005, 0.6000005)
 script = ExtResource("1_sl2e5")
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Buttons/btn_assembly" unique_id=1968610133]
+z_index = 12
 layout_mode = 0
 offset_left = -64.0
 offset_top = -200.0
@@ -265,6 +371,18 @@ scale = Vector2(11.680002, 6.04)
 mouse_filter = 2
 color = Color(0.8088749, 0.81431997, 0.86159235, 1)
 metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2013847467]
+offset_left = -200.0
+offset_top = 472.0
+offset_right = 400.0
+offset_bottom = 1072.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Tutorial:
+Click ASSEMBLY to assemble your mech
+Press FIGHT! to start a battle with your mech
+Click the dots on the map to progress (when you unlock them)"
 
 [connection signal="button_down" from="LevelMenu/Start/StartButton" to="WorldLevels" method="_on_start_button_down"]
 [connection signal="button_down" from="Buttons/btn_assembly" to="Buttons/btn_assembly" method="_on_button_down"]

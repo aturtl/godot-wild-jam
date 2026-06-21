@@ -10,7 +10,7 @@ func action_began():
 
 func action_looped():
 	if action_info.is_enemy_collision:
-		pass
+		action_info.enemy_mech.mech_stats.damage(dmg)
 	return action_info
 
 

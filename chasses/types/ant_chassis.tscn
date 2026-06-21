@@ -9,7 +9,7 @@
 radius = 14.4444
 height = 90.0
 
-[node name="DefaultChassis" type="Node2D" unique_id=312174071]
+[node name="ant_chassis" type="Node2D" unique_id=312174071]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ik7uh")
 

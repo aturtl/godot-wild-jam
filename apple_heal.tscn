@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bhaiw48d77nv1"]
+
+[ext_resource type="Script" uid="uid://cofaw1p2xowb6" path="res://apple_heal.gd" id="1_p7324"]
+[ext_resource type="Texture2D" uid="uid://ywsxbjone2yf" path="res://sprites/heal.png" id="2_j61vh"]
+
+[node name="AppleHeal" type="Node2D" unique_id=982206885]
+script = ExtResource("1_p7324")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=434253320]
+scale = Vector2(8, 8)
+texture = ExtResource("2_j61vh")

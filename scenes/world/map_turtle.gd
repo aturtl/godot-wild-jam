@@ -49,7 +49,7 @@ func set_state(state: int):
 func arrived_at_world_level(lv: WorldLevel):
 	current_world_level = lv
 	set_state(State.STAND)
-	level_menu.set_text("Level "+lv.level_display + ": " + current_world_level.name_display)
+	level_menu.set_text(lv.level_display + ": " + current_world_level.name_display)
 	
 
 

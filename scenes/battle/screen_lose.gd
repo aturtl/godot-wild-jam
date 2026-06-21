@@ -9,7 +9,7 @@ var is_active = false
 @onready var btn_again: TextureButton =  buttons.get_node("Again")
 
 func _ready():
-	#visible = false
+	visible = false
 	cover.position.y = -900
 	buttons.position.y = 648
 	pass

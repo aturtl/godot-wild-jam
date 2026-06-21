@@ -222,7 +222,7 @@ offset_right = -446.0
 offset_bottom = -294.0
 scale = Vector2(55.082, 33.968445)
 mouse_filter = 2
-color = Color(0.28235295, 0.28235295, 0.28235295, 1)
+color = Color(0.1761375, 0.29825035, 0.37868646, 1)
 
 [connection signal="button_down" from="ScreenUI/BtnInteract" to="ScreenUI/BtnInteract" method="_on_button_down"]
 [connection signal="button_down" from="ScreenUI/Switch" to="ScreenUI/Switch" method="_on_button_down"]

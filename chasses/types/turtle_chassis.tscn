@@ -9,7 +9,7 @@
 radius = 14.4444
 height = 90.0
 
-[node name="DefaultChassis" type="Node2D" unique_id=636867847]
+[node name="turtle_chassis" type="Node2D" unique_id=636867847]
 script = ExtResource("1_bnbbm")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=197273614]
@@ -46,9 +46,9 @@ type = 1
 position = Vector2(6, -24)
 
 [node name="ChassisCollision" type="CollisionShape2D" parent="." unique_id=1001613223]
-position = Vector2(-3.01981e-14, 17)
+position = Vector2(3.01981e-14, -19)
 rotation = 1.5708
-scale = Vector2(-0.988064, 1.63753)
+scale = Vector2(3.411933, 1.63753)
 shape = SubResource("CapsuleShape2D_g4m66")
 
 [editable path="AttachmentSlots/AttachmentSlot5"]

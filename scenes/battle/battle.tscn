@@ -48,11 +48,11 @@ scale = Vector2(23.48, 10.88)
 texture = ExtResource("1_0yh6x")
 
 [node name="PlayerSpawnpoint" type="Node2D" parent="." unique_id=1084930132]
-position = Vector2(155, 181)
+position = Vector2(155, 538)
 script = ExtResource("6_fh7rg")
 
 [node name="EnemySpawnpoint" type="Node2D" parent="." unique_id=1336594375]
-position = Vector2(866, 163)
+position = Vector2(866, 520)
 script = ExtResource("6_fh7rg")
 
 [node name="PlayerActionsDebug" type="RichTextLabel" parent="." unique_id=1653510318]
@@ -164,6 +164,36 @@ scale = Vector2(234.64001, 50.36001)
 mouse_filter = 2
 color = Color(0.24705882, 0.27058825, 0.5411765, 1)
 
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1281479135]
+z_index = -1
+offset_left = -3807.9998
+offset_top = -2408.0002
+offset_right = -3767.9998
+offset_bottom = -2368.0002
+scale = Vector2(81.56001, 79.12)
+mouse_filter = 2
+color = Color(0.24705882, 0.27058825, 0.5411765, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=524937736]
+z_index = -1
+offset_left = -975.99927
+offset_top = -3640.0
+offset_right = -935.99927
+offset_bottom = -3600.0
+scale = Vector2(81.56001, 79.12)
+mouse_filter = 2
+color = Color(0.24705882, 0.27058825, 0.5411765, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=215097129]
+z_index = -1
+offset_left = 1816.0002
+offset_top = -1759.9995
+offset_right = 1856.0002
+offset_bottom = -1719.9995
+scale = Vector2(81.56001, 79.12)
+mouse_filter = 2
+color = Color(0.24705882, 0.27058825, 0.5411765, 1)
+
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=1116835650]
 z_index = -12
 offset_left = -3895.9998
@@ -253,6 +283,7 @@ offset_bottom = 648.0
 pivot_offset_ratio = Vector2(0.1, 0.1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CameraUI/WinScreen/Cover" unique_id=1569513773]
+z_index = 1
 layout_mode = 0
 offset_top = 152.0
 offset_right = 1152.0
@@ -260,6 +291,16 @@ offset_bottom = 252.0
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]YOU WON![/center]"
+
+[node name="TextureRect2" type="TextureRect" parent="CameraUI/WinScreen/Cover" unique_id=1112917272]
+layout_mode = 0
+offset_left = -144.0
+offset_top = -592.0
+offset_right = 1156.0
+offset_bottom = 408.0
+scale = Vector2(1.1466515, 1.3411418)
+texture = ExtResource("12_icoan")
+expand_mode = 1
 
 [node name="Buttons" type="Control" parent="CameraUI/WinScreen" unique_id=108107633]
 z_index = 1
@@ -288,6 +329,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="LoseScreen" type="Control" parent="CameraUI" unique_id=900643283]
+visible = false
 z_index = 50
 layout_mode = 3
 anchors_preset = 15
@@ -314,12 +356,13 @@ offset_bottom = 196.0
 theme_override_font_sizes/normal_font_size = 64
 text = "Better luck next time..."
 
-[node name="TextureRect2" type="TextureRect" parent="CameraUI/LoseScreen/Cover" unique_id=932981606]
+[node name="TextureRect3" type="TextureRect" parent="CameraUI/LoseScreen/Cover" unique_id=1492635388]
 layout_mode = 0
-offset_left = -72.0
-offset_top = -296.0
-offset_right = 1228.0
-offset_bottom = 704.0
+offset_left = -144.0
+offset_top = -592.0
+offset_right = 1156.0
+offset_bottom = 408.0
+scale = Vector2(1.1466515, 1.3411418)
 texture = ExtResource("12_icoan")
 expand_mode = 1
 
@@ -351,3 +394,5 @@ stretch_mode = 0
 
 [node name="Levels" parent="." unique_id=795558777 instance=ExtResource("16_n6gaa")]
 unique_name_in_owner = true
+
+[node name="Projectiles" type="Node2D" parent="." unique_id=1108469789]

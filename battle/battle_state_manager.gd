@@ -30,11 +30,13 @@ var winner: String = ""
 
 var shake_amount: int = 0
 
-var last_zoom_factor = Vector2(1.0,1.0)
-var max_zoom_factor = Vector2(1.2,1.2)
+var last_zoom_factor = Vector2(.8,.8)
+var max_zoom_factor = Vector2(.8,.8)
 var zoom_scale = .6
 
 func _ready():
+	GlobalBattle.battle_holder = get_parent()
+	
 	read_level_info()
 
 	build_mechs()
@@ -55,7 +57,7 @@ func _ready():
 func _physics_process(delta):
 	if camera_focus:
 		camera_focus.position = camera_focus.position.lerp((p_mech.position+e_mech.position)/2.0+Vector2.UP*100.0,.045)
-		var zoom_factor = 1/(abs(p_mech.position.x-e_mech.position.x)/get_viewport_rect().size.x)
+		var zoom_factor = 1/(p_mech.position.distance_to(e_mech.position)/get_viewport_rect().size.x)
 		zoom_factor *= zoom_scale
 		var lerped_zoom_factor = last_zoom_factor.lerp(Vector2.ONE*zoom_factor, .02)
 		lerped_zoom_factor = lerped_zoom_factor.min(max_zoom_factor)

@@ -10,7 +10,7 @@
 radius = 40.9413
 height = 222.295
 
-[node name="DefaultChassis" type="Node2D" unique_id=331960377]
+[node name="dragon_chassis" type="Node2D" unique_id=331960377]
 script = ExtResource("1_xkiue")
 
 [node name="AttachmentSlots" type="Node2D" parent="." unique_id=1706212294]

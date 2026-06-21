@@ -48,9 +48,24 @@ var bounce_cd = 0
 
 var activated = false
 
+var is_clone = false
+
 func on_death():
 	looping = false
 	death.emit()
+
+
+func chassis_modifiers():
+	if !mech_stats.equipped_chassis:
+		return
+	if mech_stats.equipped_chassis.name == "dragon_chassis":
+		gravity /= 2
+		mech_stats.add_modifier("hp", 3)
+		mech_stats.add_modifier("spd", -1)
+	if mech_stats.equipped_chassis.name == "ant_chassis":
+		gravity += 2
+		mech_stats.add_modifier("hp", -3)
+		mech_stats.add_modifier("spd", 3)
 
 
 func _ready():
@@ -73,7 +88,12 @@ func _ready():
 		behavior.on_creation()
 	
 	setup_actions()
+	
+	#if is_clone:
+		#return
+	
 	set_behavior_variables()
+	chassis_modifiers()
 
 
 func activate():
@@ -88,6 +108,11 @@ func begin_action_timer():
 
 
 func _physics_process(delta):
+	if is_clone:
+		loop_through_slide_collisions()
+		move_and_slide()
+		return
+	
 	if !activated:
 		return
 	
@@ -211,7 +236,8 @@ func handle_behavior_passives():
 
 
 func compile_velocities():
-	velocity = action_info.move_velocity + Vector2.DOWN*action_info.g_velocity + action_info.jump_velocity + bounce_velocity
+	velocity = + action_info.move_velocity*mech_stats.calculate_speed_multiplier(is_on_floor()) + Vector2.DOWN*action_info.g_velocity + action_info.jump_velocity + bounce_velocity
+	
 	rotation += action_info.rot_velocity
 
 
