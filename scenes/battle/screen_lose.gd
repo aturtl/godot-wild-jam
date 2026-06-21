@@ -6,7 +6,7 @@ var is_active = false
 @onready var cover = $Cover
 @onready var buttons = $Buttons
 @onready var btn_return: TextureButton = buttons.get_node("Return")
-@onready var btn_next: TextureButton =  buttons.get_node("Continue")
+@onready var btn_again: TextureButton =  buttons.get_node("Again")
 
 func _ready():
 	#visible = false
@@ -15,7 +15,14 @@ func _ready():
 	pass
 
 
+func try_again():
+	SceneLoader.play_music("res://music/chainsaws.mp3", .5, -.3)
+	SceneLoader.instantiate_file_with_loading_screen_shown("res://scenes/battle/battle.tscn")
+
+
 func return_home():
+	SceneLoader.play_sound("res://sound/selection.wav")
+	SceneLoader.play_music("res://music/sunshine.mp3")
 	SceneLoader.instantiate_file_with_loading_screen("res://scenes/world/world.tscn")
 
 
@@ -26,9 +33,8 @@ func btn_tween(btn):
 
 
 func activate():
-	await ready
-	
 	btn_return.button_down.connect(return_home)
+	btn_again.button_down.connect(try_again)
 	
 	print("Win Screen Activated")
 	visible = true
@@ -46,7 +52,7 @@ func activate():
 	btn_tween(btn_return)
 	
 	await get_tree().create_timer(.1).timeout
-	btn_tween(btn_next)
+	btn_tween(btn_again)
 	
 	print("finished")
 	pass

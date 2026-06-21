@@ -32,6 +32,7 @@ func load_owned_attachments():
 			var attached_to = attachment_array[1]
 			if attached_to != -1:
 				#equip
+				%Attachments.add_child(dup_attachment)
 				dup_attachment.attach(equipped_chassis.get_slot_by_number(attached_to))
 				print("Attachment: ", attachment_array[0], " ", attached_to)
 			assign_attachment_to_proper_list(dup_attachment)
@@ -55,7 +56,7 @@ func add_attachment_to_list(list,attachment: Attachment):
 	marker.custom_minimum_size = Vector2(100,94)
 	list.find_child("HBoxContainer").add_child(marker)
 	attachment.control_marker = marker
-	%Attachments.add_child(attachment)
+	attachment.control_marker.add_child(attachment)
 	
 
 func set_other_lists_invisible(list):

@@ -22,3 +22,5 @@ script = ExtResource("3_cfh1h")
 
 [node name="ConnectTo" type="Node2D" parent="." unique_id=942248921]
 script = ExtResource("4_i5r4i")
+
+[node name="Center" type="Node2D" parent="." unique_id=93064845]

@@ -1,13 +1,54 @@
 [gd_scene format=3 uid="uid://c8ei6mxeiwijv"]
 
 [ext_resource type="Script" uid="uid://cjl24fr2nc7im" path="res://scenes/assembly/open_assembly.gd" id="1_sl2e5"]
+[ext_resource type="Texture2D" uid="uid://ddmh4qpj0fcb8" path="res://sprites/world_level.png" id="3_1yooq"]
 [ext_resource type="Script" uid="uid://dmcm2nj5500f7" path="res://levels/load_world_levels.gd" id="3_v5dby"]
-[ext_resource type="Texture2D" uid="uid://bmskc4idnkqna" path="res://icon.svg" id="4_6m72w"]
 [ext_resource type="Script" uid="uid://cdkeullx7pahb" path="res://levels/world_level.gd" id="4_v5dby"]
 [ext_resource type="Texture2D" uid="uid://bcholeerhrnps" path="res://sprites/map_turtle.png" id="5_v5dby"]
 [ext_resource type="Script" uid="uid://cghbnyhyc64e" path="res://scenes/world/map_turtle.gd" id="6_t5ptc"]
 [ext_resource type="Script" uid="uid://3jo4l0cw1fpr" path="res://scenes/world/level_menu.gd" id="7_bq33v"]
+[ext_resource type="Texture2D" uid="uid://cxjvw7nvn8dqy" path="res://sprites/fight.png" id="7_gb53w"]
 [ext_resource type="Script" uid="uid://c4277y7n1ja4i" path="res://scenes/world/camera_ui.gd" id="7_j2gmx"]
+[ext_resource type="Texture2D" uid="uid://bl4ruec2ju84s" path="res://sprites/assembly_button.png" id="10_gb53w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb53w"]
+atlas = ExtResource("3_1yooq")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qq27"]
+atlas = ExtResource("3_1yooq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlabj"]
+atlas = ExtResource("3_1yooq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srmg5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb53w")
+}],
+"loop": true,
+"name": &"completed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qq27")
+}],
+"loop": true,
+"name": &"locked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlabj")
+}],
+"loop": true,
+"name": &"unlocked",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2gmx"]
 atlas = ExtResource("5_v5dby")
@@ -73,9 +114,15 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_6m72w")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="WorldLevels/factory1/Button" unique_id=1502116771]
+position = Vector2(28, 1)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_srmg5")
+animation = &"unlocked"
+frame_progress = 0.28716123
 
 [node name="factory2" type="Control" parent="WorldLevels" unique_id=1103343948]
 layout_mode = 3
@@ -100,17 +147,22 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_6m72w")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="WorldLevels/factory2/Button" unique_id=1498255132]
+position = Vector2(28, 1)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_srmg5")
+animation = &"unlocked"
+frame_progress = 0.46865258
 
 [node name="MapTurtle" type="AnimatedSprite2D" parent="." unique_id=1521150692]
 unique_name_in_owner = true
 position = Vector2(483, 324)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_j2gmx")
-animation = &"walk"
-frame_progress = 0.40419438
+animation = &"stand"
 script = ExtResource("6_t5ptc")
 
 [node name="LevelMenu" type="Node2D" parent="." unique_id=801998378]
@@ -126,8 +178,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 281.0
 offset_top = 524.0
-offset_right = 871.0
-offset_bottom = 625.0
+offset_right = 281.0
+offset_bottom = 524.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -136,11 +188,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 159.0
+offset_top = -12.0
+offset_right = 527.0
+offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_6m72w")
+scale = Vector2(0.76000243, 0.76000243)
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Fight" type="Sprite2D" parent="LevelMenu/Start/StartButton" unique_id=1363396227]
+position = Vector2(188, 66)
+scale = Vector2(8, 8)
+texture = ExtResource("7_gb53w")
 
 [node name="LevelHeader" type="TextureRect" parent="LevelMenu" unique_id=1658655750]
 anchors_preset = 8
@@ -160,8 +221,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 433.0
+offset_right = 7.0
+offset_bottom = 433.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center]LEVEL INFORMATION[/center]"
 
@@ -170,13 +237,34 @@ physics_interpolation_mode = 2
 script = ExtResource("7_j2gmx")
 metadata/_custom_type_script = "uid://c4277y7n1ja4i"
 
-[node name="btn_assembly" type="Button" parent="Buttons" unique_id=1838384579]
-offset_left = 28.0
-offset_top = 26.0
-offset_right = 189.0
-offset_bottom = 64.0
-text = "Assembly"
+[node name="btn_assembly" type="TextureButton" parent="Buttons" unique_id=1798210877]
+offset_left = 24.000002
+offset_top = 24.000023
+offset_right = 408.0
+offset_bottom = 128.00003
+scale = Vector2(0.6000005, 0.6000005)
 script = ExtResource("1_sl2e5")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Buttons/btn_assembly" unique_id=1968610133]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -200.0
+offset_bottom = -136.0
+scale = Vector2(8, 8)
+texture = ExtResource("10_gb53w")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1682563814]
+z_index = -12
+offset_left = -10688.0
+offset_top = -3064.0
+offset_right = -8768.0
+offset_bottom = -1984.0
+scale = Vector2(11.680002, 6.04)
+mouse_filter = 2
+color = Color(0.8088749, 0.81431997, 0.86159235, 1)
+metadata/_edit_lock_ = true
 
 [connection signal="button_down" from="LevelMenu/Start/StartButton" to="WorldLevels" method="_on_start_button_down"]
 [connection signal="button_down" from="Buttons/btn_assembly" to="Buttons/btn_assembly" method="_on_button_down"]

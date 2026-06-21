@@ -51,15 +51,15 @@ radius = 21.023796
 [sub_resource type="CircleShape2D" id="CircleShape2D_v34og"]
 radius = 29.0172
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mof4j"]
+radius = 26.0768
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ordi7"]
 radius = 15.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ordi7"]
 radius = 30.0
 height = 96.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_mof4j"]
-radius = 26.0768
 
 [node name="AttachmentsData" type="Node2D" unique_id=1618873691]
 metadata/_edit_vertical_guides_ = [-264.0]
@@ -121,6 +121,9 @@ position = Vector2(-32, -21)
 position = Vector2(-1, -1)
 polygon = PackedVector2Array(56, -16, 59, 40, 10, 54, -32, 17, -161, 7, -183, -27, -136, -28, -123, -46, -89, -56, -62, -67, -9, -71, -9, -60, -33, -43, -25, -34)
 
+[node name="Center" parent="dragon_head" index="3" unique_id=93064845]
+position = Vector2(-8, -6)
+
 [node name="SpecialAnimate" type="Node2D" parent="dragon_head" unique_id=992775002]
 position = Vector2(-445, 117)
 script = ExtResource("4_ow60t")
@@ -153,6 +156,9 @@ polygon = PackedVector2Array(-5, -26, -27, -2, 21, 96, 61, 105, 93, 95, 106, 80,
 
 [node name="ConnectTo" parent="dragon_foot" index="2" unique_id=942248921]
 connect_to = 3
+
+[node name="Center" parent="dragon_foot" index="3" unique_id=93064845]
+position = Vector2(26, 41)
 
 [node name="Sprite2" type="Sprite2D" parent="dragon_foot" unique_id=1680667019]
 z_index = 7
@@ -222,6 +228,9 @@ polygon = PackedVector2Array(-49, -29, -48, 0, -35, 22, -12, 32, 92, 2, 203, -50
 [node name="ConnectTo" parent="dragon_tail" index="2" unique_id=942248921]
 connect_to = 2
 
+[node name="Center" parent="dragon_tail" index="3" unique_id=93064845]
+position = Vector2(15, 1)
+
 [node name="BBTailDragon" type="Node" parent="dragon_tail" unique_id=1409333355]
 script = ExtResource("6_2ma1s")
 metadata/_custom_type_script = "uid://ufjdvopudvyp"
@@ -246,6 +255,9 @@ position = Vector2(-31, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="turtle_head/DropArea" index="0" unique_id=1736744057]
 shape = SubResource("CircleShape2D_ow60t")
+
+[node name="Center" parent="turtle_head" index="3" unique_id=93064845]
+position = Vector2(-32, -7)
 
 [node name="BBHeadTurtle" type="Node" parent="turtle_head" unique_id=1930611459]
 script = ExtResource("8_b4dc7")
@@ -275,6 +287,9 @@ polygon = PackedVector2Array(-80, 42, 80, 42, 80, -6, 16, -54, -24, -54, -80, -6
 [node name="ConnectTo" parent="turtle_shell" index="2" unique_id=942248921]
 connect_to = 1
 
+[node name="Center" parent="turtle_shell" index="3" unique_id=93064845]
+position = Vector2(2, -42)
+
 [node name="BBShellTurtle" type="Node" parent="turtle_shell" unique_id=595053294]
 script = ExtResource("9_bu2dk")
 metadata/_custom_type_script = "uid://bay312bmkxeln"
@@ -302,6 +317,9 @@ shape = SubResource("CircleShape2D_lverr")
 [node name="ConnectTo" parent="apple_shell" index="2" unique_id=942248921]
 connect_to = 1
 
+[node name="Center" parent="apple_shell" index="3" unique_id=93064845]
+position = Vector2(0, -21)
+
 [node name="BBShellApple" type="Node" parent="apple_shell" unique_id=1105912649]
 script = ExtResource("11_acr78")
 metadata/_custom_type_script = "uid://boq8yoex38jd2"
@@ -328,6 +346,9 @@ polygon = PackedVector2Array(-104, 32, -70, 50, 75, 50, 75, -60, 51, -68, -17, -
 
 [node name="ConnectTo" parent="file_shell" index="2" unique_id=942248921]
 connect_to = 1
+
+[node name="Center" parent="file_shell" index="3" unique_id=93064845]
+position = Vector2(0, -51)
 
 [node name="BBShellFile" type="Node" parent="file_shell" unique_id=117215916]
 script = ExtResource("13_iyl2u")
@@ -357,6 +378,9 @@ polygon = PackedVector2Array(-12, -19, 13, -19, 13, -14, 10.125, -14, 10, 5, 7, 
 
 [node name="ConnectTo" parent="tank_shell" index="2" unique_id=942248921]
 connect_to = 1
+
+[node name="Center" parent="tank_shell" index="3" unique_id=93064845]
+position = Vector2(0, -56)
 
 [node name="BBShellTank" type="Node" parent="tank_shell" unique_id=334473529]
 script = ExtResource("15_fqr8a")
@@ -417,6 +441,9 @@ shape = SubResource("CircleShape2D_jdisx")
 [node name="ConnectTo" parent="turtle_legs" index="2" unique_id=942248921]
 connect_to = 3
 
+[node name="Center" parent="turtle_legs" index="3" unique_id=93064845]
+position = Vector2(0, 17)
+
 [node name="Sprite2" type="Sprite2D" parent="turtle_legs" unique_id=409313619]
 z_index = 7
 position = Vector2(33, -31)
@@ -451,6 +478,9 @@ polygon = PackedVector2Array(-16, -16, 16, -16, 0, 16, -16, 16)
 [node name="ConnectTo" parent="turtle_tail" index="2" unique_id=942248921]
 connect_to = 2
 
+[node name="Center" parent="turtle_tail" index="3" unique_id=93064845]
+position = Vector2(12, 0)
+
 [node name="BBTailTurtle" type="Node" parent="turtle_tail" unique_id=1639579823]
 script = ExtResource("18_oxqlx")
 metadata/_custom_type_script = "uid://dj5mfjxakbfb5"
@@ -475,6 +505,9 @@ shape = SubResource("CircleShape2D_v34og")
 [node name="ConnectTo" parent="mace_tail" index="2" unique_id=942248921]
 connect_to = 2
 
+[node name="Center" parent="mace_tail" index="3" unique_id=93064845]
+position = Vector2(8, -4)
+
 [node name="chained" type="Node2D" parent="mace_tail" unique_id=309107269]
 position = Vector2(35, -4)
 
@@ -482,7 +515,27 @@ position = Vector2(35, -4)
 script = ExtResource("21_m2dni")
 metadata/_custom_type_script = "uid://dqsdfcnmlpgar"
 
-[node name="chain" type="RigidBody2D" parent="mace_tail" unique_id=167609967]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail" unique_id=1344246095]
+z_index = 12
+position = Vector2(8, -4)
+shape = SubResource("CircleShape2D_mof4j")
+
+[node name="base2" type="Sprite2D" parent="mace_tail" unique_id=1139623906]
+position = Vector2(56, -8)
+scale = Vector2(8, 8)
+texture = ExtResource("3_2wtpt")
+vframes = 2
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail" unique_id=124314825]
+position = Vector2(60, -4)
+node_a = NodePath("..")
+node_b = NodePath("../chain")
+bias = 0.52
+
+[node name="Node2D" type="Node2D" parent="mace_tail" unique_id=1808476065]
+top_level = true
+
+[node name="chain" type="RigidBody2D" parent="mace_tail" unique_id=676926040]
 position = Vector2(60, -4)
 collision_layer = 2
 collision_mask = 2
@@ -503,7 +556,7 @@ node_b = NodePath("../../chain2")
 bias = 0.52
 softness = 0.5
 
-[node name="chain2" type="RigidBody2D" parent="mace_tail" unique_id=721691066]
+[node name="chain2" type="RigidBody2D" parent="mace_tail" unique_id=1378120403]
 position = Vector2(84, -4)
 collision_layer = 2
 collision_mask = 2
@@ -524,7 +577,7 @@ node_b = NodePath("../../chain3")
 bias = 0.52
 softness = 0.5
 
-[node name="chain3" type="RigidBody2D" parent="mace_tail" unique_id=297914177]
+[node name="chain3" type="RigidBody2D" parent="mace_tail" unique_id=568109868]
 position = Vector2(108, -4)
 collision_layer = 2
 collision_mask = 2
@@ -545,7 +598,7 @@ node_b = NodePath("../../chain4")
 bias = 0.52
 softness = 0.5
 
-[node name="chain4" type="RigidBody2D" parent="mace_tail" unique_id=60658003]
+[node name="chain4" type="RigidBody2D" parent="mace_tail" unique_id=1688791369]
 position = Vector2(132, -4)
 collision_layer = 2
 collision_mask = 2
@@ -566,7 +619,7 @@ node_b = NodePath("../../chain5")
 bias = 0.52
 softness = 0.5
 
-[node name="chain5" type="RigidBody2D" parent="mace_tail" unique_id=22172195]
+[node name="chain5" type="RigidBody2D" parent="mace_tail" unique_id=108887375]
 position = Vector2(156, -4)
 collision_layer = 2
 collision_mask = 2
@@ -587,7 +640,7 @@ node_b = NodePath("../../mace")
 bias = 0.52
 softness = 0.5
 
-[node name="mace" type="RigidBody2D" parent="mace_tail" unique_id=1009035160]
+[node name="mace" type="RigidBody2D" parent="mace_tail" unique_id=1104106447]
 position = Vector2(180, -4)
 collision_layer = 8
 collision_mask = 8
@@ -603,23 +656,6 @@ scale = Vector2(8, 8)
 texture = ExtResource("3_2wtpt")
 vframes = 2
 frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mace_tail" unique_id=1344246095]
-z_index = 12
-position = Vector2(8, -4)
-shape = SubResource("CircleShape2D_mof4j")
-
-[node name="base2" type="Sprite2D" parent="mace_tail" unique_id=1139623906]
-position = Vector2(56, -8)
-scale = Vector2(8, 8)
-texture = ExtResource("3_2wtpt")
-vframes = 2
-
-[node name="PinJoint2D" type="PinJoint2D" parent="mace_tail" unique_id=124314825]
-position = Vector2(60, -4)
-node_a = NodePath("..")
-node_b = NodePath("../chain")
-bias = 0.52
 
 [node name="scorpion_tail" parent="." unique_id=1054008860 instance=ExtResource("1_5402b")]
 position = Vector2(852, 364)

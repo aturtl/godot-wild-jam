@@ -31,11 +31,16 @@ func _ready():
 
 
 func check_level_completion(level: Level):
-	return level.name in SESSIONSTATS.default_stats.completed_levels
+	return level.name in SESSIONSTATS.stats.completed_levels
 
 
 func check_level_unlocked(level: Level):
-	return level.name in SESSIONSTATS.stats.unlocked_levels
+	if !level.prerequisite:
+		return true
+	elif level.prerequisite.name in SESSIONSTATS.stats.completed_levels:
+		return true
+	
+	return false
 
 
 func _on_start_button_down():

@@ -42,8 +42,13 @@ type = 2
 position = Vector2(-6, 9)
 type = 1
 
+[node name="CollisionShape2D" parent="AttachmentSlots/AttachmentSlot5/SlotArea" parent_id_path=PackedInt32Array(426217041, 1472295311) index="0" unique_id=1879023069]
+position = Vector2(6, -24)
+
 [node name="ChassisCollision" type="CollisionShape2D" parent="." unique_id=1001613223]
 position = Vector2(-3.01981e-14, 17)
 rotation = 1.5708
 scale = Vector2(-0.988064, 1.63753)
 shape = SubResource("CapsuleShape2D_g4m66")
+
+[editable path="AttachmentSlots/AttachmentSlot5"]

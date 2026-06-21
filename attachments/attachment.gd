@@ -38,6 +38,7 @@ var attached: bool = false
 signal detached
 
 func _ready():
+	special_attachments()
 	add_behaviors()
 	
 	var c = connect_to_info.connect_to
@@ -55,6 +56,11 @@ func _ready():
 				sprite.z_index = 9
 	else:
 		z_index = z_index_override
+
+
+func special_attachments():
+	if name == "mace_tail":
+		print("isi mace")
 
 
 func add_behaviors():
@@ -78,7 +84,8 @@ func add_battle_behavior():
 func add_assembly_behavior():
 	if !assembly_behavior:
 		assembly_behavior = AssemblyBehavior.new()
-		add_child(assembly_behavior)
+	add_child(assembly_behavior)
+	
 
 
 func replace_slot(slot: AttachmentSlot):
@@ -113,10 +120,20 @@ func detach():
 
 
 func get_slot() -> AttachmentSlot:
+	var mouse_pos = get_global_mouse_position()
+	var closest_area: SlotArea
+	var closest_dist: float = INF
 	for area in drop_area.get_overlapping_areas():
 		if area is SlotArea:
 			if connect_to_info.connect_to == area.get_parent().type:
-				SceneLoader.play_sound("res://sound/success.wav")
-				return area.get_parent()
+				var dist = mouse_pos.distance_to(area.global_position)
+				if dist < closest_dist:
+					print("closest")
+					closest_dist = dist
+					closest_area = area
+	if closest_dist < 70.0:
+		SceneLoader.play_sound("res://sound/success.wav")
+		print("success")
+		return closest_area.get_parent()
 	SceneLoader.play_sound("res://sound/drop2.wav", 0.0, 6)
 	return null

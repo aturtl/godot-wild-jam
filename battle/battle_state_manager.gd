@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @export var mech_scale = .5
 
@@ -26,7 +26,13 @@ var winner: String = ""
 
 @export var screen_shake: Sprite2D
 
+@export var camera_focus: CameraFocus
+
 var shake_amount: int = 0
+
+var last_zoom_factor = Vector2(1.0,1.0)
+var max_zoom_factor = Vector2(1.2,1.2)
+var zoom_scale = .6
 
 func _ready():
 	read_level_info()
@@ -47,6 +53,15 @@ func _ready():
 
 
 func _physics_process(delta):
+	if camera_focus:
+		camera_focus.position = camera_focus.position.lerp((p_mech.position+e_mech.position)/2.0+Vector2.UP*100.0,.045)
+		var zoom_factor = 1/(abs(p_mech.position.x-e_mech.position.x)/get_viewport_rect().size.x)
+		zoom_factor *= zoom_scale
+		var lerped_zoom_factor = last_zoom_factor.lerp(Vector2.ONE*zoom_factor, .02)
+		lerped_zoom_factor = lerped_zoom_factor.min(max_zoom_factor)
+		camera_focus.set_zoom(lerped_zoom_factor)
+		last_zoom_factor = lerped_zoom_factor
+	
 	if shake_amount > 0:
 		shake_amount = max(0,shake_amount - 1)
 		screen_shake.material.set("shader_parameter/intensity",shake_amount)
@@ -57,10 +72,6 @@ func read_level_info():
 
 
 func start_battle():
-	if !Engine.is_editor_hint():
-		instant_lose = false
-		instant_win = false
-	
 	activate_mechs()
 	
 	if instant_win:
@@ -128,8 +139,8 @@ func _debug_e_action_changed(action_name):
 
 func player_won():
 	display_win_screen()
-	
-	pass
+	SESSIONSTATS.stats.completed_levels.append(LevelInfo.level_name)
+	SESSIONSTATS.save_stats()
 
 
 func player_lost():

@@ -6,22 +6,28 @@
 [ext_resource type="Script" uid="uid://dmh7oiqfbs64t" path="res://scenes/battle/wall_collision.gd" id="4_oiw7q"]
 [ext_resource type="Shader" uid="uid://c7qpdrt6kq4qo" path="res://shaders/screen_shake.gdshader" id="4_pll4o"]
 [ext_resource type="Script" uid="uid://cjdqhxgvlbwf1" path="res://battle/spawnpoint.gd" id="6_fh7rg"]
-[ext_resource type="Script" uid="uid://bu6tlhwbqh7th" path="res://scenes/world/open_world.gd" id="7_pll4o"]
+[ext_resource type="Script" uid="uid://c4277y7n1ja4i" path="res://scenes/world/camera_ui.gd" id="6_mxe8n"]
+[ext_resource type="Texture2D" uid="uid://cudvglaxn0tns" path="res://sprites/health_bar.png" id="8_icoan"]
 [ext_resource type="Script" uid="uid://b8yhmq41uvcqo" path="res://scenes/battle/health_bar.gd" id="8_py4tk"]
 [ext_resource type="Script" uid="uid://b4vrxn02fskda" path="res://scenes/battle/screen_win.gd" id="9_agsc7"]
 [ext_resource type="Script" uid="uid://bbscablhlusec" path="res://scenes/battle/screen_lose.gd" id="10_oiw7q"]
 [ext_resource type="Script" uid="uid://d4idexlyu0cgw" path="res://scenes/assembly/camera_focus.gd" id="11_fisqk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a12nh"]
-size = Vector2(128.306, 126.592)
+[ext_resource type="Texture2D" uid="uid://cloem8dsyh4au" path="res://sprites/win_screen.png" id="12_icoan"]
+[ext_resource type="Texture2D" uid="uid://b5x0ufa6qsl24" path="res://sprites/back.png" id="13_kd6yx"]
+[ext_resource type="Texture2D" uid="uid://dg15op3ykoj7t" path="res://sprites/next.png" id="14_t1kk3"]
+[ext_resource type="Texture2D" uid="uid://b52kic6q75hhw" path="res://sprites/again.png" id="16_6ofp8"]
+[ext_resource type="PackedScene" uid="uid://bb4og3gm0oc21" path="res://levels/levels.tscn" id="16_n6gaa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4k1nj"]
 shader = ExtResource("4_pll4o")
 shader_parameter/intensity = 0.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a12nh"]
+size = Vector2(128.306, 126.592)
+
 [node name="Battle" type="Node2D" unique_id=610513562]
 
-[node name="BattleStateManager" type="Node" parent="." unique_id=1229100516 node_paths=PackedStringArray("p_spawnpoint", "e_spawnpoint", "p_healthbar", "e_healthbar", "win_screen", "lose_screen", "screen_shake")]
+[node name="BattleStateManager" type="Node2D" parent="." unique_id=2031842697 node_paths=PackedStringArray("p_spawnpoint", "e_spawnpoint", "p_healthbar", "e_healthbar", "win_screen", "lose_screen", "screen_shake", "camera_focus")]
 unique_name_in_owner = true
 script = ExtResource("1_h0kxc")
 display_action_statuses = true
@@ -29,69 +35,10 @@ p_spawnpoint = NodePath("../PlayerSpawnpoint")
 e_spawnpoint = NodePath("../EnemySpawnpoint")
 p_healthbar = NodePath("../HealthBars/PlayerHealthBar")
 e_healthbar = NodePath("../HealthBars/EnemyHealthBar")
-win_screen = NodePath("../WinScreen")
-lose_screen = NodePath("../LoseScreen")
+win_screen = NodePath("../CameraUI/WinScreen")
+lose_screen = NodePath("../CameraUI/LoseScreen")
 screen_shake = NodePath("../ScreenShake")
-
-[node name="Ground" type="Sprite2D" parent="." unique_id=121820980]
-position = Vector2(556, 619)
-scale = Vector2(12.0415, -0.908428)
-texture = ExtResource("1_0yh6x")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground" unique_id=2095705898]
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D" unique_id=875693495]
-position = Vector2(0.207619, -0.550415)
-shape = SubResource("RectangleShape2D_a12nh")
-
-[node name="Ceiiling" type="Sprite2D" parent="." unique_id=580775735]
-position = Vector2(613, -53)
-scale = Vector2(12.0415, -0.908428)
-texture = ExtResource("1_0yh6x")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ceiiling" unique_id=1573503552]
-collision_layer = 17
-collision_mask = 17
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiiling/StaticBody2D" unique_id=689183338]
-position = Vector2(0.207619, -0.550415)
-shape = SubResource("RectangleShape2D_a12nh")
-
-[node name="Wall" type="Sprite2D" parent="." unique_id=1894182023]
-position = Vector2(1151, 378)
-scale = Vector2(-0.215623, -9.35077)
-texture = ExtResource("1_0yh6x")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Wall" unique_id=1371537277]
-position = Vector2(-357.1048, 0)
-scale = Vector2(6.1942506, 1)
-collision_layer = 17
-collision_mask = 17
-script = ExtResource("3_agsc7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/StaticBody2D" unique_id=1609510295]
-position = Vector2(0.207619, -0.550415)
-shape = SubResource("RectangleShape2D_a12nh")
-script = ExtResource("4_oiw7q")
-
-[node name="Wall2" type="Sprite2D" parent="." unique_id=193354732]
-position = Vector2(6, 386)
-scale = Vector2(-0.215623, -9.35077)
-texture = ExtResource("1_0yh6x")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Wall2" unique_id=1792962599]
-position = Vector2(329.2784, 0)
-scale = Vector2(6.194249, 1)
-collision_layer = 17
-collision_mask = 17
-script = ExtResource("3_agsc7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2/StaticBody2D" unique_id=1013691975]
-position = Vector2(0.207619, -0.550415)
-shape = SubResource("RectangleShape2D_a12nh")
-script = ExtResource("4_oiw7q")
+camera_focus = NodePath("../CameraFocus")
 
 [node name="ScreenShake" type="Sprite2D" parent="." unique_id=1961084168]
 unique_name_in_owner = true
@@ -110,6 +57,7 @@ script = ExtResource("6_fh7rg")
 
 [node name="PlayerActionsDebug" type="RichTextLabel" parent="." unique_id=1653510318]
 unique_name_in_owner = true
+visible = false
 offset_left = 35.0
 offset_top = 11.0
 offset_right = 335.0
@@ -118,44 +66,35 @@ text = "Player Action:"
 
 [node name="EnemyActionsDebug" type="RichTextLabel" parent="." unique_id=225320574]
 unique_name_in_owner = true
+visible = false
 offset_left = 35.0
 offset_top = 66.0
 offset_right = 335.0
 offset_bottom = 106.0
 text = "Enemy Action:"
 
-[node name="btn_world" type="Button" parent="." unique_id=1667861169]
-offset_left = 32.0
-offset_top = 506.0
-offset_right = 193.0
-offset_bottom = 544.0
-text = "World
-"
-script = ExtResource("7_pll4o")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1090836531]
 
-[node name="HealthBars" type="Control" parent="." unique_id=980186912]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HealthBars" type="Node2D" parent="." unique_id=2110653155]
+script = ExtResource("6_mxe8n")
+metadata/_custom_type_script = "uid://c4277y7n1ja4i"
 
 [node name="PlayerHealthBar" type="Control" parent="HealthBars" unique_id=1905704304 node_paths=PackedStringArray("scaler")]
 z_index = 30
+layout_mode = 3
 anchors_preset = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 64.0
+offset_bottom = 64.0
 script = ExtResource("8_py4tk")
 scaler = NodePath("TextureRect/ColorRect")
 
 [node name="TextureRect" type="TextureRect" parent="HealthBars/PlayerHealthBar" unique_id=1690895955]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 521.0
-offset_right = 283.0
-offset_bottom = 553.0
-texture = ExtResource("1_0yh6x")
+offset_right = 240.0
+offset_bottom = 32.0
+texture = ExtResource("8_icoan")
 expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="HealthBars/PlayerHealthBar/TextureRect" unique_id=1300291463]
@@ -164,20 +103,32 @@ offset_left = 4.0
 offset_top = 4.0
 offset_right = 236.0
 offset_bottom = 28.0
+color = Color(2.887845e-06, 0.8005708, 0.3372524, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HealthBars/PlayerHealthBar" unique_id=851410780]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 408.0
+offset_bottom = 62.0
+text = "YOU"
 
 [node name="EnemyHealthBar" type="Control" parent="HealthBars" unique_id=1141825830 node_paths=PackedStringArray("scaler")]
 z_index = 30
+layout_mode = 3
 anchors_preset = 0
+offset_left = 848.0
+offset_top = 64.0
+offset_right = 848.0
+offset_bottom = 64.0
 script = ExtResource("8_py4tk")
 scaler = NodePath("TextureRect/ColorRect")
 
 [node name="TextureRect" type="TextureRect" parent="HealthBars/EnemyHealthBar" unique_id=1974641825]
 layout_mode = 0
-offset_left = 870.0
-offset_top = 523.0
-offset_right = 1110.0
-offset_bottom = 555.0
-texture = ExtResource("1_0yh6x")
+offset_right = 240.0
+offset_bottom = 32.0
+texture = ExtResource("8_icoan")
 expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="HealthBars/EnemyHealthBar/TextureRect" unique_id=1353090169]
@@ -186,8 +137,104 @@ offset_left = 4.0
 offset_top = 4.0
 offset_right = 236.0
 offset_bottom = 28.0
+color = Color(0, 0.76783043, 0.89659584, 1)
 
-[node name="WinScreen" type="Control" parent="." unique_id=344785085]
+[node name="RichTextLabel" type="RichTextLabel" parent="HealthBars/EnemyHealthBar" unique_id=1050592624]
+layout_mode = 0
+offset_left = -168.0
+offset_top = 32.0
+offset_right = 232.0
+offset_bottom = 62.0
+bbcode_enabled = true
+text = "[right]THE ENEMY[/right]"
+
+[node name="CameraFocus" type="Node2D" parent="." unique_id=1541468634]
+position = Vector2(562, 312)
+script = ExtResource("11_fisqk")
+zoom = Vector2(0.7, 0.7)
+metadata/_custom_type_script = "uid://d4idexlyu0cgw"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=278813484]
+z_index = -1
+offset_left = -3895.9998
+offset_top = 584.0
+offset_right = -3855.9998
+offset_bottom = 624.0
+scale = Vector2(234.64001, 50.36001)
+mouse_filter = 2
+color = Color(0.24705882, 0.27058825, 0.5411765, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1116835650]
+z_index = -12
+offset_left = -3895.9998
+offset_top = -2632.0
+offset_right = -3855.9998
+offset_bottom = -2592.0
+scale = Vector2(234.64001, 84.520004)
+mouse_filter = 2
+color = Color(0.43126473, 0.6159083, 0.7642254, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=452751791]
+z_index = -2
+offset_left = -3895.9998
+offset_top = 576.0
+offset_right = -3855.9998
+offset_bottom = 616.0
+scale = Vector2(234.64001, 50.36001)
+mouse_filter = 2
+color = Color(0.10263281, 0.11456416, 0.26173946, 1)
+
+[node name="WallBody" type="StaticBody2D" parent="." unique_id=1792962599]
+position = Vector2(-568, 386)
+rotation = 3.1415927
+scale = Vector2(1.3356227, 19.51077)
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("3_agsc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBody" unique_id=1013691975]
+position = Vector2(0.207619, -0.550415)
+shape = SubResource("RectangleShape2D_a12nh")
+script = ExtResource("4_oiw7q")
+
+[node name="WallBody2" type="StaticBody2D" parent="." unique_id=1371537277]
+position = Vector2(1832, 378)
+rotation = 3.1415927
+scale = Vector2(1.3356229, 18.99077)
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("3_agsc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBody2" unique_id=1609510295]
+position = Vector2(0.207619, -0.550415)
+shape = SubResource("RectangleShape2D_a12nh")
+script = ExtResource("4_oiw7q")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1573503552]
+position = Vector2(613, -624)
+scale = Vector2(30.587526, -1.9872394)
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=689183338]
+position = Vector2(0.207619, -0.550415)
+shape = SubResource("RectangleShape2D_a12nh")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=2095705898]
+position = Vector2(556, 688)
+scale = Vector2(20.761497, -1.5662771)
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=875693495]
+position = Vector2(0.207619, -0.550415)
+shape = SubResource("RectangleShape2D_a12nh")
+
+[node name="CameraUI" type="Node2D" parent="." unique_id=515101075]
+script = ExtResource("6_mxe8n")
+metadata/_custom_type_script = "uid://c4277y7n1ja4i"
+
+[node name="WinScreen" type="Control" parent="CameraUI" unique_id=344785085 node_paths=PackedStringArray("levels")]
 visible = false
 z_index = 50
 layout_mode = 3
@@ -197,57 +244,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("9_agsc7")
+levels = NodePath("../../Levels")
 
-[node name="Cover" type="Control" parent="WinScreen" unique_id=48906763]
+[node name="Cover" type="Control" parent="CameraUI/WinScreen" unique_id=48906763]
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 pivot_offset_ratio = Vector2(0.1, 0.1)
 
-[node name="TextureRect" type="TextureRect" parent="WinScreen/Cover" unique_id=932981606]
+[node name="RichTextLabel" type="RichTextLabel" parent="CameraUI/WinScreen/Cover" unique_id=1569513773]
 layout_mode = 0
+offset_top = 152.0
 offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("1_0yh6x")
-expand_mode = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="WinScreen/Cover" unique_id=1569513773]
-layout_mode = 0
-offset_left = 157.0
-offset_top = 96.0
-offset_right = 797.0
-offset_bottom = 196.0
+offset_bottom = 252.0
 theme_override_font_sizes/normal_font_size = 64
-text = "winner!"
+bbcode_enabled = true
+text = "[center]YOU WON![/center]"
 
-[node name="Buttons" type="Control" parent="WinScreen" unique_id=108107633]
+[node name="Buttons" type="Control" parent="CameraUI/WinScreen" unique_id=108107633]
 z_index = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Return" type="TextureButton" parent="WinScreen/Buttons" unique_id=326140104]
+[node name="Return" type="TextureButton" parent="CameraUI/WinScreen/Buttons" unique_id=326140104]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 674.0
 offset_right = 176.0
 offset_bottom = 738.0
-texture_normal = ExtResource("1_0yh6x")
+texture_normal = ExtResource("13_kd6yx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Continue" type="TextureButton" parent="WinScreen/Buttons" unique_id=1178012196]
+[node name="Continue" type="TextureButton" parent="CameraUI/WinScreen/Buttons" unique_id=1178012196]
 layout_mode = 0
 offset_left = 979.0
 offset_top = 680.0
 offset_right = 1107.0
 offset_bottom = 744.0
-texture_normal = ExtResource("1_0yh6x")
+texture_normal = ExtResource("14_t1kk3")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="LoseScreen" type="Control" parent="." unique_id=900643283]
-visible = false
+[node name="LoseScreen" type="Control" parent="CameraUI" unique_id=900643283]
 z_index = 50
 layout_mode = 3
 anchors_preset = 15
@@ -258,20 +298,14 @@ grow_vertical = 2
 script = ExtResource("10_oiw7q")
 metadata/_custom_type_script = "uid://bbscablhlusec"
 
-[node name="Cover" type="Control" parent="LoseScreen" unique_id=1099375128]
+[node name="Cover" type="Control" parent="CameraUI/LoseScreen" unique_id=1099375128]
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 pivot_offset_ratio = Vector2(0.1, 0.1)
 
-[node name="TextureRect" type="TextureRect" parent="LoseScreen/Cover" unique_id=1599634045]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("1_0yh6x")
-expand_mode = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="LoseScreen/Cover" unique_id=2081339460]
+[node name="RichTextLabel" type="RichTextLabel" parent="CameraUI/LoseScreen/Cover" unique_id=2081339460]
+z_index = 1
 layout_mode = 0
 offset_left = 157.0
 offset_top = 96.0
@@ -280,36 +314,40 @@ offset_bottom = 196.0
 theme_override_font_sizes/normal_font_size = 64
 text = "Better luck next time..."
 
-[node name="Buttons" type="Control" parent="LoseScreen" unique_id=562844965]
+[node name="TextureRect2" type="TextureRect" parent="CameraUI/LoseScreen/Cover" unique_id=932981606]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -296.0
+offset_right = 1228.0
+offset_bottom = 704.0
+texture = ExtResource("12_icoan")
+expand_mode = 1
+
+[node name="Buttons" type="Control" parent="CameraUI/LoseScreen" unique_id=562844965]
 z_index = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Return" type="TextureButton" parent="LoseScreen/Buttons" unique_id=1055339995]
+[node name="Return" type="TextureButton" parent="CameraUI/LoseScreen/Buttons" unique_id=1055339995]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 674.0
 offset_right = 176.0
 offset_bottom = 738.0
-texture_normal = ExtResource("1_0yh6x")
+texture_normal = ExtResource("13_kd6yx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Continue" type="TextureButton" parent="LoseScreen/Buttons" unique_id=503261715]
+[node name="Again" type="TextureButton" parent="CameraUI/LoseScreen/Buttons" unique_id=503261715]
 layout_mode = 0
 offset_left = 979.0
 offset_top = 680.0
 offset_right = 1107.0
 offset_bottom = 744.0
-texture_normal = ExtResource("1_0yh6x")
+texture_normal = ExtResource("16_6ofp8")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="CameraFocus" type="Node2D" parent="." unique_id=1541468634]
-position = Vector2(562, 312)
-script = ExtResource("11_fisqk")
-zoom = Vector2(0.7, 0.7)
-metadata/_custom_type_script = "uid://d4idexlyu0cgw"
-
-[connection signal="button_down" from="btn_world" to="btn_world" method="_on_button_down"]
+[node name="Levels" parent="." unique_id=795558777 instance=ExtResource("16_n6gaa")]
+unique_name_in_owner = true

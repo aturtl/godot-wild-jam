@@ -1,4 +1,4 @@
-extends Button
+extends BaseButton
 
 func _on_button_down():
 	SceneLoader.play_sound("res://sound/selection.wav")

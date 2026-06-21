@@ -119,3 +119,20 @@ GODOT WILD JAM DEVLOG
 	- CameraFocus class
 	- Camera follows Map Turtle
 	- Map Turtle Footstep sounds
+
+
+6/20:
+	- Last-minute polishing
+		- Spritework for Menu buttons
+			- Assembly Button
+			- Attachment Buttons
+			- Battle: Back, Next, Try Again
+		- Loading screen spritework
+		- Assembly Background
+		- Scrollbar clipping in assembly
+		- Adjusted connection range to attachments
+		- Made drop range rely on mouse proximity rather than on area proximity
+		- Dynamic battle camera
+		- Made levels rely on prerequisites instead of storing unlocked levels
+		- Back, Next, Try Again functionalities for battles
+		- Nicer health bars

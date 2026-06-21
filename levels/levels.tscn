@@ -6,14 +6,16 @@
 [node name="Levels" type="Node2D" unique_id=795558777]
 script = ExtResource("1_7nsre")
 
-[node name="factory1" type="Node" parent="." unique_id=1102410882]
+[node name="factory1" type="Node" parent="." unique_id=1102410882 node_paths=PackedStringArray("next_level")]
 script = ExtResource("1_cmi1o")
+next_level = NodePath("../factory2")
 enemy_id = "factory1"
 location = "debug"
 metadata/_custom_type_script = "uid://nygkegmarce3"
 
-[node name="factory2" type="Node" parent="." unique_id=2147417647]
+[node name="factory2" type="Node" parent="." unique_id=2147417647 node_paths=PackedStringArray("prerequisite")]
 script = ExtResource("1_cmi1o")
 enemy_id = "factory2"
 location = "debug"
+prerequisite = NodePath("../factory1")
 metadata/_custom_type_script = "uid://nygkegmarce3"

@@ -49,4 +49,4 @@ func _process(delta):
 	
 	local_children.clear()
 	if following:
-		position = following.position
+		global_position = following.global_position
