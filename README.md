@@ -13,6 +13,8 @@
 - [Videos](docs/videos)
 - [Screenshots](docs/screenshots)
 
+![MECHA SHELLS](https://github.com/aturtl/godot-wild-jam/blob/main/docs/thumbnails/mecha-shells%20thumbnail-purple.png)
+
 <h2>Made for Godot Wild Jam #94</h2>
 
  - [Godot Wild Jam (Itch.io)](https://itch.io/jam/godot-wild-jam-94)
